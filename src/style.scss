@@ -1,15 +1,84 @@
-/* Coolors Exported Palette - coolors.co/ef6461-e4b363-e8e9eb-e0dfd5-313638 */
+/* Coolors Exported Palette - coolors.co/f2efea-fc7753-66d7d1-403d58-dbd56e */
 
 /* HSL */
-$color1: hsla(1%, 82%, 66%, 1);
-$color2: hsla(37%, 70%, 64%, 1);
-$color3: hsla(220%, 7%, 92%, 1);
-$color4: hsla(55%, 15%, 86%, 1);
-$color5: hsla(197%, 7%, 21%, 1);
+$color1: hsla(38%, 24%, 93%, 1);
+$color2: hsla(13%, 97%, 66%, 1);
+$color3: hsla(177%, 59%, 62%, 1);
+$color4: hsla(247%, 18%, 29%, 1);
+$color5: hsla(57%, 60%, 65%, 1);
+$black: hsla(197%, 7%, 21%, 1);
+$white: hsla(220%, 7%, 92%, 1);
+
 
 /* RGB */
-$color1: rgba(239, 100, 97, 1);
-$color2: rgba(228, 179, 99, 1);
-$color3: rgba(232, 233, 235, 1);
-$color4: rgba(224, 223, 213, 1);
-$color5: rgba(49, 54, 56, 1);
+$color1: rgba(242, 239, 234, 1);
+$color2: rgba(252, 119, 83, 1);
+$color3: rgba(102, 215, 209, 1);
+$color4: rgba(64, 61, 88, 1);
+$color5: rgba(219, 213, 110, 1);
+$black: rgba(49, 54, 56, 1);
+$white: rgba(232, 233, 235, 1);
+
+
+
+$tl-width: 4px;
+$tl-node-radius: 60px;
+$padding: 20px;
+
+html {
+  color: $white;
+}
+
+body {
+  font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.zt-container {
+  position: relative;
+}
+
+.zt-tl-block {
+  // background: yellow;
+}
+
+.zt-tl-block::after{
+  content: ' ';
+  position: absolute;
+  top: 0;
+  background: $color1;
+  height: 100%;
+  width: $tl-width;
+  z-index: 2;
+  left: 50%;
+}
+.zt-tl-node {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: $color3;
+  position: absolute;
+  z-index: 10;
+  left: calc(50% - 30px);
+  border:  calc(#{$tl-width}/2) solid $color1;
+}
+
+.zt-tl-content {
+  // background: green;
+  width: calc(50% - #{$tl-node-radius}/2 - #{$padding}*2);
+  // position: absolute;
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid $color1;
+  }
+}
+
+.left-content {
+  margin-left: $padding;
+  text-align: right;
+}
+
+.right-content {
+  margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
+  text-align: left;
+}

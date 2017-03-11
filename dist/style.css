@@ -1,0 +1,46 @@
+/* Coolors Exported Palette - coolors.co/f2efea-fc7753-66d7d1-403d58-dbd56e */
+/* HSL */
+/* RGB */
+html {
+  color: #e8e9eb; }
+
+body {
+  font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif; }
+
+.zt-container {
+  position: relative; }
+
+.zt-tl-block::after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  background: #f2efea;
+  height: 100%;
+  width: 4px;
+  z-index: 2;
+  left: 50%; }
+
+.zt-tl-node {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #66d7d1;
+  position: absolute;
+  z-index: 10;
+  left: calc(50% - 30px);
+  border: calc(4px/2) solid #f2efea; }
+
+.zt-tl-content {
+  width: calc(50% - 60px/2 - 20px*2); }
+  .zt-tl-content img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #f2efea; }
+
+.left-content {
+  margin-left: 20px;
+  text-align: right; }
+
+.right-content {
+  margin-left: calc(50% + 60px/2 + 20px);
+  text-align: left; }
