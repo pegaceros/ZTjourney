@@ -72,10 +72,12 @@ body {
     height: auto;
     border: 2px solid #f2efea; }
 
-.left-content {
+.section:nth-child(even) .zt-tl-content:nth-child(2),
+.section:nth-child(odd) .zt-tl-content:nth-child(3) {
   margin-left: 20px;
   text-align: right; }
 
-.right-content {
+.section:nth-child(even) .zt-tl-content:nth-child(3),
+.section:nth-child(odd) .zt-tl-content:nth-child(2) {
   margin-left: calc(50% + 60px/2 + 20px);
   text-align: left; }

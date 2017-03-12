@@ -137,12 +137,24 @@ body {
     }
 }
 
-.left-content {
+// .left-content {
+//     margin-left: $padding;
+//     text-align: right;
+// }
+//
+// .right-content {
+//     margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
+//     text-align: left;
+// }
+
+.section:nth-child(even) .zt-tl-content:nth-child(2),
+.section:nth-child(odd) .zt-tl-content:nth-child(3) {
     margin-left: $padding;
     text-align: right;
 }
 
-.right-content {
+.section:nth-child(even) .zt-tl-content:nth-child(3),
+.section:nth-child(odd) .zt-tl-content:nth-child(2) {
     margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
     text-align: left;
 }

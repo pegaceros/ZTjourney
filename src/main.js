@@ -6,7 +6,7 @@ class TlNode extends React.Component {
     const nodeStyle = {
       backgroundImage: "url(" + this.props.img + ")",
       backgroundSize: "cover",
-      // animation: "arrow 1s alternate infinite"
+      animation: "arrow 1s alternate infinite"
     };
     return (
       <div className="zt-tl-node" style={nodeStyle}>
@@ -71,13 +71,13 @@ class Page extends React.Component {
       <div className="section" style={pageStyle}>
           <div className="zt-tl-block">
               <TlNode img={this.props.node.nodeImg} />
-              <div className="zt-tl-content left-content">
+              <div className="zt-tl-content">
                   <h4 className="zl-tl-date">{this.props.node.date}</h4>
                   <h3 className="zl-tl-title">{this.props.node.title}</h3>
                   <p className="zl-tl-description>">{this.props.node.description}
                   </p>
               </div>
-              <div className="zt-tl-content right-content">
+              <div className="zt-tl-content">
                   <a href={this.props.node.link} target="_blank">
                       <img src={this.props.node.thumbnail}></img>
                   </a>

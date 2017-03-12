@@ -24,7 +24,8 @@ var TlNode = function (_React$Component) {
     value: function render() {
       var nodeStyle = {
         backgroundImage: "url(" + this.props.img + ")",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
+        animation: "arrow 1s alternate infinite"
       };
       return React.createElement("div", { className: "zt-tl-node", style: nodeStyle });
     }
@@ -131,7 +132,7 @@ var Page = function (_React$Component3) {
           React.createElement(TlNode, { img: this.props.node.nodeImg }),
           React.createElement(
             "div",
-            { className: "zt-tl-content left-content" },
+            { className: "zt-tl-content" },
             React.createElement(
               "h4",
               { className: "zl-tl-date" },
@@ -150,7 +151,7 @@ var Page = function (_React$Component3) {
           ),
           React.createElement(
             "div",
-            { className: "zt-tl-content right-content" },
+            { className: "zt-tl-content" },
             React.createElement(
               "a",
               { href: this.props.node.link, target: "_blank" },
