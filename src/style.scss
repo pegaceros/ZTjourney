@@ -1,5 +1,4 @@
 /* Coolors Exported Palette - coolors.co/f2efea-fc7753-66d7d1-403d58-dbd56e */
-
 /* HSL */
 $color1: hsla(38%, 24%, 93%, 1);
 $color2: hsla(13%, 97%, 66%, 1);
@@ -8,8 +7,6 @@ $color4: hsla(247%, 18%, 29%, 1);
 $color5: hsla(57%, 60%, 65%, 1);
 $black: hsla(197%, 7%, 21%, 1);
 $white: hsla(220%, 7%, 92%, 1);
-
-
 /* RGB */
 $color1: rgba(242, 239, 234, 1);
 $color2: rgba(252, 119, 83, 1);
@@ -18,52 +15,73 @@ $color4: rgba(64, 61, 88, 1);
 $color5: rgba(219, 213, 110, 1);
 $black: rgba(49, 54, 56, 1);
 $white: rgba(232, 233, 235, 1);
-
-
-
 $tl-width: 2px;
 $tl-node-radius: 60px;
 $padding: 20px;
 $max-width: 1000px;
 
 html {
-  color: $white;
+    color: $white;
 }
 
 body {
-  font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
 .zt-container {
-  position: relative;
+    // position: relative;
+    background-color: black;
 }
 
 .zt-landing-page {
-  background-color: yellow;
+    // background-color: yellow;
+}
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+@-moz-keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+@-webkit-keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .zt-top {
-  background-color: green;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+    // background-color: blue;
+    text-align: center;
+    max-height: calc(100% - #{$tl-node-radius} - #{$padding} * 3);
 
-
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  // background-color: blue;
-  text-align: center;
-  max-height: calc(100% - #{$tl-node-radius} - #{$padding} * 3);
-
-  img {
-    max-height: 90%;
-    width: auto;
-    border: 2px solid $color1;
-  }
+    img {
+        max-height: 90%;
+        width: auto;
+        border: 2px solid $color1;
+    }
 }
 
 .zt-tl-block {
-  // background: yellow;
+    // background: yellow;
 }
-
 // .zt-tl-block::after, .zt-tl-header::after{
 //   content: ' ';
 //   position: absolute;
@@ -89,41 +107,42 @@ body {
 }
 
 .zt-tl-block::after {
-  top: 0;
+    top: 0;
 }
 
 .zt-tl-node {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: $color3;
-  position: absolute;
-  z-index: 10;
-  left: calc(50% - 30px);
-  border:  calc(#{$tl-width}) solid $color1;
-
-  // TODO: change Icon
-  // background-image: url("../img/icon_1.png");
-  background-size: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $color3;
+    position: absolute;
+    z-index: 10;
+    left: calc(50% - 30px);
+    border: calc(#{$tl-width}) solid $color1;
+    // TODO: change Icon
+    // background-image: url("../img/icon_1.png");
+    background-size: cover;
+    animation: pop 0.6s alternate infinite;
+    animation-timing-function: ease;
 }
 
 .zt-tl-content {
-  // background: green;
-  width: calc(50% - #{$tl-node-radius}/2 - #{$padding}*2);
-  // position: absolute;
-  img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid $color1;
-  }
+    // background: green;
+    width: calc(50% - #{$tl-node-radius}/2 - #{$padding}*2);
+    // position: absolute;
+    img {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid $color1;
+    }
 }
 
 .left-content {
-  margin-left: $padding;
-  text-align: right;
+    margin-left: $padding;
+    text-align: right;
 }
 
 .right-content {
-  margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
-  text-align: left;
+    margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
+    text-align: left;
 }

@@ -8,13 +8,27 @@ body {
   font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif; }
 
 .zt-container {
-  position: relative; }
+  background-color: black; }
 
-.zt-landing-page {
-  background-color: yellow; }
+@keyframes pop {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1.1); } }
+
+@-moz-keyframes pop {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1.1); } }
+
+@-webkit-keyframes pop {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1.1); } }
 
 .zt-top {
-  background-color: green;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -47,7 +61,9 @@ body {
   z-index: 10;
   left: calc(50% - 30px);
   border: calc(2px) solid #f2efea;
-  background-size: cover; }
+  background-size: cover;
+  animation: pop 0.6s alternate infinite;
+  animation-timing-function: ease; }
 
 .zt-tl-content {
   width: calc(50% - 60px/2 - 20px*2); }

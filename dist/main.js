@@ -33,6 +33,22 @@ var TlNode = function (_React$Component) {
   return TlNode;
 }(React.Component);
 
+// class PageBackground extends React.Component {
+//   render () {
+//     const bgStyle = {
+//       backgroundImage: "url(img/bg_0.jpg)",
+//       backgroundSize: "cover",
+//       filter: "blur(2px)",
+//     };
+//
+//     return (
+//       <div className="zt-page-background" style={bgStyle}>
+//       </div>
+//     )
+//   }
+// }
+
+
 // TODO: 编辑内容
 
 
@@ -48,9 +64,13 @@ var LandingPage = function (_React$Component2) {
   _createClass(LandingPage, [{
     key: "render",
     value: function render() {
+      var pageStyle = {
+        backgroundImage: "url(img/bg_0.png)",
+        backgroundSize: "cover"
+      };
       return React.createElement(
         "div",
-        { className: "section" },
+        { className: "section", style: pageStyle },
         React.createElement(
           "div",
           { className: "zt-landing-page" },
@@ -174,7 +194,7 @@ var App = function (_React$Component4) {
 var page1 = {
   id: "1",
   nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_1.png",
+  bgImg: "img/bg_4.png",
   date: "2015",
   title: "真情无限",
   description: "环保环保环保",
@@ -185,7 +205,7 @@ var page1 = {
 var page2 = {
   id: "2",
   nodeImg: "img/icon_2.png",
-  bgImg: "img/bg_2.png",
+  bgImg: "img/bg_5.png",
   date: "2016",
   title: "春节联欢晚会2016",
   description: "2016央视春晚主持阵容发布：在中央电视台一号演播大厅主会场的共有六位主持人，分别是周涛、朱军、董卿、撒贝宁、李思思和尼格买提。福建泉州分会场：李佳明、赵琳硕；陕西西安分会场：朱迅、徐杰；广东广州分会场：任鲁豫、邓璐；内蒙古呼伦贝尔分会场：马跃、欧仁图雅。",
@@ -196,7 +216,7 @@ var page2 = {
 var page3 = {
   id: "3",
   nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_1.png",
+  bgImg: "img/bg_0.jpg",
   date: "2017",
   title: "Dream",
   description: "BLABLABLABLABLABLABL",
