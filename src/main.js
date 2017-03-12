@@ -5,8 +5,6 @@ class TlNode extends React.Component {
   render () {
     const nodeStyle = {
       backgroundImage: "url(" + this.props.img + ")",
-      backgroundSize: "cover",
-      animation: "arrow 1s alternate infinite"
     };
     return (
       <div className="zt-tl-node" style={nodeStyle}>

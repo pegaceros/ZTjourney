@@ -23,9 +23,7 @@ var TlNode = function (_React$Component) {
     key: "render",
     value: function render() {
       var nodeStyle = {
-        backgroundImage: "url(" + this.props.img + ")",
-        backgroundSize: "cover",
-        animation: "arrow 1s alternate infinite"
+        backgroundImage: "url(" + this.props.img + ")"
       };
       return React.createElement("div", { className: "zt-tl-node", style: nodeStyle });
     }
