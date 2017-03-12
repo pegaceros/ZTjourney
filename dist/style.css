@@ -10,15 +10,33 @@ body {
 .zt-container {
   position: relative; }
 
-.zt-tl-block::after {
+.zt-landing-page {
+  background-color: yellow; }
+
+.zt-top {
+  background-color: green;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-height: calc(100% - 60px - 20px * 3); }
+  .zt-top img {
+    max-height: 90%;
+    width: auto;
+    border: 2px solid #f2efea; }
+
+.zt-tl-block::after,
+.zt-tl-header::after {
   content: ' ';
   position: absolute;
-  top: 0;
   background: #f2efea;
   height: 100%;
-  width: 4px;
+  width: 2px;
   z-index: 2;
   left: 50%; }
+
+.zt-tl-block::after {
+  top: 0; }
 
 .zt-tl-node {
   width: 60px;
@@ -28,7 +46,8 @@ body {
   position: absolute;
   z-index: 10;
   left: calc(50% - 30px);
-  border: calc(4px/2) solid #f2efea; }
+  border: calc(2px) solid #f2efea;
+  background-size: cover; }
 
 .zt-tl-content {
   width: calc(50% - 60px/2 - 20px*2); }
