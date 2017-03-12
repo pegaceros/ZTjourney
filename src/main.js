@@ -77,7 +77,7 @@ class Page extends React.Component {
               </div>
               <div className="zt-tl-content">
                   <a href={this.props.node.link} target="_blank">
-                      <img src={this.props.node.thumbnail}></img>
+                      <img src="" data-src={this.props.node.thumbnail}></img>
                   </a>
               </div>
           </div>

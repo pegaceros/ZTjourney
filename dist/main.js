@@ -153,7 +153,7 @@ var Page = function (_React$Component3) {
             React.createElement(
               "a",
               { href: this.props.node.link, target: "_blank" },
-              React.createElement("img", { src: this.props.node.thumbnail })
+              React.createElement("img", { src: "", "data-src": this.props.node.thumbnail })
             )
           )
         )
