@@ -15,27 +15,16 @@ $color4: rgba(64, 61, 88, 1);
 $color5: rgba(219, 213, 110, 1);
 $black: rgba(49, 54, 56, 1);
 $white: rgba(232, 233, 235, 1);
+/* Variables */
+$font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
 $tl-width: 2px;
 $tl-node-radius: 60px;
 $padding: 20px;
-$max-width: 1000px;
-
-html {
-    color: $white;
-}
-
-body {
-    font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
-}
-
-.zt-container {
-    // position: relative;
-    background-color: black;
-}
-
-.zt-landing-page {
-    // background-color: yellow;
-}
+$top-max-width: 1000px;
+$item-width: 300px;
+$item-height: 180px;
+$border-radius: 8px;
+/* Animation */
 @keyframes pop {
     0% {
         transform: scale(1);
@@ -64,8 +53,26 @@ body {
     }
 }
 
+/* Style */
+html {
+    color: $white;
+}
+
+body {
+    font-family: $font-family;
+}
+
+.zt-container {
+    // position: relative;
+    // background-color: black;
+}
+
+.zt-landing-page {
+    // background-color: yellow;
+}
+
 .zt-top {
-    max-width: $max-width;
+    max-width: $top-max-width;
     margin-left: auto;
     margin-right: auto;
     // background-color: blue;
@@ -119,9 +126,11 @@ body {
     z-index: 10;
     left: calc(50% - 30px);
     border: calc(#{$tl-width}) solid $color1;
-    // TODO: change Icon
-    // background-image: url("../img/icon_1.png");
+
     background-size: cover;
+}
+
+.pop {
     animation: pop 0.6s alternate infinite;
     animation-timing-function: ease;
 }
@@ -136,7 +145,6 @@ body {
         border: 2px solid $color1;
     }
 }
-
 // .left-content {
 //     margin-left: $padding;
 //     text-align: right;
@@ -157,4 +165,69 @@ body {
 .section:nth-child(odd) .zt-tl-content:nth-child(2) {
     margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
     text-align: left;
+}
+
+.zt-event {
+    display: inline-block;
+    position: relative;
+    width: $item-width;
+    height: $item-height;
+    // border-radius: $border-radius;
+    overflow: hidden;
+
+    .zt-event-thumb {
+        height: 100%;
+        width: 100%;
+        // border-radius: $border-radius;
+        // background-image: url("../img/thumb_1.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: filter 0.4s ease, transform 0.4s ease;
+        -webkit-transition: -webkit-filter 0.4s ease, -webkit-transform 0.4s ease;
+        -moz-transition: -moz-filter 0.4s ease, -moz-transform 0.4s ease;
+    }
+
+    .zt-event-title {
+        background-color: rgba(0,0,0,0.5);
+        color: $white;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding-top: 20%;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        -webkit-transition: opacity 0.4s ease;
+        -moz-transition: opacity 0.4s ease;
+
+        font-size: 16px;
+        font-weight: 300;
+        text-align: center;
+
+        &::after {
+          content: "点击观看";
+          display: block;
+          color: $color1;
+          font-size: 12px;
+          font-weight: lighter;
+        }
+    }
+
+    &:hover {
+        .zt-event-thumb {
+            filter: blur(2px);
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+        }
+
+        .zt-event-title {
+            opacity: 1;
+        }
+    }
 }

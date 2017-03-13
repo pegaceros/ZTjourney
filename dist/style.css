@@ -1,15 +1,9 @@
+@charset "UTF-8";
 /* Coolors Exported Palette - coolors.co/f2efea-fc7753-66d7d1-403d58-dbd56e */
 /* HSL */
 /* RGB */
-html {
-  color: #e8e9eb; }
-
-body {
-  font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif; }
-
-.zt-container {
-  background-color: black; }
-
+/* Variables */
+/* Animation */
 @keyframes pop {
   0% {
     transform: scale(1); }
@@ -27,6 +21,13 @@ body {
     transform: scale(1); }
   100% {
     transform: scale(1.1); } }
+
+/* Style */
+html {
+  color: #e8e9eb; }
+
+body {
+  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
 .zt-top {
   max-width: 1000px;
@@ -61,7 +62,9 @@ body {
   z-index: 10;
   left: calc(50% - 30px);
   border: calc(2px) solid #f2efea;
-  background-size: cover;
+  background-size: cover; }
+
+.pop {
   animation: pop 0.6s alternate infinite;
   animation-timing-function: ease; }
 
@@ -81,3 +84,51 @@ body {
 .section:nth-child(odd) .zt-tl-content:nth-child(2) {
   margin-left: calc(50% + 60px/2 + 20px);
   text-align: left; }
+
+.zt-event {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  height: 180px;
+  overflow: hidden; }
+  .zt-event .zt-event-thumb {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: filter 0.4s ease, transform 0.4s ease;
+    -webkit-transition: -webkit-filter 0.4s ease, -webkit-transform 0.4s ease;
+    -moz-transition: -moz-filter 0.4s ease, -moz-transform 0.4s ease; }
+  .zt-event .zt-event-title {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #e8e9eb;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 20%;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    -webkit-transition: opacity 0.4s ease;
+    -moz-transition: opacity 0.4s ease;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center; }
+    .zt-event .zt-event-title::after {
+      content: "点击观看";
+      display: block;
+      color: #f2efea;
+      font-size: 12px;
+      font-weight: lighter; }
+  .zt-event:hover .zt-event-thumb {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1); }
+  .zt-event:hover .zt-event-title {
+    opacity: 1; }
