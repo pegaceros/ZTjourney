@@ -55,7 +55,8 @@ $timeline-top-tail: 10%;
 }
 /* Style */
 html {
-    color: $white;
+    color: $black;
+    background-color: $white;
 }
 
 body {
@@ -97,7 +98,7 @@ body {
 .zt-tl-header::after {
     content: ' ';
     position: absolute;
-    background: $color1;
+    background: $color2;
     width: $tl-width;
     z-index: 2;
     left: 50%;
@@ -138,8 +139,19 @@ body {
     position: absolute;
     z-index: 10;
     left: calc(50% - 30px);
-    border: calc(#{$tl-width}) solid $color1;
+    border: calc(#{$tl-width}) solid $color2;
     background-size: cover;
+
+    transition: transform 0.8s ease;
+    -webkit-transition: -webkit-transform 0.8s ease;
+    -moz-transition: -moz-transform 0.8s ease;
+
+    &:hover {
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+    }
+
 }
 
 .pop {
@@ -186,6 +198,7 @@ body {
     height: $item-height;
     // border-radius: $border-radius;
     overflow: hidden;
+    box-shadow: 0px 11px 54px -9px rgba(0,0,0,0.5);
 
     .zt-event-thumb {
         height: 100%;

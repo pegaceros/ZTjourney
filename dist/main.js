@@ -326,7 +326,7 @@ var eventItem3 = {
 
 var page1 = {
   nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_1.jpg",
+  // bgImg: "img/bg_1.jpg",
   date: "date1",
   title: "真情无限",
   description: "环保环保环保",
@@ -337,7 +337,7 @@ var page1 = {
 
 var page2 = {
   nodeImg: "img/icon_2.png",
-  bgImg: "img/bg_2.jpg",
+  // bgImg: "img/bg_2.jpg",
   date: "date2",
   title: "春节联欢晚会2016",
   description: "2016央视春晚主持阵容发布：在中央电视台一号演播大厅主会场的共有六位主持人，分别是周涛、朱军、董卿、撒贝宁、李思思和尼格买提。福建泉州分会场：李佳明、赵琳硕；陕西西安分会场：朱迅、徐杰；广东广州分会场：任鲁豫、邓璐；内蒙古呼伦贝尔分会场：马跃、欧仁图雅。",
@@ -348,7 +348,7 @@ var page2 = {
 
 var page3 = {
   nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_3.jpg",
+  // bgImg: "img/bg_3.jpg",
   date: "date3",
   title: "Dream",
   description: "BLABLABLABLABLABLABL",

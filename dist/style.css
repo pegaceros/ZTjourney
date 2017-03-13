@@ -24,7 +24,8 @@
 
 /* Style */
 html {
-  color: #e8e9eb; }
+  color: #313638;
+  background-color: #e8e9eb; }
 
 body {
   font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
@@ -47,7 +48,7 @@ body {
 .zt-tl-header::after {
   content: ' ';
   position: absolute;
-  background: #f2efea;
+  background: #fc7753;
   width: 2px;
   z-index: 2;
   left: 50%; }
@@ -78,8 +79,15 @@ body {
   position: absolute;
   z-index: 10;
   left: calc(50% - 30px);
-  border: calc(2px) solid #f2efea;
-  background-size: cover; }
+  border: calc(2px) solid #fc7753;
+  background-size: cover;
+  transition: transform 0.8s ease;
+  -webkit-transition: -webkit-transform 0.8s ease;
+  -moz-transition: -moz-transform 0.8s ease; }
+  .zt-tl-node:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg); }
 
 .pop {
   animation: pop 0.6s alternate infinite;
@@ -107,7 +115,8 @@ body {
   position: relative;
   width: 300px;
   height: 180px;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0px 11px 54px -9px rgba(0, 0, 0, 0.5); }
   .zt-event .zt-event-thumb {
     height: 100%;
     width: 100%;
