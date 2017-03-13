@@ -51,7 +51,7 @@ class LandingPage extends React.Component {
               <div className="zt-top">
                   <div className="zt-tl-header">
                       <div className="zt-tl-message">
-                          <h2>周涛的奇妙旅程</h2>
+                          <h2>周涛的奇妙冒险</h2>
                           <h3>TaoTao's Marvellous Adventure</h3>
                       </div>
                   </div>
@@ -76,7 +76,6 @@ class LandingPage extends React.Component {
 //   link: "http://www.bilibili.com/video/av5202457/index_2.html",
 //   eventItem: eventItem
 // };
-
 class Page extends React.Component {
   render() {
     const pageStyle = {

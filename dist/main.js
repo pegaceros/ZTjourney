@@ -110,7 +110,7 @@ var LandingPage = function (_React$Component3) {
                 React.createElement(
                   "h2",
                   null,
-                  "\u5468\u6D9B\u7684\u5947\u5999\u65C5\u7A0B"
+                  "\u5468\u6D9B\u7684\u5947\u5999\u5192\u9669"
                 ),
                 React.createElement(
                   "h3",
@@ -140,6 +140,7 @@ var LandingPage = function (_React$Component3) {
 //   link: "http://www.bilibili.com/video/av5202457/index_2.html",
 //   eventItem: eventItem
 // };
+
 
 var Page = function (_React$Component4) {
   _inherits(Page, _React$Component4);
