@@ -371,10 +371,15 @@ var pages = pageList.map(function (page) {
 
 ReactDOM.render(React.createElement(App, { pages: pages }), document.getElementById('fullpage'));
 
+var anchors = ["home"].concat(pageList.map(function (i) {
+  return "page" + i.id;
+})).concat(["thanks"]);
+
 // Animation & Action
 
 $('#fullpage').fullpage({
-  anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+  // anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+  anchors: anchors,
   // sectionsColor: ['#7E8F7C', '#C63D0F', '#1BBC9B'],
   scrollBar: true
 });

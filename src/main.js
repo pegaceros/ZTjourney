@@ -242,12 +242,13 @@ ReactDOM.render(
   document.getElementById('fullpage')
 );
 
-
+const anchors = ["home"].concat(pageList.map( i => "page"+i.id)).concat(["thanks"])
 
 // Animation & Action
 
 $('#fullpage').fullpage({
-    anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+    // anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+    anchors: anchors,
     // sectionsColor: ['#7E8F7C', '#C63D0F', '#1BBC9B'],
     scrollBar: true
 });
