@@ -93,7 +93,6 @@ class EndingPage extends React.Component {
 
 
 // const page = {
-//   id: "1",
 //   nodeImg: "img/icon_1.png",
 //   bgImg: "img/bg_1.jpg",
 //   date: "2015",
@@ -190,7 +189,6 @@ const eventItem3 = {
 };
 
 const page1 = {
-  id: "1",
   nodeImg: "img/icon_1.png",
   bgImg: "img/bg_1.jpg",
   date: "date1",
@@ -202,7 +200,6 @@ const page1 = {
 };
 
 const page2 = {
-  id: "2",
   nodeImg: "img/icon_2.png",
   bgImg: "img/bg_2.jpg",
   date: "date2",
@@ -214,7 +211,6 @@ const page2 = {
 };
 
 const page3 = {
-  id: "3",
   nodeImg: "img/icon_1.png",
   bgImg: "img/bg_3.jpg",
   date: "date3",
@@ -226,13 +222,17 @@ const page3 = {
 };
 
 
-const pageList = [page1, page2, page3];
+const pageList = [page1, page2, page3, page1, page2, page3,
+  page1, page2, page3, page1, page2, page3,
+  page1, page2, page3, page1, page2, page3,
+  page1, page2, page3, page1, page2, page3
+];
 
 
 // Render
 
-const pages = pageList.map( (page) =>
-  <Page key={page.id} page={page} />
+const pages = pageList.map( (page, idx) =>
+  <Page key={idx} page={page} />
 );
 
 
@@ -242,13 +242,15 @@ ReactDOM.render(
   document.getElementById('fullpage')
 );
 
-const anchors = ["home"].concat(pageList.map( i => "page"+i.id)).concat(["thanks"])
+const anchors = ["home"].concat(pageList.map( (i, idx) => (idx+1992) + "年")).concat(["thanks"])
 
 // Animation & Action
 
 $('#fullpage').fullpage({
     // anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
     anchors: anchors,
-    // sectionsColor: ['#7E8F7C', '#C63D0F', '#1BBC9B'],
-    scrollBar: true
+    navigation: true,
+    navigationPosition: "right",
+    navigationTooltips: anchors
+    // scrollBar: true
 });

@@ -186,7 +186,6 @@ var EndingPage = function (_React$Component4) {
 }(React.Component);
 
 // const page = {
-//   id: "1",
 //   nodeImg: "img/icon_1.png",
 //   bgImg: "img/bg_1.jpg",
 //   date: "2015",
@@ -326,7 +325,6 @@ var eventItem3 = {
 };
 
 var page1 = {
-  id: "1",
   nodeImg: "img/icon_1.png",
   bgImg: "img/bg_1.jpg",
   date: "date1",
@@ -338,7 +336,6 @@ var page1 = {
 };
 
 var page2 = {
-  id: "2",
   nodeImg: "img/icon_2.png",
   bgImg: "img/bg_2.jpg",
   date: "date2",
@@ -350,7 +347,6 @@ var page2 = {
 };
 
 var page3 = {
-  id: "3",
   nodeImg: "img/icon_1.png",
   bgImg: "img/bg_3.jpg",
   date: "date3",
@@ -361,18 +357,18 @@ var page3 = {
   eventItem: eventItem3
 };
 
-var pageList = [page1, page2, page3];
+var pageList = [page1, page2, page3, page1, page2, page3, page1, page2, page3, page1, page2, page3, page1, page2, page3, page1, page2, page3, page1, page2, page3, page1, page2, page3];
 
 // Render
 
-var pages = pageList.map(function (page) {
-  return React.createElement(Page, { key: page.id, page: page });
+var pages = pageList.map(function (page, idx) {
+  return React.createElement(Page, { key: idx, page: page });
 });
 
 ReactDOM.render(React.createElement(App, { pages: pages }), document.getElementById('fullpage'));
 
-var anchors = ["home"].concat(pageList.map(function (i) {
-  return "page" + i.id;
+var anchors = ["home"].concat(pageList.map(function (i, idx) {
+  return idx + 1992 + "年";
 })).concat(["thanks"]);
 
 // Animation & Action
@@ -380,6 +376,8 @@ var anchors = ["home"].concat(pageList.map(function (i) {
 $('#fullpage').fullpage({
   // anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
   anchors: anchors,
-  // sectionsColor: ['#7E8F7C', '#C63D0F', '#1BBC9B'],
-  scrollBar: true
+  navigation: true,
+  navigationPosition: "right",
+  navigationTooltips: anchors
+  // scrollBar: true
 });
