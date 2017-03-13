@@ -24,6 +24,7 @@ $top-max-width: 1000px;
 $item-width: 300px;
 $item-height: 180px;
 $border-radius: 8px;
+$timeline-top-tail: 10%;
 /* Animation */
 @keyframes pop {
     0% {
@@ -52,7 +53,6 @@ $border-radius: 8px;
         transform: scale(1.1);
     }
 }
-
 /* Style */
 html {
     color: $white;
@@ -71,6 +71,7 @@ body {
     // background-color: yellow;
 }
 
+.zt-bottom,
 .zt-top {
     max-width: $top-max-width;
     margin-left: auto;
@@ -100,21 +101,42 @@ body {
 //   left: 50%;
 // }
 
-.zt-tl-block,
-.zt-tl-header {
-    &::after {
-        content: ' ';
-        position: absolute;
-        background: $color1;
-        height: 100%;
-        width: $tl-width;
-        z-index: 2;
-        left: 50%;
-    }
+.zt-tl-block::after,
+.zt-tl-footer::before,
+.zt-tl-header::after {
+    content: ' ';
+    position: absolute;
+    background: $color1;
+    width: $tl-width;
+    z-index: 2;
+    left: 50%;
 }
 
 .zt-tl-block::after {
     top: 0;
+    height: 100%;
+}
+
+.zt-tl-header {
+    &::after {
+        top: calc(100% - #{$timeline-top-tail});
+        height: $timeline-top-tail;
+    }
+
+    .zt-tl-node {
+        bottom: $timeline-top-tail;
+    }
+}
+
+.zt-tl-footer {
+    &::before {
+        top: 0;
+        height: $timeline-top-tail;
+    }
+
+    .zt-tl-node {
+        top: $timeline-top-tail;
+    }
 }
 
 .zt-tl-node {
@@ -126,7 +148,6 @@ body {
     z-index: 10;
     left: calc(50% - 30px);
     border: calc(#{$tl-width}) solid $color1;
-
     background-size: cover;
 }
 
@@ -202,17 +223,16 @@ body {
         transition: opacity 0.4s ease;
         -webkit-transition: opacity 0.4s ease;
         -moz-transition: opacity 0.4s ease;
-
         font-size: 16px;
         font-weight: 300;
         text-align: center;
 
         &::after {
-          content: "点击观看";
-          display: block;
-          color: $color1;
-          font-size: 12px;
-          font-weight: lighter;
+            content: "点击观看";
+            display: block;
+            color: $color1;
+            font-size: 12px;
+            font-weight: lighter;
         }
     }
 

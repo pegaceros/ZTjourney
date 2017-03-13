@@ -43,7 +43,6 @@ class LandingPage extends React.Component {
     const pageStyle = {
       backgroundImage: "url(img/bg_0.jpg)",
       backgroundSize: "cover",
-      // filter: "blur(2px)",
     };
     return (
       <div className="section" style={pageStyle}>
@@ -54,10 +53,38 @@ class LandingPage extends React.Component {
                           <h2>周涛的奇妙冒险</h2>
                           <h3>TaoTao's Marvellous Adventure</h3>
                       </div>
+
+                      <TlNode img="img/icon_2.png" />
                   </div>
               </div>
 
-              <TlNode img="img/icon_2.png" />
+          </div>
+      </div>
+    )
+  }
+}
+
+// TODO: 编辑内容
+class EndingPage extends React.Component {
+  render () {
+    const pageStyle = {
+      backgroundImage: "url(img/bg_0.jpg)",
+      backgroundSize: "cover",
+    };
+    return (
+      <div className="section" style={pageStyle}>
+          <div className="zt-ending-page">
+              <div className="zt-bottom">
+                  <div className="zt-tl-footer">
+                      <TlNode img="img/icon_2.png" />
+
+                      <div className="zt-tl-message">
+                          <h2>周老师，谢谢您为世界带来美。</h2>
+                          <h3>Thank you for bringing beauty into the world!</h3>
+                      </div>
+                  </div>
+              </div>
+
           </div>
       </div>
     )
@@ -136,6 +163,7 @@ class App extends React.Component {
       <div>
         <LandingPage />
         {this.props.pages}
+        <EndingPage />
       </div>
     )
   }

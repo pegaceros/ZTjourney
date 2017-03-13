@@ -117,16 +117,72 @@ var LandingPage = function (_React$Component3) {
                   null,
                   "TaoTao's Marvellous Adventure"
                 )
-              )
+              ),
+              React.createElement(TlNode, { img: "img/icon_2.png" })
             )
-          ),
-          React.createElement(TlNode, { img: "img/icon_2.png" })
+          )
         )
       );
     }
   }]);
 
   return LandingPage;
+}(React.Component);
+
+// TODO: 编辑内容
+
+
+var EndingPage = function (_React$Component4) {
+  _inherits(EndingPage, _React$Component4);
+
+  function EndingPage() {
+    _classCallCheck(this, EndingPage);
+
+    return _possibleConstructorReturn(this, (EndingPage.__proto__ || Object.getPrototypeOf(EndingPage)).apply(this, arguments));
+  }
+
+  _createClass(EndingPage, [{
+    key: "render",
+    value: function render() {
+      var pageStyle = {
+        backgroundImage: "url(img/bg_0.jpg)",
+        backgroundSize: "cover"
+      };
+      return React.createElement(
+        "div",
+        { className: "section", style: pageStyle },
+        React.createElement(
+          "div",
+          { className: "zt-ending-page" },
+          React.createElement(
+            "div",
+            { className: "zt-bottom" },
+            React.createElement(
+              "div",
+              { className: "zt-tl-footer" },
+              React.createElement(TlNode, { img: "img/icon_2.png" }),
+              React.createElement(
+                "div",
+                { className: "zt-tl-message" },
+                React.createElement(
+                  "h2",
+                  null,
+                  "\u5468\u8001\u5E08\uFF0C\u8C22\u8C22\u60A8\u4E3A\u4E16\u754C\u5E26\u6765\u7F8E\u3002"
+                ),
+                React.createElement(
+                  "h3",
+                  null,
+                  "Thank you for bringing beauty into the world!"
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return EndingPage;
 }(React.Component);
 
 // const page = {
@@ -142,8 +198,8 @@ var LandingPage = function (_React$Component3) {
 // };
 
 
-var Page = function (_React$Component4) {
-  _inherits(Page, _React$Component4);
+var Page = function (_React$Component5) {
+  _inherits(Page, _React$Component5);
 
   function Page() {
     _classCallCheck(this, Page);
@@ -226,8 +282,8 @@ var Page = function (_React$Component4) {
 //   }
 // }
 
-var App = function (_React$Component5) {
-  _inherits(App, _React$Component5);
+var App = function (_React$Component6) {
+  _inherits(App, _React$Component6);
 
   function App() {
     _classCallCheck(this, App);
@@ -242,7 +298,8 @@ var App = function (_React$Component5) {
         "div",
         null,
         React.createElement(LandingPage, null),
-        this.props.pages
+        this.props.pages,
+        React.createElement(EndingPage, null)
       );
     }
   }]);
