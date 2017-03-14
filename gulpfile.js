@@ -12,7 +12,7 @@ gulp.task('default', function() {
 gulp.task('sass', function () {
   gulp.src('./src/**/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./package/dist/'));
 });
 
 // gulp.task('coffee', function() {
@@ -24,7 +24,7 @@ gulp.task('sass', function () {
 gulp.task("babel", function () {
   return gulp.src("./src/**/*.js")
     .pipe(babel())
-    .pipe(gulp.dest("./dist/"));
+    .pipe(gulp.dest("./package/dist/"));
 });
 
 gulp.task('watch', ['babel', 'sass'], function() {
