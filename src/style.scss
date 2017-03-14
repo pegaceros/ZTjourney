@@ -25,6 +25,10 @@ $item-width: 300px;
 $item-height: 180px;
 $border-radius: 8px;
 $timeline-top-tail: 10%;
+
+$fadeload-duration: 0.6s;
+$fadeload-offset: 30px;
+$fadeload-delay: 0s;
 /* Animation */
 @keyframes pop {
     0% {
@@ -154,11 +158,6 @@ body {
 
 }
 
-.pop {
-    animation: pop 0.6s alternate infinite;
-    animation-timing-function: ease;
-}
-
 .zt-tl-content {
     // background: green;
     width: calc(50% - #{$tl-node-radius}/2 - #{$padding}*2);
@@ -254,4 +253,50 @@ body {
             opacity: 1;
         }
     }
+}
+
+/* Effect */
+.pop {
+    animation: pop 0.6s alternate infinite;
+    animation-timing-function: ease;
+}
+
+.fade-in {
+  opacity: 0;
+
+  transition: transform $fadeload-duration ease 0.1s, opacity $fadeload-duration ease $fadeload-delay;
+  -webkit-transition: -webkit-transform $fadeload-duration ease 0.1s, opacity $fadeload-duration ease $fadeload-delay;
+  -moz-transition: -moz-transform $fadeload-duration ease 0.1s, opacity $fadeload-duration ease $fadeload-delay;
+}
+
+.fade-in-up {
+  @extend .fade-in;
+
+  transform: translate(0, $fadeload-offset);
+  -webkit-transform: translate(0, $fadeload-offset);
+  -moz-transform: translate(0, $fadeload-offset);
+}
+
+.fade-in-down {
+  @extend .fade-in;
+
+  transform: translate(0, -$fadeload-offset);
+  -webkit-transform: translate(0, -$fadeload-offset);
+  -moz-transform: translate(0, -$fadeload-offset);
+}
+
+.fade-in-left {
+  @extend .fade-in;
+
+  transform: translate($fadeload-offset, 0);
+  -webkit-transform: translate($fadeload-offset, 0);
+  -moz-transform: translate($fadeload-offset, 0);
+}
+
+.fade-in-right {
+  @extend .fade-in;
+
+  transform: translate(-$fadeload-offset, 0);
+  -webkit-transform: translate(-$fadeload-offset, 0);
+  -moz-transform: translate(-$fadeload-offset, 0);
 }

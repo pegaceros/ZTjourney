@@ -49,7 +49,7 @@ class LandingPage extends React.Component {
           <div className="zt-landing-page">
               <div className="zt-top">
                   <div className="zt-tl-header">
-                      <div className="zt-tl-message">
+                      <div className="zt-tl-message fade-in-down">
                           <h2>周涛的奇妙冒险</h2>
                           <h3>TaoTao's Marvellous Adventure</h3>
                       </div>
@@ -78,7 +78,7 @@ class EndingPage extends React.Component {
                   <div className="zt-tl-footer">
                       <TlNode img="img/icon_2.png" />
 
-                      <div className="zt-tl-message">
+                      <div className="zt-tl-message fade-in-up">
                           <h2>周老师，谢谢您为世界带来美。</h2>
                           <h3>Thank you for bringing beauty into the world!</h3>
                       </div>
@@ -113,13 +113,13 @@ class Page extends React.Component {
       <div className="section" style={pageStyle}>
           <div className="zt-tl-block">
               <TlNode img={this.props.page.nodeImg} />
-              <div className="zt-tl-content">
+              <div className="zt-tl-content fade-in-right">
                   <h4 className="zl-tl-date">{this.props.page.date}</h4>
                   <h3 className="zl-tl-title">{this.props.page.title}</h3>
                   <p className="zl-tl-description>">{this.props.page.description}
                   </p>
               </div>
-              <div className="zt-tl-content">
+              <div className="zt-tl-content fade-in-left">
                   <EventItem eventItem={this.props.page.eventItem} />
               </div>
           </div>
@@ -242,15 +242,34 @@ ReactDOM.render(
   document.getElementById('fullpage')
 );
 
-const anchors = ["home"].concat(pageList.map( (i, idx) => (idx+1992) + "年")).concat(["thanks"])
+// TODO: set anchors
+const anchors = ["Home"].concat(pageList.map( (i, idx) => (idx+1992) + "")).concat(["Thanks"])
 
 // Animation & Action
 
 $('#fullpage').fullpage({
-    // anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
     anchors: anchors,
     navigation: true,
     navigationPosition: "right",
-    navigationTooltips: anchors
+    navigationTooltips: anchors,
     // scrollBar: true
+
+    afterLoad: (anchorLink, index) => {
+      // console.log(anchorLink + " is loaded");
+      const section = "[data-anchor='"+anchorLink+ "']";
+      const selectors = [
+        section + " .fade-in-up",
+        section + " .fade-in-down",
+        section + " .fade-in-left",
+        section + " .fade-in-right"
+      ];
+
+      const ele = $(selectors.join(","));
+      ele.css({
+        "opacity": "1",
+        "transform": "translate(0, 0)",
+        "-webkit-transform": "translate(0, 0)",
+        "-moz-transform": "translate(0, 0)",
+      });
+    }
 });

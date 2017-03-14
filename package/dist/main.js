@@ -106,7 +106,7 @@ var LandingPage = function (_React$Component3) {
               { className: "zt-tl-header" },
               React.createElement(
                 "div",
-                { className: "zt-tl-message" },
+                { className: "zt-tl-message fade-in-down" },
                 React.createElement(
                   "h2",
                   null,
@@ -163,7 +163,7 @@ var EndingPage = function (_React$Component4) {
               React.createElement(TlNode, { img: "img/icon_2.png" }),
               React.createElement(
                 "div",
-                { className: "zt-tl-message" },
+                { className: "zt-tl-message fade-in-up" },
                 React.createElement(
                   "h2",
                   null,
@@ -223,7 +223,7 @@ var Page = function (_React$Component5) {
           React.createElement(TlNode, { img: this.props.page.nodeImg }),
           React.createElement(
             "div",
-            { className: "zt-tl-content" },
+            { className: "zt-tl-content fade-in-right" },
             React.createElement(
               "h4",
               { className: "zl-tl-date" },
@@ -242,7 +242,7 @@ var Page = function (_React$Component5) {
           ),
           React.createElement(
             "div",
-            { className: "zt-tl-content" },
+            { className: "zt-tl-content fade-in-left" },
             React.createElement(EventItem, { eventItem: this.props.page.eventItem })
           )
         )
@@ -367,17 +367,31 @@ var pages = pageList.map(function (page, idx) {
 
 ReactDOM.render(React.createElement(App, { pages: pages }), document.getElementById('fullpage'));
 
-var anchors = ["home"].concat(pageList.map(function (i, idx) {
-  return idx + 1992 + "年";
-})).concat(["thanks"]);
+// TODO: set anchors
+var anchors = ["Home"].concat(pageList.map(function (i, idx) {
+  return idx + 1992 + "";
+})).concat(["Thanks"]);
 
 // Animation & Action
 
 $('#fullpage').fullpage({
-  // anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
   anchors: anchors,
   navigation: true,
   navigationPosition: "right",
-  navigationTooltips: anchors
+  navigationTooltips: anchors,
   // scrollBar: true
+
+  afterLoad: function afterLoad(anchorLink, index) {
+    // console.log(anchorLink + " is loaded");
+    var section = "[data-anchor='" + anchorLink + "']";
+    var selectors = [section + " .fade-in-up", section + " .fade-in-down", section + " .fade-in-left", section + " .fade-in-right"];
+
+    var ele = $(selectors.join(","));
+    ele.css({
+      "opacity": "1",
+      "transform": "translate(0, 0)",
+      "-webkit-transform": "translate(0, 0)",
+      "-moz-transform": "translate(0, 0)"
+    });
+  }
 });
