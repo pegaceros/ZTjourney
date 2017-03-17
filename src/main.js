@@ -212,7 +212,7 @@ const page2 = {
 
 const page3 = {
   nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_3.jpg",
+  bgImg: "img/bg_3.png",
   date: "date3",
   title: "Dream",
   description: "BLABLABLABLABLABLABL",
