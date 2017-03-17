@@ -79,7 +79,7 @@ class EndingPage extends React.Component {
                       <TlNode img="img/icon_2.png" />
 
                       <div className="zt-tl-message fade-in-up">
-                          <h2>周老师，谢谢您为世界带来美。</h2>
+                          <h2>谢谢您为世界带来美。</h2>
                           <h3>Thank you for bringing beauty into the world!</h3>
                       </div>
                   </div>
@@ -212,7 +212,7 @@ const page2 = {
 
 const page3 = {
   nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_3.png",
+  bgImg: "img/bg_3.jpg",
   date: "date3",
   title: "Dream",
   description: "BLABLABLABLABLABLABL",
