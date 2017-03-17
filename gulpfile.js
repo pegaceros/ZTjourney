@@ -22,7 +22,7 @@ gulp.task('sass', function () {
 // });
 
 gulp.task("babel", function () {
-  return gulp.src("./src/**/*.js")
+  gulp.src("./src/**/*.js")
     .pipe(babel())
     .pipe(gulp.dest("./package/dist/"));
 });
@@ -30,4 +30,10 @@ gulp.task("babel", function () {
 gulp.task('watch', ['babel', 'sass'], function() {
   gulp.watch('./src/**/*.js', ['babel']);
   gulp.watch('./src/**/*.scss', ['sass']);
+});
+
+
+gulp.task('copy',  function() {
+  gulp.src('./package/**/*')
+    .pipe(gulp.dest("../ZhouTao/"))
 });
