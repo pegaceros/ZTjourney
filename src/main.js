@@ -285,8 +285,8 @@ $('#fullpage').fullpage({
     navigationTooltips: anchors,
     // scrollBar: true
     responsiveSlides: true,
-    responsiveWidth: 1200,
-    responsiveHeight: 720,
+    responsiveWidth: 800,
+    responsiveHeight: 480,
 
     afterLoad: (anchorLink, index) => {
       // console.log(anchorLink + " is loaded");
