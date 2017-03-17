@@ -399,7 +399,7 @@ var page5 = {
   events: [eventItem3, eventItem1, eventItem1, eventItem2, eventItem1, eventItem3, eventItem1, eventItem3]
 };
 
-var pageList = [page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5];
+var pageList = [page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5];
 
 // Render
 
