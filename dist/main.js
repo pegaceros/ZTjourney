@@ -351,7 +351,7 @@ var eventItem3 = {
 
 var page1 = {
   nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_1.jpg",
+  bgImg: "",
   date: "year1",
   title: "真情无限",
   description: "环保环保环保",
@@ -391,7 +391,7 @@ var page4 = {
 
 var page5 = {
   nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_3.png",
+  bgImg: "img/bg_1.jpg",
   date: "year5",
   title: "",
   description: "",
