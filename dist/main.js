@@ -167,7 +167,7 @@ var EndingPage = function (_React$Component4) {
                 React.createElement(
                   "h2",
                   null,
-                  "\u5468\u8001\u5E08\uFF0C\u8C22\u8C22\u60A8\u4E3A\u4E16\u754C\u5E26\u6765\u7F8E\u3002"
+                  "\u8C22\u8C22\u60A8\u4E3A\u4E16\u754C\u5E26\u6765\u7F8E\u3002"
                 ),
                 React.createElement(
                   "h3",
@@ -348,7 +348,7 @@ var page2 = {
 
 var page3 = {
   nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_3.png",
+  bgImg: "img/bg_3.jpg",
   date: "date3",
   title: "Dream",
   description: "BLABLABLABLABLABLABL",
