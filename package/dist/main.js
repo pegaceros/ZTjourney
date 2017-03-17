@@ -73,11 +73,37 @@ var EventItem = function (_React$Component2) {
   return EventItem;
 }(React.Component);
 
+var EventsBlock = function (_React$Component3) {
+  _inherits(EventsBlock, _React$Component3);
+
+  function EventsBlock() {
+    _classCallCheck(this, EventsBlock);
+
+    return _possibleConstructorReturn(this, (EventsBlock.__proto__ || Object.getPrototypeOf(EventsBlock)).apply(this, arguments));
+  }
+
+  _createClass(EventsBlock, [{
+    key: "render",
+    value: function render() {
+      var eventItems = this.props.events.map(function (e, idx) {
+        return React.createElement(EventItem, { key: idx, eventItem: e });
+      });
+      return React.createElement(
+        "div",
+        { className: "zt-events-block" },
+        eventItems
+      );
+    }
+  }]);
+
+  return EventsBlock;
+}(React.Component);
+
 // TODO: 编辑内容
 
 
-var LandingPage = function (_React$Component3) {
-  _inherits(LandingPage, _React$Component3);
+var LandingPage = function (_React$Component4) {
+  _inherits(LandingPage, _React$Component4);
 
   function LandingPage() {
     _classCallCheck(this, LandingPage);
@@ -132,8 +158,8 @@ var LandingPage = function (_React$Component3) {
 // TODO: 编辑内容
 
 
-var EndingPage = function (_React$Component4) {
-  _inherits(EndingPage, _React$Component4);
+var EndingPage = function (_React$Component5) {
+  _inherits(EndingPage, _React$Component5);
 
   function EndingPage() {
     _classCallCheck(this, EndingPage);
@@ -191,14 +217,13 @@ var EndingPage = function (_React$Component4) {
 //   date: "2015",
 //   title: "真情无限",
 //   description: "环保环保环保",
-//   thumbnail: "img/thumbnail_2.jpg",
 //   link: "http://www.bilibili.com/video/av5202457/index_2.html",
 //   eventItem: eventItem
 // };
 
 
-var Page = function (_React$Component5) {
-  _inherits(Page, _React$Component5);
+var Page = function (_React$Component6) {
+  _inherits(Page, _React$Component6);
 
   function Page() {
     _classCallCheck(this, Page);
@@ -243,7 +268,7 @@ var Page = function (_React$Component5) {
           React.createElement(
             "div",
             { className: "zt-tl-content fade-in-left" },
-            React.createElement(EventItem, { eventItem: this.props.page.eventItem })
+            React.createElement(EventsBlock, { events: this.props.page.events })
           )
         )
       );
@@ -281,8 +306,8 @@ var Page = function (_React$Component5) {
 //   }
 // }
 
-var App = function (_React$Component6) {
-  _inherits(App, _React$Component6);
+var App = function (_React$Component7) {
+  _inherits(App, _React$Component7);
 
   function App() {
     _classCallCheck(this, App);
@@ -327,37 +352,54 @@ var eventItem3 = {
 var page1 = {
   nodeImg: "img/icon_1.png",
   bgImg: "img/bg_1.jpg",
-  date: "date1",
+  date: "year1",
   title: "真情无限",
   description: "环保环保环保",
-  thumbnail: "img/thumbnail_2.jpg",
   link: "http://www.bilibili.com/video/av5202457/index_2.html",
-  eventItem: eventItem1
+  events: [eventItem1, eventItem2, eventItem1, eventItem2]
 };
 
 var page2 = {
   nodeImg: "img/icon_2.png",
   bgImg: "img/bg_2.jpg",
-  date: "date2",
+  date: "year2",
   title: "春节联欢晚会2016",
   description: "2016央视春晚主持阵容发布：在中央电视台一号演播大厅主会场的共有六位主持人，分别是周涛、朱军、董卿、撒贝宁、李思思和尼格买提。福建泉州分会场：李佳明、赵琳硕；陕西西安分会场：朱迅、徐杰；广东广州分会场：任鲁豫、邓璐；内蒙古呼伦贝尔分会场：马跃、欧仁图雅。",
-  thumbnail: "img/thumbnail_1.jpg",
   link: "http://www.bilibili.com/video/av5202457/index_1.html",
-  eventItem: eventItem2
+  events: [eventItem2, eventItem3, eventItem1, eventItem3, eventItem1, eventItem2]
 };
 
 var page3 = {
   nodeImg: "img/icon_1.png",
   bgImg: "img/bg_3.png",
-  date: "date3",
+  date: "year3",
   title: "Dream",
   description: "BLABLABLABLABLABLABL",
-  thumbnail: "img/thumbnail_2.jpg",
   link: "http://www.bilibili.com/video/av5202457/index_3.html",
-  eventItem: eventItem3
+  events: [eventItem3, eventItem1, eventItem3, eventItem2, eventItem1]
 };
 
-var pageList = [page1, page2, page3, page1, page2, page3, page1, page2, page3, page1, page2, page3, page1, page2, page3, page1, page2, page3, page1, page2, page3, page1, page2, page3];
+var page4 = {
+  nodeImg: "img/icon_2.png",
+  bgImg: "img/bg_0.jpg",
+  date: "year4",
+  title: "",
+  description: "",
+  link: "http://www.bilibili.com/video/av5202457/index_3.html",
+  events: [eventItem3, eventItem2, eventItem1, eventItem2, eventItem1, eventItem3, eventItem2]
+};
+
+var page5 = {
+  nodeImg: "img/icon_1.png",
+  bgImg: "img/bg_3.png",
+  date: "year5",
+  title: "",
+  description: "",
+  link: "http://www.bilibili.com/video/av5202457/index_3.html",
+  events: [eventItem3, eventItem1, eventItem1, eventItem2, eventItem1, eventItem3, eventItem1, eventItem3]
+};
+
+var pageList = [page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5];
 
 // Render
 
@@ -369,7 +411,7 @@ ReactDOM.render(React.createElement(App, { pages: pages }), document.getElementB
 
 // TODO: set anchors
 var anchors = ["Home"].concat(pageList.map(function (i, idx) {
-  return idx + 1992 + "";
+  return idx + 1993 + "";
 })).concat(["Thanks"]);
 
 // Animation & Action
@@ -380,6 +422,9 @@ $('#fullpage').fullpage({
   navigationPosition: "right",
   navigationTooltips: anchors,
   // scrollBar: true
+  responsiveSlides: true,
+  responsiveWidth: 1200,
+  responsiveHeight: 720,
 
   afterLoad: function afterLoad(anchorLink, index) {
     // console.log(anchorLink + " is loaded");

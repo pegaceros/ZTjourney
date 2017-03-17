@@ -108,9 +108,14 @@ body {
 
 .zt-event {
   display: inline-block;
+  margin: 6px;
   position: relative;
-  width: 300px;
-  height: 180px;
+  max-width: 400px;
+  max-height: calc(400px * 0.6);
+  min-width: 200px;
+  min-height: calc(200px * 0.6);
+  width: 200px;
+  height: calc( 200px * 0.6);
   overflow: hidden;
   box-shadow: 0px 11px 54px -9px rgba(0, 0, 0, 0.5); }
   .zt-event .zt-event-thumb {

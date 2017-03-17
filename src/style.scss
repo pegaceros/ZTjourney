@@ -22,8 +22,10 @@ $tl-width: 2px;
 $tl-node-radius: 60px;
 $padding: 20px;
 $top-max-width: 1000px;
-$item-width: 300px;
-$item-height: 180px;
+$item-ratio: 0.6;
+$item-max-w: 400px;
+$item-min-w: 200px;
+$item-w: 200px;
 $border-radius: 8px;
 $timeline-top-tail: 10%;
 
@@ -193,9 +195,14 @@ body {
 
 .zt-event {
     display: inline-block;
+    margin: 6px;
     position: relative;
-    width: $item-width;
-    height: $item-height;
+    max-width: $item-max-w;
+    max-height: calc(#{$item-max-w} * #{$item-ratio});
+    min-width: $item-min-w;
+    min-height: calc(#{$item-min-w} * #{$item-ratio});
+    width: $item-w;
+    height: calc( #{$item-w} * #{$item-ratio});
     // border-radius: $border-radius;
     overflow: hidden;
     box-shadow: 0px 11px 54px -9px rgba(0,0,0,0.5);

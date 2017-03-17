@@ -36,6 +36,19 @@ class EventItem extends React.Component {
   }
 }
 
+class EventsBlock extends React.Component {
+  render () {
+    const eventItems = this.props.events.map( (e, idx) =>
+      <EventItem key={idx} eventItem={e} />
+    );
+    return (
+      <div className="zt-events-block">
+        {eventItems}
+      </div>
+    )
+  }
+}
+
 
 // TODO: 编辑内容
 class LandingPage extends React.Component {
@@ -98,7 +111,6 @@ class EndingPage extends React.Component {
 //   date: "2015",
 //   title: "真情无限",
 //   description: "环保环保环保",
-//   thumbnail: "img/thumbnail_2.jpg",
 //   link: "http://www.bilibili.com/video/av5202457/index_2.html",
 //   eventItem: eventItem
 // };
@@ -120,7 +132,7 @@ class Page extends React.Component {
                   </p>
               </div>
               <div className="zt-tl-content fade-in-left">
-                  <EventItem eventItem={this.props.page.eventItem} />
+                  <EventsBlock events={this.props.page.events} />
               </div>
           </div>
       </div>
@@ -191,41 +203,61 @@ const eventItem3 = {
 const page1 = {
   nodeImg: "img/icon_1.png",
   bgImg: "img/bg_1.jpg",
-  date: "date1",
+  date: "year1",
   title: "真情无限",
   description: "环保环保环保",
-  thumbnail: "img/thumbnail_2.jpg",
   link: "http://www.bilibili.com/video/av5202457/index_2.html",
-  eventItem: eventItem1
+  events: [eventItem1, eventItem2, eventItem1, eventItem2]
 };
 
 const page2 = {
   nodeImg: "img/icon_2.png",
   bgImg: "img/bg_2.jpg",
-  date: "date2",
+  date: "year2",
   title: "春节联欢晚会2016",
   description: "2016央视春晚主持阵容发布：在中央电视台一号演播大厅主会场的共有六位主持人，分别是周涛、朱军、董卿、撒贝宁、李思思和尼格买提。福建泉州分会场：李佳明、赵琳硕；陕西西安分会场：朱迅、徐杰；广东广州分会场：任鲁豫、邓璐；内蒙古呼伦贝尔分会场：马跃、欧仁图雅。",
-  thumbnail: "img/thumbnail_1.jpg",
   link: "http://www.bilibili.com/video/av5202457/index_1.html",
-  eventItem: eventItem2
+  events: [eventItem2, eventItem3, eventItem1, eventItem3,eventItem1, eventItem2]
 };
 
 const page3 = {
   nodeImg: "img/icon_1.png",
   bgImg: "img/bg_3.png",
-  date: "date3",
+  date: "year3",
   title: "Dream",
   description: "BLABLABLABLABLABLABL",
-  thumbnail: "img/thumbnail_2.jpg",
   link: "http://www.bilibili.com/video/av5202457/index_3.html",
-  eventItem: eventItem3
+  events: [eventItem3, eventItem1, eventItem3, eventItem2, eventItem1]
+};
+
+const page4 = {
+  nodeImg: "img/icon_2.png",
+  bgImg: "img/bg_0.jpg",
+  date: "year4",
+  title: "",
+  description: "",
+  link: "http://www.bilibili.com/video/av5202457/index_3.html",
+  events: [eventItem3, eventItem2, eventItem1, eventItem2, eventItem1, eventItem3, eventItem2 ]
+};
+
+const page5 = {
+  nodeImg: "img/icon_1.png",
+  bgImg: "img/bg_3.png",
+  date: "year5",
+  title: "",
+  description: "",
+  link: "http://www.bilibili.com/video/av5202457/index_3.html",
+  events: [eventItem3, eventItem1, eventItem1, eventItem2, eventItem1, eventItem3, eventItem1, eventItem3]
 };
 
 
-const pageList = [page1, page2, page3, page1, page2, page3,
-  page1, page2, page3, page1, page2, page3,
-  page1, page2, page3, page1, page2, page3,
-  page1, page2, page3, page1, page2, page3
+
+const pageList = [page1, page2, page3, page4, page5,
+  page1, page2, page3, page4, page5,
+  page1, page2, page3, page4, page5,
+  page1, page2, page3, page4, page5,
+  page1, page2, page3, page4, page5,
+  page1, page2, page3, page4, page5
 ];
 
 
@@ -243,7 +275,7 @@ ReactDOM.render(
 );
 
 // TODO: set anchors
-const anchors = ["Home"].concat(pageList.map( (i, idx) => (idx+1992) + "")).concat(["Thanks"])
+const anchors = ["Home"].concat(pageList.map( (i, idx) => (idx+1993) + "")).concat(["Thanks"])
 
 // Animation & Action
 
@@ -253,6 +285,9 @@ $('#fullpage').fullpage({
     navigationPosition: "right",
     navigationTooltips: anchors,
     // scrollBar: true
+    responsiveSlides: true,
+    responsiveWidth: 1200,
+    responsiveHeight: 720,
 
     afterLoad: (anchorLink, index) => {
       // console.log(anchorLink + " is loaded");
