@@ -89,22 +89,34 @@ body {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg); }
 
-.zt-tl-content {
-  width: calc(50% - 60px/2 - 20px*2); }
-  .zt-tl-content img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #f2efea; }
+.zt-events-block {
+  width: 100%;
+  display: inline-block; }
 
-.section:nth-child(even) .zt-tl-content:nth-child(2),
-.section:nth-child(odd) .zt-tl-content:nth-child(3) {
+.zt-tl-content, .content-left, .content-right, .content-full {
+  display: inline-block; }
+
+.content-left {
+  width: calc(50% - 60px/2 - 20px*2);
   margin-left: 20px;
   text-align: right; }
 
-.section:nth-child(even) .zt-tl-content:nth-child(3),
-.section:nth-child(odd) .zt-tl-content:nth-child(2) {
+.content-right {
+  width: calc(50% - 60px/2 - 20px*2);
   margin-left: calc(50% + 60px/2 + 20px);
   text-align: left; }
+
+.content-full {
+  width: calc(100% - 20px*2);
+  margin-left: 20px; }
+  .content-full .zt-events-block {
+    width: calc(50% - 60px/2 - 20px); }
+    .content-full .zt-events-block:nth-child(even) {
+      float: left;
+      text-align: right; }
+    .content-full .zt-events-block:nth-child(odd) {
+      float: right;
+      text-align: left; }
 
 .zt-event {
   display: inline-block;

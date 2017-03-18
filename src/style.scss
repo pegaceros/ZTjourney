@@ -161,15 +161,17 @@ body {
 
 }
 
+.zt-events-block {
+  // background: pink;
+  width: 100%;
+  display: inline-block;
+}
+
 .zt-tl-content {
     // background: green;
-    width: calc(50% - #{$tl-node-radius}/2 - #{$padding}*2);
+    display: inline-block;
+    // width: calc(50% - #{$tl-node-radius}/2 - #{$padding}*2);
     // position: absolute;
-    img {
-        max-width: 100%;
-        height: auto;
-        border: 2px solid $color1;
-    }
 }
 // .left-content {
 //     margin-left: $padding;
@@ -181,17 +183,57 @@ body {
 //     text-align: left;
 // }
 
-.section:nth-child(even) .zt-tl-content:nth-child(2),
-.section:nth-child(odd) .zt-tl-content:nth-child(3) {
-    margin-left: $padding;
-    text-align: right;
+.content-left {
+  @extend .zt-tl-content;
+
+  width: calc(50% - #{$tl-node-radius}/2 - #{$padding}*2);
+  margin-left: $padding;
+  text-align: right;
 }
 
-.section:nth-child(even) .zt-tl-content:nth-child(3),
-.section:nth-child(odd) .zt-tl-content:nth-child(2) {
-    margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
-    text-align: left;
+.content-right {
+  @extend .zt-tl-content;
+
+  width: calc(50% - #{$tl-node-radius}/2 - #{$padding}*2);
+  margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
+  text-align: left;
 }
+
+.content-full {
+  @extend .zt-tl-content;
+
+  width: calc(100% - #{$padding}*2);
+  margin-left: $padding;
+
+  // background-color: blue;
+
+  .zt-events-block {
+    width: calc(50% - #{$tl-node-radius}/2 - #{$padding});
+
+    &:nth-child(even) {
+      float: left;
+      text-align: right;
+    }
+
+    &:nth-child(odd) {
+      float: right;
+      text-align: left;
+    }
+  }
+}
+
+
+// .section:nth-child(even) .zt-tl-content:nth-child(2),
+// .section:nth-child(odd) .zt-tl-content:nth-child(3) {
+//     margin-left: $padding;
+//     text-align: right;
+// }
+//
+// .section:nth-child(even) .zt-tl-content:nth-child(3),
+// .section:nth-child(odd) .zt-tl-content:nth-child(2) {
+//     margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
+//     text-align: left;
+// }
 
 .zt-event {
     display: inline-block;
