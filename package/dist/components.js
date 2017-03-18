@@ -58,7 +58,6 @@ var EventItem = function (_React$Component2) {
   _createClass(EventItem, [{
     key: "render",
     value: function render() {
-      console.log(this.props.eventItem);
       var thumbStyle = {
         backgroundImage: "url(" + this.props.eventItem.thumb + ")"
       };

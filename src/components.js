@@ -29,7 +29,6 @@ class TlNode extends React.Component {
 // };
 class EventItem extends React.Component {
   render () {
-    console.log(this.props.eventItem);
     const thumbStyle = {
       backgroundImage: "url(" + this.props.eventItem.thumb + ")",
     };

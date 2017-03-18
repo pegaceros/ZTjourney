@@ -18,7 +18,7 @@
 
 
 
-const node10 = <TlNode img="img/icon_1.png" />
+const node10 = <TlNode img="img/icon00.jpeg" />
 const c10 = <Content content={createContent(2010, data2010, "right")} />
 
 const node02 = <TlNode img="img/icon_2.png" />
