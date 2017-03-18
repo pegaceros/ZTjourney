@@ -19,7 +19,7 @@ $white: rgba(232, 233, 235, 1);
 // $font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
 $font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
 $tl-width: 2px;
-$tl-node-radius: 60px;
+$tl-node-width: 60px;
 $padding: 20px;
 $top-max-width: 1000px;
 $item-ratio: 0.6;
@@ -88,7 +88,7 @@ body {
     margin-right: auto;
     // background-color: blue;
     text-align: center;
-    max-height: calc(100% - #{$tl-node-radius} - #{$padding} * 3);
+    max-height: calc(100% - #{$tl-node-width} - #{$padding} * 3);
 
     img {
         max-height: 90%;
@@ -141,8 +141,8 @@ body {
 }
 
 .zt-tl-node {
-    width: 60px;
-    height: 60px;
+    width: $tl-node-width;
+    height: $tl-node-width;
     border-radius: 50%;
     background: $color3;
     position: absolute;
@@ -172,7 +172,7 @@ body {
 .zt-tl-content {
     // background: green;
     display: inline-block;
-    // width: calc(50% - #{$tl-node-radius}/2 - #{$padding}*2);
+    // width: calc(50% - #{$tl-node-width}/2 - #{$padding}*2);
     // position: absolute;
 }
 // .left-content {
@@ -181,14 +181,14 @@ body {
 // }
 //
 // .right-content {
-//     margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
+//     margin-left: calc(50% + #{$tl-node-width}/2 + #{$padding});
 //     text-align: left;
 // }
 
 .content-left {
   @extend .zt-tl-content;
 
-  width: calc(50% - #{$tl-node-radius}/2 - #{$padding}*2);
+  width: calc(50% - #{$tl-node-width}/2 - #{$padding}*2);
   margin-left: $padding;
   text-align: right;
 }
@@ -196,8 +196,8 @@ body {
 .content-right {
   @extend .zt-tl-content;
 
-  width: calc(50% - #{$tl-node-radius}/2 - #{$padding}*2);
-  margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
+  width: calc(50% - #{$tl-node-width}/2 - #{$padding}*2);
+  margin-left: calc(50% + #{$tl-node-width}/2 + #{$padding});
   text-align: left;
 }
 
@@ -210,7 +210,7 @@ body {
   // background-color: blue;
 
   .zt-events-block {
-    width: calc(50% - #{$tl-node-radius}/2 - #{$padding});
+    width: calc(50% - #{$tl-node-width}/2 - #{$padding});
 
     &:nth-child(even) {
       float: left;
@@ -233,7 +233,7 @@ body {
 //
 // .section:nth-child(even) .zt-tl-content:nth-child(3),
 // .section:nth-child(odd) .zt-tl-content:nth-child(2) {
-//     margin-left: calc(50% + #{$tl-node-radius}/2 + #{$padding});
+//     margin-left: calc(50% + #{$tl-node-width}/2 + #{$padding});
 //     text-align: left;
 // }
 
