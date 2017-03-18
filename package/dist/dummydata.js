@@ -17,15 +17,15 @@ var eventItem3 = {
   link: "http://www.bilibili.com/video/av5202457/index_3.html"
 };
 
-var page1 = {
-  nodeImg: "img/icon_1.png",
-  bgImg: "",
-  date: "year1",
-  title: "真情无限",
-  description: "环保环保环保",
-  link: "http://www.bilibili.com/video/av5202457/index_2.html",
-  events: [eventItem1, eventItem2]
-};
+// const page1 = {
+//   nodeImg: "img/icon_1.png",
+//   bgImg: "",
+//   date: "year1",
+//   title: "真情无限",
+//   description: "环保环保环保",
+//   link: "http://www.bilibili.com/video/av5202457/index_2.html",
+//   events: [eventItem1, eventItem2]
+// };
 
 var page2 = {
   nodeImg: "img/icon_2.png",

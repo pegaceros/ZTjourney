@@ -1,68 +1,69 @@
 "use strict";
 
-var eventItem1 = {
-  title: "2016春晚",
-  thumb: "img/thumb_1.jpg",
-  link: "http://www.bilibili.com/video/av5202457/index_1.html"
+// 10 年
+// TODO: deal with links
+
+var data02 = [{
+  "title": "中央电视台春节联欢晚会",
+  "description": "周涛的出场时间很短，仅仅在开场和结尾处短短的几分钟。一句“夜已深了，兴犹未尽”千回百转。",
+  "links": ["http://www.bilibili.com/video/av5202457/index_13.html"]
+}, {
+  "title": "公安部春节晚会《盛世金盾情》",
+  "description": "周涛的表演大方自然，一如主持时的沉稳大气，又不失幽默诙谐，拿捏得当。",
+  "links": ["http://www.tudou.com/programs/view/dWofBNMtASc/?tpa=dW5pb25faWQ9MTAzMDkzXzEwMDAwMl8wMV8wMQ&fromvsogou=1"]
+}, {
+  "title": "《青山林海歌飞扬》中央电视台心连心赴伊春慰问演出",
+  "description": "周涛与几位艺术家老师的航班由于天气原因延误，最后连夜坐火车赶到演出现场。整场演出依然呈现出自己最好的状态。",
+  "links": ["http://www.56.com/u45/v_NTg0OTg2NTA.html", "http://www.56.com/u14/v_NTg1MDAzNzk.html"]
+}, {
+  "title": "《情系大别山》2002年中央电视台心连心艺术团赴安徽霍山慰问演出",
+  "description": "本身就是安徽人的周涛对家乡的热爱自是溢于言表，那一句“嗯你们安徽人都是好样的”更是满满的对家乡的喜爱和身为安徽人的自豪。",
+  "links": ["http://www.tudou.com/programs/view/QV1azjzAmDI/"]
+}];
+
+var data10 = [{
+  "title": "走进世博大型明星文艺晚会",
+  "description": "周涛主持2010年上海旅游年启动仪式",
+  "links": ["http://v.youku.com/v_show/id_XMTQ0MTM3Njg0.html"]
+}, {
+  "title": "全国检查系统迎新年主题晚会为了正义的誓言",
+  "description": "晚会由著名央视节目主持人周涛、朱军、张泽群与来自北京市检察院的检察官韩冰共同主持。",
+  "links": ["http://www.tudou.com/programs/view/vl-JwbPUEc0/"]
+}, {
+  "title": "2010年央视春节联欢晚会",
+  "description": "周涛从1996年起连续16年主持央视春节联欢晚会，是迄今为止连续主持春晚最多的女主持。",
+  "links": ["http://www.iqiyi.com/v_19rrgzaj7c.html"]
+}, {
+  "title": "中央电视台戏曲春节晚会",
+  "description": "周涛主持我国博大精深、缤纷荟萃的艺术晚会",
+  "links": ["http://www.tudou.com/listplay/OUndYPSvFio/aO3-wF_jHEs.html"]
+}, {
+  "title": "百花迎春晚会",
+  "description": "周涛主持艺术节春节大联欢晚会",
+  "links": ["http://www.tudou.com/programs/view/5hA7Nonl3Qg/"]
+}];
+
+var createEventItem = function createEventItem(year, num, links, title, description) {
+  var thumb = ["img/thumb/", year, "-", num, ".jpg"];
+
+  var item = {
+    title: title,
+    thumb: thumb.join(""),
+    description: description,
+    links: links
+    // TODO:
+  };
+  return item;
 };
 
-var eventItem2 = {
-  title: "2015中国谜语大会",
-  thumb: "img/thumb_2.jpg",
-  link: "http://www.bilibili.com/video/av5202457/index_2.html"
-};
-var eventItem3 = {
-  title: "筑梦路上",
-  thumb: "img/thumb_3.jpg",
-  link: "http://www.bilibili.com/video/av5202457/index_3.html"
-};
-
-var page1 = {
-  nodeImg: "img/icon_1.png",
-  bgImg: "",
-  date: "year1",
-  title: "真情无限",
-  description: "环保环保环保",
-  link: "http://www.bilibili.com/video/av5202457/index_2.html",
-  events: [eventItem1, eventItem2]
-};
-
-var page2 = {
-  nodeImg: "img/icon_2.png",
-  bgImg: "img/bg_2.jpg",
-  date: "year2",
-  title: "春节联欢晚会2016",
-  description: "2016央视春晚主持阵容发布：在中央电视台一号演播大厅主会场的共有六位主持人，分别是周涛、朱军、董卿、撒贝宁、李思思和尼格买提。福建泉州分会场：李佳明、赵琳硕；陕西西安分会场：朱迅、徐杰；广东广州分会场：任鲁豫、邓璐；内蒙古呼伦贝尔分会场：马跃、欧仁图雅。",
-  link: "http://www.bilibili.com/video/av5202457/index_1.html",
-  events: [eventItem2, eventItem3, eventItem1, eventItem3, eventItem1, eventItem2]
-};
-
-var page3 = {
-  nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_3.png",
-  date: "year3",
-  title: "Dream",
-  description: "BLABLABLABLABLABLABL",
-  link: "http://www.bilibili.com/video/av5202457/index_3.html",
-  events: [eventItem3, eventItem1, eventItem3, eventItem2, eventItem1]
-};
-
-var page4 = {
-  nodeImg: "img/icon_2.png",
-  bgImg: "img/bg_0.jpg",
-  date: "year4",
-  title: "",
-  description: "",
-  link: "http://www.bilibili.com/video/av5202457/index_3.html",
-  events: [eventItem3, eventItem2, eventItem1, eventItem2, eventItem1, eventItem3, eventItem2]
-};
-
-var page5 = {
-  nodeImg: "",
-  bgImg: "img/bg_1.jpg",
-  date: "year5",
-  title: "",
-  description: "",
-  link: "http://www.bilibili.com/video/av5202457/index_3.html",
-  events: [eventItem3, eventItem1, eventItem1, eventItem2, eventItem1, eventItem3, eventItem1, eventItem3]
+var createContent = function createContent(year, yearItemArray, position) {
+  var es = yearItemArray.map(function (i, idx) {
+    return createEventItem(year, idx + 1, i.links, i.title, i.description);
+  });
+  var content = {
+    yearTitle: year,
+    position: position,
+    events: es
+  };
+  return content;
 };
