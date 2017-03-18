@@ -19,10 +19,10 @@
 
 
 const node10 = <TlNode img="img/icon_1.png" />
-const c10 = <Content content={createContent(2010, data10, "right")} />
+const c10 = <Content content={createContent(2010, data2010, "right")} />
 
 const node02 = <TlNode img="img/icon_2.png" />
-const c02 = <Content content={createContent(2002, data02, "left")} />
+const c02 = <Content content={createContent(2002, data2002, "left")} />
 
 const p1 = {
   bgImg: "",
@@ -31,7 +31,7 @@ const p1 = {
 
 const p2 = {
   bgImg: "",
-  parts: [node10, c10, node02, c02]
+  parts: [node02, c02, node10, c10]
 }
 
 const pageData = [p1, p2]
@@ -58,8 +58,8 @@ $('#fullpage').fullpage({
     navigationTooltips: anchors,
     // scrollBar: true
     responsiveSlides: true,
-    responsiveWidth: 800,
-    responsiveHeight: 480,
+    responsiveWidth: 80000,
+    responsiveHeight: 48000,
 
     afterLoad: (anchorLink, index) => {
       // console.log(anchorLink + " is loaded");

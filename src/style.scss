@@ -64,6 +64,7 @@ $fadeload-delay: 0s;
 html {
     color: $black;
     background-color: $white;
+    min-width: 800px;
 }
 
 body {
@@ -81,6 +82,7 @@ body {
 
 .zt-bottom,
 .zt-top {
+    color: $white;
     max-width: $top-max-width;
     margin-left: auto;
     margin-right: auto;
@@ -270,7 +272,7 @@ body {
         width: 100%;
         top: 0;
         left: 0;
-        padding-top: 20%;
+        // padding-top: 20%;
         overflow: hidden;
         opacity: 0;
         transition: opacity 0.4s ease;

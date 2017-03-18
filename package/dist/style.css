@@ -25,13 +25,15 @@
 /* Style */
 html {
   color: #313638;
-  background-color: #e8e9eb; }
+  background-color: #e8e9eb;
+  min-width: 800px; }
 
 body {
   font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif; }
 
 .zt-bottom,
 .zt-top {
+  color: #e8e9eb;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -147,7 +149,6 @@ body {
     width: 100%;
     top: 0;
     left: 0;
-    padding-top: 20%;
     overflow: hidden;
     opacity: 0;
     transition: opacity 0.4s ease;

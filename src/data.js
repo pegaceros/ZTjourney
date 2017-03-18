@@ -2,7 +2,7 @@
 // 10 年
 // TODO: deal with links
 
-const data02 = [
+const data2002 = [
   {
     "title": "中央电视台春节联欢晚会",
     "description": "周涛的出场时间很短，仅仅在开场和结尾处短短的几分钟。一句“夜已深了，兴犹未尽”千回百转。",
@@ -35,7 +35,7 @@ const data02 = [
 ]
 
 
-const data10 = [
+const data2010 = [
   {
     "title": "走进世博大型明星文艺晚会",
     "description": "周涛主持2010年上海旅游年启动仪式",

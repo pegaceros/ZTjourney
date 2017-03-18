@@ -16,10 +16,10 @@
 
 
 var node10 = React.createElement(TlNode, { img: "img/icon_1.png" });
-var c10 = React.createElement(Content, { content: createContent(2010, data10, "right") });
+var c10 = React.createElement(Content, { content: createContent(2010, data2010, "right") });
 
 var node02 = React.createElement(TlNode, { img: "img/icon_2.png" });
-var c02 = React.createElement(Content, { content: createContent(2002, data02, "left") });
+var c02 = React.createElement(Content, { content: createContent(2002, data2002, "left") });
 
 var p1 = {
   bgImg: "",
@@ -28,7 +28,7 @@ var p1 = {
 
 var p2 = {
   bgImg: "",
-  parts: [node10, c10, node02, c02]
+  parts: [node02, c02, node10, c10]
 };
 
 var pageData = [p1, p2];
@@ -53,8 +53,8 @@ $('#fullpage').fullpage({
   navigationTooltips: anchors,
   // scrollBar: true
   responsiveSlides: true,
-  responsiveWidth: 800,
-  responsiveHeight: 480,
+  responsiveWidth: 80000,
+  responsiveHeight: 48000,
 
   afterLoad: function afterLoad(anchorLink, index) {
     // console.log(anchorLink + " is loaded");

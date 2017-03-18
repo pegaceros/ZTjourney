@@ -179,7 +179,7 @@ var LandingPage = function (_React$Component5) {
     key: "render",
     value: function render() {
       var pageStyle = {
-        backgroundImage: "url(img/bg_0.jpg)",
+        backgroundImage: "url(img/bg_0.jpeg)",
         backgroundSize: "cover"
       };
       return React.createElement(
@@ -235,7 +235,7 @@ var EndingPage = function (_React$Component6) {
     key: "render",
     value: function render() {
       var pageStyle = {
-        backgroundImage: "url(img/bg_0.jpg)",
+        backgroundImage: "url(img/bg_0.jpeg)",
         backgroundSize: "cover"
       };
       return React.createElement(
@@ -257,7 +257,7 @@ var EndingPage = function (_React$Component6) {
                 React.createElement(
                   "h2",
                   null,
-                  "\u8C22\u8C22\u60A8\u4E3A\u4E16\u754C\u5E26\u6765\u7F8E\u3002"
+                  "\u611F\u8C22\u60A8\u4E3A\u4E16\u754C\u5E26\u6765\u7F8E\u3002"
                 ),
                 React.createElement(
                   "h3",

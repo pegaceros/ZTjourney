@@ -3,7 +3,7 @@
 // 10 年
 // TODO: deal with links
 
-var data02 = [{
+var data2002 = [{
   "title": "中央电视台春节联欢晚会",
   "description": "周涛的出场时间很短，仅仅在开场和结尾处短短的几分钟。一句“夜已深了，兴犹未尽”千回百转。",
   "links": ["http://www.bilibili.com/video/av5202457/index_13.html"]
@@ -21,7 +21,7 @@ var data02 = [{
   "links": ["http://www.tudou.com/programs/view/QV1azjzAmDI/"]
 }];
 
-var data10 = [{
+var data2010 = [{
   "title": "走进世博大型明星文艺晚会",
   "description": "周涛主持2010年上海旅游年启动仪式",
   "links": ["http://v.youku.com/v_show/id_XMTQ0MTM3Njg0.html"]

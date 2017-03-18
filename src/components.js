@@ -96,7 +96,7 @@ class Content extends React.Component {
 class LandingPage extends React.Component {
   render () {
     const pageStyle = {
-      backgroundImage: "url(img/bg_0.jpg)",
+      backgroundImage: "url(img/bg_0.jpeg)",
       backgroundSize: "cover",
     };
     return (
@@ -123,7 +123,7 @@ class LandingPage extends React.Component {
 class EndingPage extends React.Component {
   render () {
     const pageStyle = {
-      backgroundImage: "url(img/bg_0.jpg)",
+      backgroundImage: "url(img/bg_0.jpeg)",
       backgroundSize: "cover",
     };
     return (
@@ -134,7 +134,7 @@ class EndingPage extends React.Component {
                       <TlNode img="img/icon_2.png" />
 
                       <div className="zt-tl-message fade-in-up">
-                          <h2>谢谢您为世界带来美。</h2>
+                          <h2>感谢您为世界带来美。</h2>
                           <h3>Thank you for bringing beauty into the world!</h3>
                       </div>
                   </div>
