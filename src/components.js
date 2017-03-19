@@ -34,10 +34,15 @@ class EventItem extends React.Component {
     };
     // <div className="zt-event-thumb" style={thumbStyle}></div>
     // <img className="zt-event-thumb" src={this.props.eventItem.thumb} />
+    let l = "javascript:void(0)";
+    // console.log(this.props.eventItem.links[0]);
+    if (this.props.eventItem.links[0]) {
+      l = this.props.eventItem.links[0];
+    }
     return (
       // TODO: 处理复数 links
       <div className="zt-event">
-        <a href={this.props.eventItem.links[0]} target="_blank">
+        <a href={l} target="_blank">
           <div className="zt-event-preview">
             <div className="zt-event-thumb" style={thumbStyle}></div>
             <div className="zt-event-description">

@@ -63,6 +63,11 @@ var EventItem = function (_React$Component2) {
       };
       // <div className="zt-event-thumb" style={thumbStyle}></div>
       // <img className="zt-event-thumb" src={this.props.eventItem.thumb} />
+      var l = "javascript:void(0)";
+      // console.log(this.props.eventItem.links[0]);
+      if (this.props.eventItem.links[0]) {
+        l = this.props.eventItem.links[0];
+      }
       return (
         // TODO: 处理复数 links
         React.createElement(
@@ -70,7 +75,7 @@ var EventItem = function (_React$Component2) {
           { className: "zt-event" },
           React.createElement(
             "a",
-            { href: this.props.eventItem.links[0], target: "_blank" },
+            { href: l, target: "_blank" },
             React.createElement(
               "div",
               { className: "zt-event-preview" },
