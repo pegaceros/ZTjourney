@@ -37,10 +37,10 @@
 
 
 const position = ["left", "right", "full"]
-const layout = [0, 1, 0]
+const layout = [0, 1, 0, 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
 
 const pageData = data.map( (d, idx) => {
-  const node = <TlNode img="img/icon00.jpeg" /> // change image name
+  const node = <TlNode img="img/icon_2.png" /> // change image name
   const content = <Content content={createContent(d.year, d.data, position[layout[idx]])} />
 
   return {bgImg: "", parts:[node, content]}
@@ -59,7 +59,7 @@ ReactDOM.render(
 );
 
 // TODO: set anchors
-const anchors = ["Home"].concat(appPages.map( (i, idx) => (idx+1) + "")).concat(["Thanks"])
+const anchors = ["Home"].concat(data.map( (d, idx) => (d.year) + "")).concat(["Thanks"])
 
 // Animation & Action
 
@@ -70,8 +70,8 @@ $('#fullpage').fullpage({
     navigationTooltips: anchors,
     // scrollBar: true
     responsiveSlides: true,
-    responsiveWidth: 80000,
-    responsiveHeight: 48000,
+    responsiveWidth: 1200,
+    responsiveHeight: 720,
 
     afterLoad: (anchorLink, index) => {
       // console.log(anchorLink + " is loaded");

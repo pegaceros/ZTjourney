@@ -35,10 +35,10 @@
 
 
 var position = ["left", "right", "full"];
-var layout = [0, 1, 0];
+var layout = [0, 1, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2];
 
 var pageData = data.map(function (d, idx) {
-  var node = React.createElement(TlNode, { img: "img/icon00.jpeg" }); // change image name
+  var node = React.createElement(TlNode, { img: "img/icon_2.png" }); // change image name
   var content = React.createElement(Content, { content: createContent(d.year, d.data, position[layout[idx]]) });
 
   return { bgImg: "", parts: [node, content] };
@@ -51,8 +51,8 @@ var appPages = pageData.map(function (p, idx) {
 ReactDOM.render(React.createElement(App, { pages: appPages }), document.getElementById('fullpage'));
 
 // TODO: set anchors
-var anchors = ["Home"].concat(appPages.map(function (i, idx) {
-  return idx + 1 + "";
+var anchors = ["Home"].concat(data.map(function (d, idx) {
+  return d.year + "";
 })).concat(["Thanks"]);
 
 // Animation & Action
@@ -64,8 +64,8 @@ $('#fullpage').fullpage({
   navigationTooltips: anchors,
   // scrollBar: true
   responsiveSlides: true,
-  responsiveWidth: 80000,
-  responsiveHeight: 48000,
+  responsiveWidth: 1200,
+  responsiveHeight: 720,
 
   afterLoad: function afterLoad(anchorLink, index) {
     // console.log(anchorLink + " is loaded");
