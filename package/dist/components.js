@@ -228,6 +228,11 @@ var LandingPage = function (_React$Component5) {
                 "h2",
                 null,
                 "Happy 49th Birthday!"
+              ),
+              React.createElement(
+                "h5",
+                null,
+                "\u56DB\u820D\u4E94\u5165\u8FD8\u6CA1\u6EE1\u6708\u561B ( \u2022\u0300\u1D17\u2022\u0301 )\u0648 \u0311\u0311"
               )
             ),
             React.createElement(
