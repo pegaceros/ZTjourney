@@ -92,7 +92,7 @@ class Content extends React.Component {
 
     return (
       <div className={cName}>
-        <div> {this.props.content.yearTitle} {this.props.content.events.length}个节目 </div>
+        <div> {this.props.content.yearTitle}</div>
         {eventsBlocks}
       </div>
     )
