@@ -242,9 +242,9 @@ var LandingPage = function (_React$Component5) {
                 "div",
                 { className: "zt-tl-message fade-in-down" },
                 React.createElement(
-                  "h4",
+                  "h3",
                   null,
-                  "\u5468\u6D9B\u7684\u5947\u5999\u5192\u9669 TaoTao's Marvellous Adventure"
+                  "TaoTao's Marvellous Adventure"
                 )
               ),
               React.createElement(TlNode, { img: "img/icon000.jpeg" })
@@ -294,15 +294,24 @@ var EndingPage = function (_React$Component6) {
                 "div",
                 { className: "zt-tl-message fade-in-up" },
                 React.createElement(
-                  "h2",
-                  null,
-                  "\u611F\u8C22\u60A8\u4E3A\u4E16\u754C\u5E26\u6765\u7F8E\u3002"
-                ),
-                React.createElement(
                   "h3",
                   null,
-                  "Thank you for bringing beauty into the world."
+                  "To Be Continued"
                 )
+              )
+            ),
+            React.createElement(
+              "div",
+              null,
+              React.createElement(
+                "h1",
+                null,
+                "\u611F\u8C22\u60A8\u4E3A\u4E16\u754C\u5E26\u6765\u7F8E\u3002"
+              ),
+              React.createElement(
+                "h2",
+                null,
+                "Thank you for bringing beauty into the world."
               )
             )
           )

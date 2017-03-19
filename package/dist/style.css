@@ -58,6 +58,11 @@ body {
   top: 0;
   height: 100%; }
 
+.zt-tl-message {
+  text-align: left;
+  left: calc(50% + 60px);
+  position: absolute; }
+
 .zt-tl-header::after {
   top: calc(100% - 10%);
   height: 10%; }
@@ -67,10 +72,7 @@ body {
   margin: 0; }
 
 .zt-tl-header .zt-tl-message {
-  text-align: left;
-  left: calc(50% + 60px);
-  bottom: 10%;
-  position: absolute; }
+  bottom: 10%; }
 
 .zt-tl-footer::before {
   top: 0;
@@ -79,6 +81,9 @@ body {
 .zt-tl-footer .zt-tl-node {
   top: 10%;
   margin: 0; }
+
+.zt-tl-footer .zt-tl-message {
+  top: 10%; }
 
 .zt-tl-node {
   width: 60px;
@@ -158,6 +163,7 @@ body {
     .zt-event .zt-event-preview .zt-event-thumb {
       width: 200px;
       height: calc(200px * 0.6);
+      opacity: 0.9;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;

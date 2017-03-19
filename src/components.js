@@ -129,8 +129,7 @@ class LandingPage extends React.Component {
                 </div>
                   <div className="zt-tl-header">
                       <div className="zt-tl-message fade-in-down">
-                          <h4>周涛的奇妙冒险
-                          TaoTao's Marvellous Adventure</h4>
+                          <h3>TaoTao's Marvellous Adventure</h3>
                       </div>
                       <TlNode img="img/icon000.jpeg" />
                   </div>
@@ -156,9 +155,12 @@ class EndingPage extends React.Component {
                   <div className="zt-tl-footer">
                       <TlNode img="img/icon000.jpeg" />
                       <div className="zt-tl-message fade-in-up">
-                          <h2>感谢您为世界带来美。</h2>
-                          <h3>Thank you for bringing beauty into the world.</h3>
+                          <h3>To Be Continued</h3>
                       </div>
+                  </div>
+                  <div>
+                      <h1>感谢您为世界带来美。</h1>
+                      <h2>Thank you for bringing beauty into the world.</h2>
                   </div>
               </div>
 
