@@ -15,23 +15,34 @@
 // );
 
 
-var node10 = React.createElement(TlNode, { img: "img/icon00.jpeg" });
-var c10 = React.createElement(Content, { content: createContent(2010, data2010, "right") });
+// const node10 = <TlNode img="img/icon00.jpeg" />
+// const c10 = <Content content={createContent(2010, data2010, "right")} />
+//
+// const node02 = <TlNode img="img/icon_2.png" />
+// const c02 = <Content content={createContent(2002, data2002, "left")} />
+//
+// const p1 = {
+//   bgImg: "",
+//   parts: [node02, c02]
+// }
+//
+// const p2 = {
+//   bgImg: "",
+//   parts: [node02, c02, node10, c10]
+// }
+//
+// const pageData = [p1, p2]
 
-var node02 = React.createElement(TlNode, { img: "img/icon_2.png" });
-var c02 = React.createElement(Content, { content: createContent(2002, data2002, "left") });
 
-var p1 = {
-  bgImg: "",
-  parts: [node02, c02]
-};
+var position = ["left", "right", "full"];
+var layout = [0, 1, 0];
 
-var p2 = {
-  bgImg: "",
-  parts: [node02, c02, node10, c10]
-};
+var pageData = data.map(function (d, idx) {
+  var node = React.createElement(TlNode, { img: "img/icon00.jpeg" }); // change image name
+  var content = React.createElement(Content, { content: createContent(d.year, d.data, position[layout[idx]]) });
 
-var pageData = [p1, p2];
+  return { bgImg: "", parts: [node, content] };
+});
 
 var appPages = pageData.map(function (p, idx) {
   return React.createElement(Page, { key: idx, page: p });
