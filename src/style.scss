@@ -22,13 +22,12 @@ $tl-width: 2px;
 $tl-node-width: 60px;
 $padding: 20px;
 $top-max-width: 1000px;
-$item-ratio: 0.6;
-$item-max-w: 400px;
-$item-min-w: 200px;
+$item-ratio-top: 0.6;
+$item-ratio-bottom: 0.2; // $item-max-w: 400px;
+// $item-min-w: 200px;
 $item-w: 200px;
 $border-radius: 8px;
 $timeline-top-tail: 10%;
-
 $fadeload-duration: 0.6s;
 $fadeload-offset: 30px;
 $fadeload-delay: 0s;
@@ -101,7 +100,6 @@ body {
     // background: yellow;
 }
 
-
 .zt-tl-block::after,
 .zt-tl-footer::before,
 .zt-tl-header::after {
@@ -150,23 +148,21 @@ body {
     left: calc(50% - 30px);
     border: calc(#{$tl-width}) solid $color2;
     background-size: cover;
-
     transition: transform 0.8s ease;
     -webkit-transition: -webkit-transform 0.8s ease;
     -moz-transition: -moz-transform 0.8s ease;
 
     &:hover {
-      transform: rotate(360deg);
-      -webkit-transform: rotate(360deg);
-      -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
     }
-
 }
 
 .zt-events-block {
-  // background: pink;
-  width: 100%;
-  display: inline-block;
+    // background: pink;
+    width: 100%;
+    display: inline-block;
 }
 
 .zt-tl-content {
@@ -186,45 +182,38 @@ body {
 // }
 
 .content-left {
-  @extend .zt-tl-content;
-
-  width: calc(50% - #{$tl-node-width}/2 - #{$padding}*2);
-  margin-left: $padding;
-  text-align: right;
+    @extend .zt-tl-content;
+    width: calc(50% - #{$tl-node-width}/2 - #{$padding}*2);
+    margin-left: $padding;
+    text-align: right;
 }
 
 .content-right {
-  @extend .zt-tl-content;
-
-  width: calc(50% - #{$tl-node-width}/2 - #{$padding}*2);
-  margin-left: calc(50% + #{$tl-node-width}/2 + #{$padding});
-  text-align: left;
+    @extend .zt-tl-content;
+    width: calc(50% - #{$tl-node-width}/2 - #{$padding}*2);
+    margin-left: calc(50% + #{$tl-node-width}/2 + #{$padding});
+    text-align: left;
 }
 
 .content-full {
-  @extend .zt-tl-content;
+    @extend .zt-tl-content;
+    width: calc(100% - #{$padding}*2);
+    margin-left: $padding;
+    // background-color: blue;
+    .zt-events-block {
+        width: calc(50% - #{$tl-node-width}/2 - #{$padding});
 
-  width: calc(100% - #{$padding}*2);
-  margin-left: $padding;
+        &:nth-child(even) {
+            float: left;
+            text-align: right;
+        }
 
-  // background-color: blue;
-
-  .zt-events-block {
-    width: calc(50% - #{$tl-node-width}/2 - #{$padding});
-
-    &:nth-child(even) {
-      float: left;
-      text-align: right;
+        &:nth-child(odd) {
+            float: right;
+            text-align: left;
+        }
     }
-
-    &:nth-child(odd) {
-      float: right;
-      text-align: left;
-    }
-  }
 }
-
-
 // .section:nth-child(even) .zt-tl-content:nth-child(2),
 // .section:nth-child(odd) .zt-tl-content:nth-child(3) {
 //     margin-left: $padding;
@@ -241,57 +230,112 @@ body {
     display: inline-block;
     margin: 6px;
     position: relative;
-    max-width: $item-max-w;
-    max-height: calc(#{$item-max-w} * #{$item-ratio});
-    min-width: $item-min-w;
-    min-height: calc(#{$item-min-w} * #{$item-ratio});
     width: $item-w;
-    height: calc( #{$item-w} * #{$item-ratio});
-    // border-radius: $border-radius;
-    overflow: hidden;
-    box-shadow: 0px 11px 54px -9px rgba(0,0,0,0.5);
-
-    .zt-event-thumb {
-        height: 100%;
-        width: 100%;
-        // border-radius: $border-radius;
-        // background-image: url("../img/thumb_1.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        transition: filter 0.4s ease, transform 0.4s ease;
-        -webkit-transition: -webkit-filter 0.4s ease, -webkit-transform 0.4s ease;
-        -moz-transition: -moz-filter 0.4s ease, -moz-transform 0.4s ease;
-    }
+    height: calc(#{$item-w} * (#{$item-ratio-top} + #{$item-ratio-bottom}));
 
     .zt-event-title {
-        background-color: rgba(0,0,0,0.5);
-        color: $white;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        // padding-top: 20%;
-        overflow: hidden;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        -webkit-transition: opacity 0.4s ease;
-        -moz-transition: opacity 0.4s ease;
-        font-size: 16px;
-        font-weight: 300;
-        text-align: center;
+      // background-color: yellow;
+      height: calc(#{$item-w} * #{$item-ratio-bottom});
 
-        &::after {
-            content: "点击观看";
-            display: block;
-            color: $color1;
-            font-size: 12px;
-            font-weight: lighter;
+      padding: 4px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 18px;
+      overflow: hidden;
+
+      transition: all 0.4s ease;
+      -webkit-transition: all 0.4s ease;
+      -moz-transition: all 0.4s ease;
+    }
+
+    .zt-event-preview {
+        // max-width: $item-max-w;
+        // max-height: calc(#{$item-max-w} * #{$item-ratio});
+        // min-width: $item-min-w;
+        // min-height: calc(#{$item-min-w} * #{$item-ratio});
+        // border-radius: $border-radius;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+
+        .zt-event-thumb {
+            width: $item-w;
+            height: calc(#{$item-w} * #{$item-ratio-top});
+            // border-radius: $border-radius;
+            // background-image: url("../img/thumb_1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: filter 0.4s ease, transform 0.4s ease;
+            -webkit-transition: -webkit-filter 0.4s ease, -webkit-transform 0.4s ease;
+            -moz-transition: -moz-filter 0.4s ease, -moz-transform 0.4s ease;
         }
+
+        .zt-event-description {
+            width: $item-w;
+            height: calc(#{$item-w} * #{$item-ratio-top});
+            background-color: rgba(0,0,0,0.5);
+            color: $white;
+            position: absolute;
+            // height: 100%;
+            // width: 100%;
+            top: 0;
+            left: 0;
+            // padding-top: 20%;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            -webkit-transition: opacity 0.4s ease;
+            -moz-transition: opacity 0.4s ease;
+            font-size: 14px;
+            font-weight: 200;
+            text-align: left;
+
+            div {
+                padding: 6px;
+            }
+            // &::after {
+            //     content: "点击观看";
+            //     display: block;
+            //     color: $color1;
+            //     font-size: 12px;
+            //     font-weight: lighter;
+            // }
+        }
+
+        // &:hover {
+        //     .zt-event-thumb {
+        //         filter: blur(2px);
+        //         -webkit-filter: blur(2px);
+        //         -moz-filter: blur(2px);
+        //         transform: scale(1.1);
+        //         -webkit-transform: scale(1.1);
+        //         -moz-transform: scale(1.1);
+        //     }
+        //
+        //     .zt-event-description {
+        //         opacity: 1;
+        //     }
+        // }
     }
 
     &:hover {
+        .zt-event-preview {
+          transform: translate(0, -10px);
+          -webkit-transform: translate(0, -10px);
+          -moz-transform: translate(0, -10px);
+
+          box-shadow: 0 11px 54px -9px rgba(0,0,0,0.5);
+        }
+
+        .zt-event-title {
+          transform: translate(0, 6px);
+          -webkit-transform: translate(0, 6px);
+          -moz-transform: translate(0, 6px);
+        }
+
         .zt-event-thumb {
             filter: blur(2px);
             -webkit-filter: blur(2px);
@@ -301,12 +345,11 @@ body {
             -moz-transform: scale(1.1);
         }
 
-        .zt-event-title {
+        .zt-event-description {
             opacity: 1;
         }
     }
 }
-
 /* Effect */
 .pop {
     animation: pop 0.6s alternate infinite;
@@ -314,41 +357,36 @@ body {
 }
 
 .fade-in {
-  opacity: 0;
-
-  transition: transform $fadeload-duration ease 0.1s, opacity $fadeload-duration ease $fadeload-delay;
-  -webkit-transition: -webkit-transform $fadeload-duration ease 0.1s, opacity $fadeload-duration ease $fadeload-delay;
-  -moz-transition: -moz-transform $fadeload-duration ease 0.1s, opacity $fadeload-duration ease $fadeload-delay;
+    opacity: 0;
+    transition: transform $fadeload-duration ease 0.1s, opacity $fadeload-duration ease $fadeload-delay;
+    -webkit-transition: -webkit-transform $fadeload-duration ease 0.1s, opacity $fadeload-duration ease $fadeload-delay;
+    -moz-transition: -moz-transform $fadeload-duration ease 0.1s, opacity $fadeload-duration ease $fadeload-delay;
 }
 
 .fade-in-up {
-  @extend .fade-in;
-
-  transform: translate(0, $fadeload-offset);
-  -webkit-transform: translate(0, $fadeload-offset);
-  -moz-transform: translate(0, $fadeload-offset);
+    @extend .fade-in;
+    transform: translate(0, $fadeload-offset);
+    -webkit-transform: translate(0, $fadeload-offset);
+    -moz-transform: translate(0, $fadeload-offset);
 }
 
 .fade-in-down {
-  @extend .fade-in;
-
-  transform: translate(0, -$fadeload-offset);
-  -webkit-transform: translate(0, -$fadeload-offset);
-  -moz-transform: translate(0, -$fadeload-offset);
+    @extend .fade-in;
+    transform: translate(0, -$fadeload-offset);
+    -webkit-transform: translate(0, -$fadeload-offset);
+    -moz-transform: translate(0, -$fadeload-offset);
 }
 
 .fade-in-left {
-  @extend .fade-in;
-
-  transform: translate($fadeload-offset, 0);
-  -webkit-transform: translate($fadeload-offset, 0);
-  -moz-transform: translate($fadeload-offset, 0);
+    @extend .fade-in;
+    transform: translate($fadeload-offset, 0);
+    -webkit-transform: translate($fadeload-offset, 0);
+    -moz-transform: translate($fadeload-offset, 0);
 }
 
 .fade-in-right {
-  @extend .fade-in;
-
-  transform: translate(-$fadeload-offset, 0);
-  -webkit-transform: translate(-$fadeload-offset, 0);
-  -moz-transform: translate(-$fadeload-offset, 0);
+    @extend .fade-in;
+    transform: translate(-$fadeload-offset, 0);
+    -webkit-transform: translate(-$fadeload-offset, 0);
+    -moz-transform: translate(-$fadeload-offset, 0);
 }

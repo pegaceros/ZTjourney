@@ -36,10 +36,19 @@ class EventItem extends React.Component {
     // <img className="zt-event-thumb" src={this.props.eventItem.thumb} />
     return (
       // TODO: 处理复数 links
-      <a className="zt-event" href={this.props.eventItem.links[0]} target="_blank">
-          <div className="zt-event-thumb" style={thumbStyle}></div>
-          <div className="zt-event-title">{this.props.eventItem.title}</div>
-      </a>
+      <div className="zt-event">
+        <a href={this.props.eventItem.links[0]} target="_blank">
+          <div className="zt-event-preview">
+            <div className="zt-event-thumb" style={thumbStyle}></div>
+            <div className="zt-event-description">
+              <div>{this.props.eventItem.description}</div>
+            </div>
+          </div>
+        </a>
+        <div className="zt-event-title">
+          {this.props.eventItem.title}
+        </div>
+      </div>
     )
   }
 }
@@ -83,7 +92,7 @@ class Content extends React.Component {
 
     return (
       <div className={cName}>
-        <h2> {this.props.content.yearTitle} {this.props.content.events.length}个节目 </h2>
+        <div> {this.props.content.yearTitle} {this.props.content.events.length}个节目 </div>
         {eventsBlocks}
       </div>
     )

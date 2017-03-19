@@ -66,9 +66,26 @@ var EventItem = function (_React$Component2) {
       return (
         // TODO: 处理复数 links
         React.createElement(
-          "a",
-          { className: "zt-event", href: this.props.eventItem.links[0], target: "_blank" },
-          React.createElement("div", { className: "zt-event-thumb", style: thumbStyle }),
+          "div",
+          { className: "zt-event" },
+          React.createElement(
+            "a",
+            { href: this.props.eventItem.links[0], target: "_blank" },
+            React.createElement(
+              "div",
+              { className: "zt-event-preview" },
+              React.createElement("div", { className: "zt-event-thumb", style: thumbStyle }),
+              React.createElement(
+                "div",
+                { className: "zt-event-description" },
+                React.createElement(
+                  "div",
+                  null,
+                  this.props.eventItem.description
+                )
+              )
+            )
+          ),
           React.createElement(
             "div",
             { className: "zt-event-title" },
@@ -148,7 +165,7 @@ var Content = function (_React$Component4) {
         "div",
         { className: cName },
         React.createElement(
-          "h2",
+          "div",
           null,
           " ",
           this.props.content.yearTitle,
