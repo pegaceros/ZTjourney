@@ -73,10 +73,10 @@ class EventsBlock extends React.Component {
 // };
 class Content extends React.Component {
   render () {
-    const cName = "zt-tl-content " + "content-" + this.props.content.position;
+    const position = this.props.content.position;
 
     var eventsGroup = [];
-    if (this.props.content.position == "full") {
+    if (position == "full") {
       const len = this.props.content.events.length;
       const mid = Math.ceil(len / 2);
       const leftEvents = this.props.content.events.slice(0, mid);
@@ -91,9 +91,14 @@ class Content extends React.Component {
       <EventsBlock events={es} key={idx} />
     );
 
+    // const fadeStyle = (position == "right") ? "fade-in-left" : "fade-in-right";
+
+    const cName = "zt-tl-content " + "content-" + position;
+    // const cName2 ="content-title " + fadeStyle;
+
     return (
       <div className={cName}>
-        <h3 className="content-title">{this.props.content.yearTitle}</h3>
+        <h2 className="content-title">{this.props.content.yearTitle}</h2>
         {eventsBlocks}
       </div>
     )
@@ -105,20 +110,23 @@ class Content extends React.Component {
 class LandingPage extends React.Component {
   render () {
     const pageStyle = {
-      backgroundImage: "url(img/bg_0.jpeg)",
+      backgroundImage: "", //url(img/bg_0.jpeg)
       backgroundSize: "cover",
     };
     return (
       <div className="section" style={pageStyle}>
           <div className="zt-landing-page">
               <div className="zt-top">
+                <div>
+                  <h1>周涛，2017生日快乐！</h1>
+                  <h2>Happy 49th Birthday!</h2>
+                </div>
                   <div className="zt-tl-header">
                       <div className="zt-tl-message fade-in-down">
-                          <h2>周涛的奇妙冒险</h2>
-                          <h3>TaoTao's Marvellous Adventure</h3>
+                          <h4>周涛的奇妙冒险
+                          TaoTao's Marvellous Adventure</h4>
                       </div>
-
-                      <TlNode img="img/icon_2.png" />
+                      <TlNode img="img/icon000.jpeg" />
                   </div>
               </div>
 
@@ -132,7 +140,7 @@ class LandingPage extends React.Component {
 class EndingPage extends React.Component {
   render () {
     const pageStyle = {
-      backgroundImage: "url(img/bg_0.jpeg)",
+      backgroundImage: "", //url(img/bg_0.jpeg)
       backgroundSize: "cover",
     };
     return (
@@ -140,11 +148,10 @@ class EndingPage extends React.Component {
           <div className="zt-ending-page">
               <div className="zt-bottom">
                   <div className="zt-tl-footer">
-                      <TlNode img="img/icon_2.png" />
-
+                      <TlNode img="img/icon000.jpeg" />
                       <div className="zt-tl-message fade-in-up">
                           <h2>感谢您为世界带来美。</h2>
-                          <h3>Thank you for bringing beauty into the world!</h3>
+                          <h3>Thank you for bringing beauty into the world.</h3>
                       </div>
                   </div>
               </div>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Coolors Exported Palette - coolors.co/f2efea-fc7753-66d7d1-403d58-dbd56e */
 /* HSL */
 /* RGB */
@@ -23,8 +24,8 @@
 
 /* Style */
 html {
-  color: #313638;
-  background-color: #e8e9eb;
+  color: #403d58;
+  background-color: white;
   min-width: 800px; }
 
 body {
@@ -32,7 +33,6 @@ body {
 
 .zt-bottom,
 .zt-top {
-  color: #e8e9eb;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -49,7 +49,7 @@ body {
 .zt-tl-header::after {
   content: ' ';
   position: absolute;
-  background: #fc7753;
+  background: #ef6461;
   width: 2px;
   z-index: 2;
   left: 50%; }
@@ -65,6 +65,12 @@ body {
 .zt-tl-header .zt-tl-node {
   bottom: 10%;
   margin: 0; }
+
+.zt-tl-header .zt-tl-message {
+  text-align: left;
+  left: calc(50% + 60px);
+  bottom: 10%;
+  position: absolute; }
 
 .zt-tl-footer::before {
   top: 0;
@@ -82,7 +88,7 @@ body {
   position: absolute;
   z-index: 10;
   left: calc(50% - 30px);
-  border: calc(2px) solid #fc7753;
+  border: calc(2px) solid #ef6461;
   background-size: cover;
   transition: transform 0.8s ease;
   -webkit-transition: -webkit-transform 0.8s ease;
@@ -225,3 +231,7 @@ body {
   transform: translate(-30px, 0);
   -webkit-transform: translate(-30px, 0);
   -moz-transform: translate(-30px, 0); }
+
+/*  导航栏css  */
+#fp-nav ul li .fp-tooltip {
+  color: #403d58; }

@@ -144,10 +144,10 @@ var Content = function (_React$Component4) {
   _createClass(Content, [{
     key: "render",
     value: function render() {
-      var cName = "zt-tl-content " + "content-" + this.props.content.position;
+      var position = this.props.content.position;
 
       var eventsGroup = [];
-      if (this.props.content.position == "full") {
+      if (position == "full") {
         var len = this.props.content.events.length;
         var mid = Math.ceil(len / 2);
         var leftEvents = this.props.content.events.slice(0, mid);
@@ -162,11 +162,16 @@ var Content = function (_React$Component4) {
         return React.createElement(EventsBlock, { events: es, key: idx });
       });
 
+      // const fadeStyle = (position == "right") ? "fade-in-left" : "fade-in-right";
+
+      var cName = "zt-tl-content " + "content-" + position;
+      // const cName2 ="content-title " + fadeStyle;
+
       return React.createElement(
         "div",
         { className: cName },
         React.createElement(
-          "h3",
+          "h2",
           { className: "content-title" },
           this.props.content.yearTitle
         ),
@@ -194,7 +199,7 @@ var LandingPage = function (_React$Component5) {
     key: "render",
     value: function render() {
       var pageStyle = {
-        backgroundImage: "url(img/bg_0.jpeg)",
+        backgroundImage: "", //url(img/bg_0.jpeg)
         backgroundSize: "cover"
       };
       return React.createElement(
@@ -208,22 +213,31 @@ var LandingPage = function (_React$Component5) {
             { className: "zt-top" },
             React.createElement(
               "div",
+              null,
+              React.createElement(
+                "h1",
+                null,
+                "\u5468\u6D9B\uFF0C2017\u751F\u65E5\u5FEB\u4E50\uFF01"
+              ),
+              React.createElement(
+                "h2",
+                null,
+                "Happy 49th Birthday!"
+              )
+            ),
+            React.createElement(
+              "div",
               { className: "zt-tl-header" },
               React.createElement(
                 "div",
                 { className: "zt-tl-message fade-in-down" },
                 React.createElement(
-                  "h2",
+                  "h4",
                   null,
-                  "\u5468\u6D9B\u7684\u5947\u5999\u5192\u9669"
-                ),
-                React.createElement(
-                  "h3",
-                  null,
-                  "TaoTao's Marvellous Adventure"
+                  "\u5468\u6D9B\u7684\u5947\u5999\u5192\u9669 TaoTao's Marvellous Adventure"
                 )
               ),
-              React.createElement(TlNode, { img: "img/icon_2.png" })
+              React.createElement(TlNode, { img: "img/icon000.jpeg" })
             )
           )
         )
@@ -250,7 +264,7 @@ var EndingPage = function (_React$Component6) {
     key: "render",
     value: function render() {
       var pageStyle = {
-        backgroundImage: "url(img/bg_0.jpeg)",
+        backgroundImage: "", //url(img/bg_0.jpeg)
         backgroundSize: "cover"
       };
       return React.createElement(
@@ -265,7 +279,7 @@ var EndingPage = function (_React$Component6) {
             React.createElement(
               "div",
               { className: "zt-tl-footer" },
-              React.createElement(TlNode, { img: "img/icon_2.png" }),
+              React.createElement(TlNode, { img: "img/icon000.jpeg" }),
               React.createElement(
                 "div",
                 { className: "zt-tl-message fade-in-up" },
@@ -277,7 +291,7 @@ var EndingPage = function (_React$Component6) {
                 React.createElement(
                   "h3",
                   null,
-                  "Thank you for bringing beauty into the world!"
+                  "Thank you for bringing beauty into the world."
                 )
               )
             )

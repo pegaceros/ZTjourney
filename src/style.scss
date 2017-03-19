@@ -15,6 +15,8 @@ $color4: rgba(64, 61, 88, 1);
 $color5: rgba(219, 213, 110, 1);
 $black: rgba(49, 54, 56, 1);
 $white: rgba(232, 233, 235, 1);
+
+$pink: #ef6461;
 /* Variables */
 // $font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
 $font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
@@ -61,8 +63,8 @@ $fadeload-delay: 0s;
 }
 /* Style */
 html {
-    color: $black;
-    background-color: $white;
+    color: $color4;
+    background-color: white;
     min-width: 800px;
 }
 
@@ -81,7 +83,7 @@ body {
 
 .zt-bottom,
 .zt-top {
-    color: $white;
+    // color: $white;
     max-width: $top-max-width;
     margin-left: auto;
     margin-right: auto;
@@ -96,6 +98,8 @@ body {
     }
 }
 
+
+
 .zt-tl-block {
     // background: yellow;
 }
@@ -105,7 +109,7 @@ body {
 .zt-tl-header::after {
     content: ' ';
     position: absolute;
-    background: $color2;
+    background: $pink;
     width: $tl-width;
     z-index: 2;
     left: 50%;
@@ -125,6 +129,13 @@ body {
     .zt-tl-node {
         bottom: $timeline-top-tail;
         margin: 0;
+    }
+
+    .zt-tl-message {
+        text-align: left;
+        left: calc(50% + #{$tl-node-width});
+        bottom: $timeline-top-tail;
+        position: absolute;
     }
 }
 
@@ -149,7 +160,7 @@ body {
     position: absolute;
     z-index: 10;
     left: calc(50% - 30px);
-    border: calc(#{$tl-width}) solid $color2;
+    border: calc(#{$tl-width}) solid $pink;
     background-size: cover;
     transition: transform 0.8s ease;
     -webkit-transition: -webkit-transform 0.8s ease;
@@ -403,4 +414,11 @@ body {
     transform: translate(-$fadeload-offset, 0);
     -webkit-transform: translate(-$fadeload-offset, 0);
     -moz-transform: translate(-$fadeload-offset, 0);
+}
+
+
+
+/*  导航栏css  */
+#fp-nav ul li .fp-tooltip {
+  color: $color4;
 }
