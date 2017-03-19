@@ -78,12 +78,14 @@ var createEventItem = function createEventItem(year, num, links, title, descript
   return item;
 };
 
-var createContent = function createContent(year, dataArray1, position) {
+var createContent = function createContent(year, title, position, dataArray1) {
+  var offset = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
+
   var es = dataArray1.map(function (i, idx) {
-    return createEventItem(year, idx + 1, i.links, i.title, i.description);
+    return createEventItem(year, idx + 1 + offset, i.links, i.title, i.description);
   });
   var content = {
-    yearTitle: year,
+    yearTitle: title,
     position: position,
     events: es
   };

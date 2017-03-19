@@ -35,20 +35,55 @@
 //
 // const pageData = [p1, p2]
 
+// 分页
+// 2009 28
+// 2011 19
+// 2012 19
+// 2014 22
+// 2015 29
+// 2016 26
+
+// ----------
 
 const position = ["left", "right", "full"]
-const layout = [0, 1, 0, 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
+// const layout = [0, 1, 0, 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
+//
+// const pageData = data.map( (d, idx) => {
+//   const node = <TlNode img="img/icon_2.png" /> // change image name
+//   const content = <Content content={createContent(d.year, d.year, d.data, position[layout[idx]])} />
+//
+//   return {bgImg: "", parts:[node, content]}
+// }
+// )
+//
+// const appPages = pageData.map( (p, idx) =>
+//   <Page key={idx} page={p} />
+// )
 
-const pageData = data.map( (d, idx) => {
-  const node = <TlNode img="img/icon_2.png" /> // change image name
-  const content = <Content content={createContent(d.year, d.data, position[layout[idx]])} />
 
-  return {bgImg: "", parts:[node, content]}
+// ----------
+
+let pageStack = []
+for (const d of data) {
+  const node = <TlNode img="img/icon_2.png" />
+  console.log(d.year+ ", "+ d.chopIdx + ", typeof(d.chopIdx): " + typeof(d.chopIdx));
+  if(d.chopIdx > 0) {
+    const content1 = <Content content={createContent(d.year, d.year, position[2], d.data.slice(0, d.chopIdx))} />
+    const content2 = <Content content={createContent(d.year, "", position[2], d.data.slice(d.chopIdx, d.length), d.chopIdx)} />
+
+    pageStack.push(
+      {bgImg: "", parts:[node, content1]},
+      {bgImg: "", parts:[content2]}
+    )
+  } else {
+    const content = <Content content={createContent(d.year, d.year, position[2], d.data)} />
+    pageStack.push(
+      {bgImg: "", parts:[node, content]},
+    )
+  }
 }
-)
 
-
-const appPages = pageData.map( (p, idx) =>
+const appPages = pageStack.map( (p, idx) =>
   <Page key={idx} page={p} />
 )
 
@@ -59,7 +94,7 @@ ReactDOM.render(
 );
 
 // TODO: set anchors
-const anchors = ["Home"].concat(data.map( (d, idx) => (d.year) + "")).concat(["Thanks"])
+const anchors = ["Home"].concat(pageStack.map( (p, idx) => (idx+1) + "")).concat(["Thanks"])
 
 // Animation & Action
 

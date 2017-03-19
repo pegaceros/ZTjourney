@@ -77,12 +77,12 @@ const createEventItem = (year, num, links, title, description) => {
   return item
 }
 
-const createContent = (year, dataArray1, position) => {
+const createContent = (year, title, position, dataArray1,  offset=0) => {
   const es = dataArray1.map( (i, idx) =>
-    createEventItem(year, idx+1, i.links, i.title, i.description)
+    createEventItem(year, idx+1+offset, i.links, i.title, i.description)
   )
   const content = {
-    yearTitle: year,
+    yearTitle: title,
     position: position,
     events:es
   }

@@ -152,7 +152,9 @@ var Content = function (_React$Component4) {
           null,
           " ",
           this.props.content.yearTitle,
-          " "
+          " ",
+          this.props.content.events.length,
+          "\u4E2A\u8282\u76EE "
         ),
         eventsBlocks
       );
