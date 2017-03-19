@@ -64,24 +64,223 @@ const position = ["left", "right", "full"]
 // ----------
 
 let pageStack = []
-for (const d of data) {
-  const node = <TlNode img="img/icon_2.png" />
-  console.log(d.year+ ", "+ d.chopIdx + ", typeof(d.chopIdx): " + typeof(d.chopIdx));
-  if(d.chopIdx > 0) {
-    const content1 = <Content content={createContent(d.year, d.year, position[2], d.data.slice(0, d.chopIdx))} />
-    const content2 = <Content content={createContent(d.year, "", position[2], d.data.slice(d.chopIdx, d.length), d.chopIdx)} />
 
-    pageStack.push(
-      {bgImg: "", parts:[node, content1]},
-      {bgImg: "", parts:[content2]}
-    )
-  } else {
-    const content = <Content content={createContent(d.year, d.year, position[2], d.data)} />
-    pageStack.push(
-      {bgImg: "", parts:[node, content]},
-    )
+
+
+
+// for (const d of data) {
+//   const node = <TlNode img="img/icon000.jpeg" />
+//   console.log(d.year+ ", "+ d.chopIdx + ", typeof(d.chopIdx): " + typeof(d.chopIdx));
+  // if(d.chopIdx > 0) {
+  //   const content1 = <Content content={createContent(d.year, d.year, "full", d.data.slice(0, d.chopIdx))} />
+  //   const content2 = <Content content={createContent(d.year, "", "full", d.data.slice(d.chopIdx, d.length), d.chopIdx)} />
+  //
+  //   pageStack.push(
+  //     {bgImg: "", parts:[node, content1]},
+  //     {bgImg: "", parts:[content2]}
+  //   )
+  // } else {
+  //   const content = <Content content={createContent(d.year, d.year, "full", d.data)} />
+  //   pageStack.push(
+  //     {bgImg: "", parts:[node, content]},
+  //   )
+  // }
+// }
+
+
+const nodes = data.map( (d,idx) =>
+  <TlNode img="img/icon000.jpeg" />
+)
+
+
+const contentGenerator = (idx) => {
+  if(idx < data.length) {
+    const d = data[idx]
+
+    if(d.chopIdx > 0) {
+      const content1 = <Content content={createContent(d.year, d.year, "full", d.data.slice(0, d.chopIdx))} />
+      const content2 = <Content content={createContent(d.year, "", "full", d.data.slice(d.chopIdx, d.length), d.chopIdx)} />
+
+      return [content1, content2]
+    } else {
+      const content = <Content content={createContent(d.year, d.year, d.position, d.data)} />
+
+      return [content]
+    }
   }
 }
+
+// {bgImg: "", parts:[node, content]},
+
+const pageGenerator = (idx, parts) => {
+    return {idx: i, bgImg: "", parts:parts}
+
+}
+
+let i = 0
+let j = 0
+
+//93 95 96
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    nodes[i], contentGenerator(i++),
+    nodes[i], contentGenerator(i++),
+  ] )
+)
+
+//97 98
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~00
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~02
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~04
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    nodes[i], contentGenerator(i++),
+  ] )
+)
+
+//~06
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    nodes[i], contentGenerator(i++),
+  ] )
+)
+
+//~07
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    // nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~08
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    // nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~09
+// const c09 = contentGenerator(i++)
+// pageStack.push(
+//   pageGenerator( j++, [
+//     nodes[i], c09[0],
+//   ] )
+// )
+// pageStack.push(
+//   pageGenerator( j++, [
+//     c09[1]
+//   ] )
+// )
+
+// ~09
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    // nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~10
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    // nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~11
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    // nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~12
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    // nodes[i], contentGenerator(i++),
+  ] )
+)
+// const c12 = contentGenerator(i++)
+// pageStack.push(
+//   pageGenerator( j++, [
+//     nodes[i], c12[0],
+//   ] )
+// )
+// pageStack.push(
+//   pageGenerator( j++, [
+//     c12[1]
+//   ] )
+// )
+
+// ~13
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    // nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~14
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    // nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~15
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    // nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~16
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    // nodes[i], contentGenerator(i++),
+  ] )
+)
+
+// ~17
+pageStack.push(
+  pageGenerator( j++, [
+    nodes[i], contentGenerator(i++),
+    // nodes[i], contentGenerator(i++),
+  ] )
+)
+
 
 const appPages = pageStack.map( (p, idx) =>
   <Page key={idx} page={p} />
@@ -104,9 +303,11 @@ $('#fullpage').fullpage({
     navigationPosition: "right",
     navigationTooltips: anchors,
     // scrollBar: true
-    responsiveSlides: true,
-    responsiveWidth: 1200,
-    responsiveHeight: 720,
+    autoScrolling: false,
+    fitToSection: false,
+    // responsiveSlides: true,
+    // responsiveWidth: 12000,
+    // responsiveHeight: 7200,
 
     afterLoad: (anchorLink, index) => {
       // console.log(anchorLink + " is loaded");

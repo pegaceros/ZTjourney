@@ -149,8 +149,9 @@ var Content = function (_React$Component4) {
       var eventsGroup = [];
       if (this.props.content.position == "full") {
         var len = this.props.content.events.length;
-        var leftEvents = this.props.content.events.slice(0, len / 2);
-        var rightEvents = this.props.content.events.slice(len / 2, len);
+        var mid = Math.ceil(len / 2);
+        var leftEvents = this.props.content.events.slice(0, mid);
+        var rightEvents = this.props.content.events.slice(mid, len);
 
         eventsGroup = [leftEvents, rightEvents];
       } else {
@@ -165,9 +166,8 @@ var Content = function (_React$Component4) {
         "div",
         { className: cName },
         React.createElement(
-          "div",
-          null,
-          " ",
+          "h3",
+          { className: "content-title" },
           this.props.content.yearTitle
         ),
         eventsBlocks

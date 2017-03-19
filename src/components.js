@@ -78,8 +78,9 @@ class Content extends React.Component {
     var eventsGroup = [];
     if (this.props.content.position == "full") {
       const len = this.props.content.events.length;
-      const leftEvents = this.props.content.events.slice(0, len/2);
-      const rightEvents = this.props.content.events.slice(len/2, len);
+      const mid = Math.ceil(len / 2);
+      const leftEvents = this.props.content.events.slice(0, mid);
+      const rightEvents = this.props.content.events.slice(mid, len);
 
       eventsGroup = [leftEvents, rightEvents];
     } else {
@@ -92,7 +93,7 @@ class Content extends React.Component {
 
     return (
       <div className={cName}>
-        <div> {this.props.content.yearTitle}</div>
+        <h3 className="content-title">{this.props.content.yearTitle}</h3>
         {eventsBlocks}
       </div>
     )

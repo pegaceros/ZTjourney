@@ -124,6 +124,7 @@ body {
 
     .zt-tl-node {
         bottom: $timeline-top-tail;
+        margin: 0;
     }
 }
 
@@ -135,6 +136,7 @@ body {
 
     .zt-tl-node {
         top: $timeline-top-tail;
+        margin: 0;
     }
 }
 
@@ -142,7 +144,8 @@ body {
     width: $tl-node-width;
     height: $tl-node-width;
     border-radius: 50%;
-    background: $color3;
+    margin: $padding 0 $padding 0;
+    // background: $color3;
     position: absolute;
     z-index: 10;
     left: calc(50% - 30px);
@@ -167,9 +170,14 @@ body {
 
 .zt-tl-content {
     // background: green;
-    display: inline-block;
+    // display: block;
     // width: calc(50% - #{$tl-node-width}/2 - #{$padding}*2);
     // position: absolute;
+    margin: $padding 0 $padding 0;
+    .content-title {
+      // background-color: yellow;
+      color: $color4;
+    }
 }
 // .left-content {
 //     margin-left: $padding;
@@ -197,9 +205,15 @@ body {
 
 .content-full {
     @extend .zt-tl-content;
+
+    display: inline-block;
     width: calc(100% - #{$padding}*2);
     margin-left: $padding;
     // background-color: blue;
+    .content-title {
+      text-align: right;
+      width: calc( (100% - #{$tl-node-width}) / 2 - #{$padding});
+    }
     .zt-events-block {
         width: calc(50% - #{$tl-node-width}/2 - #{$padding});
 
