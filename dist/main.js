@@ -1,417 +1,202 @@
 "use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// Componets
-
-// const node = {
-//   img: "img/icon_2.png"
-// };
-var TlNode = function (_React$Component) {
-  _inherits(TlNode, _React$Component);
-
-  function TlNode() {
-    _classCallCheck(this, TlNode);
-
-    return _possibleConstructorReturn(this, (TlNode.__proto__ || Object.getPrototypeOf(TlNode)).apply(this, arguments));
-  }
-
-  _createClass(TlNode, [{
-    key: "render",
-    value: function render() {
-      var nodeStyle = {
-        backgroundImage: "url(" + this.props.img + ")"
-      };
-      return React.createElement("div", { className: "zt-tl-node", style: nodeStyle });
-    }
-  }]);
-
-  return TlNode;
-}(React.Component);
-
-// const eventItem = {
-//   title: "title",
-//   thumb: "img/thumb_1.jpg",
-//   link: "http://www.bilibili.com/video/av5202457/index_1.html"
-// };
-
-
-var EventItem = function (_React$Component2) {
-  _inherits(EventItem, _React$Component2);
-
-  function EventItem() {
-    _classCallCheck(this, EventItem);
-
-    return _possibleConstructorReturn(this, (EventItem.__proto__ || Object.getPrototypeOf(EventItem)).apply(this, arguments));
-  }
-
-  _createClass(EventItem, [{
-    key: "render",
-    value: function render() {
-      var thumbStyle = {
-        backgroundImage: "url(" + this.props.eventItem.thumb + ")"
-      };
-      return React.createElement(
-        "a",
-        { className: "zt-event", href: this.props.eventItem.link, target: "_blank" },
-        React.createElement("div", { className: "zt-event-thumb", style: thumbStyle }),
-        React.createElement(
-          "div",
-          { className: "zt-event-title" },
-          this.props.eventItem.title
-        )
-      );
-    }
-  }]);
-
-  return EventItem;
-}(React.Component);
-
-var EventsBlock = function (_React$Component3) {
-  _inherits(EventsBlock, _React$Component3);
-
-  function EventsBlock() {
-    _classCallCheck(this, EventsBlock);
-
-    return _possibleConstructorReturn(this, (EventsBlock.__proto__ || Object.getPrototypeOf(EventsBlock)).apply(this, arguments));
-  }
-
-  _createClass(EventsBlock, [{
-    key: "render",
-    value: function render() {
-      var eventItems = this.props.events.map(function (e, idx) {
-        return React.createElement(EventItem, { key: idx, eventItem: e });
-      });
-      return React.createElement(
-        "div",
-        { className: "zt-events-block" },
-        eventItems
-      );
-    }
-  }]);
-
-  return EventsBlock;
-}(React.Component);
-
-// TODO: 编辑内容
-
-
-var LandingPage = function (_React$Component4) {
-  _inherits(LandingPage, _React$Component4);
-
-  function LandingPage() {
-    _classCallCheck(this, LandingPage);
-
-    return _possibleConstructorReturn(this, (LandingPage.__proto__ || Object.getPrototypeOf(LandingPage)).apply(this, arguments));
-  }
-
-  _createClass(LandingPage, [{
-    key: "render",
-    value: function render() {
-      var pageStyle = {
-        backgroundImage: "url(img/bg_0.jpg)",
-        backgroundSize: "cover"
-      };
-      return React.createElement(
-        "div",
-        { className: "section", style: pageStyle },
-        React.createElement(
-          "div",
-          { className: "zt-landing-page" },
-          React.createElement(
-            "div",
-            { className: "zt-top" },
-            React.createElement(
-              "div",
-              { className: "zt-tl-header" },
-              React.createElement(
-                "div",
-                { className: "zt-tl-message fade-in-down" },
-                React.createElement(
-                  "h2",
-                  null,
-                  "\u5468\u6D9B\u7684\u5947\u5999\u5192\u9669"
-                ),
-                React.createElement(
-                  "h3",
-                  null,
-                  "TaoTao's Marvellous Adventure"
-                )
-              ),
-              React.createElement(TlNode, { img: "img/icon_2.png" })
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return LandingPage;
-}(React.Component);
-
-// TODO: 编辑内容
-
-
-var EndingPage = function (_React$Component5) {
-  _inherits(EndingPage, _React$Component5);
-
-  function EndingPage() {
-    _classCallCheck(this, EndingPage);
-
-    return _possibleConstructorReturn(this, (EndingPage.__proto__ || Object.getPrototypeOf(EndingPage)).apply(this, arguments));
-  }
-
-  _createClass(EndingPage, [{
-    key: "render",
-    value: function render() {
-      var pageStyle = {
-        backgroundImage: "url(img/bg_0.jpg)",
-        backgroundSize: "cover"
-      };
-      return React.createElement(
-        "div",
-        { className: "section", style: pageStyle },
-        React.createElement(
-          "div",
-          { className: "zt-ending-page" },
-          React.createElement(
-            "div",
-            { className: "zt-bottom" },
-            React.createElement(
-              "div",
-              { className: "zt-tl-footer" },
-              React.createElement(TlNode, { img: "img/icon_2.png" }),
-              React.createElement(
-                "div",
-                { className: "zt-tl-message fade-in-up" },
-                React.createElement(
-                  "h2",
-                  null,
-                  "\u8C22\u8C22\u60A8\u4E3A\u4E16\u754C\u5E26\u6765\u7F8E\u3002"
-                ),
-                React.createElement(
-                  "h3",
-                  null,
-                  "Thank you for bringing beauty into the world!"
-                )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return EndingPage;
-}(React.Component);
-
-// const page = {
-//   nodeImg: "img/icon_1.png",
-//   bgImg: "img/bg_1.jpg",
-//   date: "2015",
-//   title: "真情无限",
-//   description: "环保环保环保",
-//   link: "http://www.bilibili.com/video/av5202457/index_2.html",
-//   eventItem: eventItem
-// };
-
-
-var Page = function (_React$Component6) {
-  _inherits(Page, _React$Component6);
-
-  function Page() {
-    _classCallCheck(this, Page);
-
-    return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).apply(this, arguments));
-  }
-
-  _createClass(Page, [{
-    key: "render",
-    value: function render() {
-      var pageStyle = {
-        backgroundImage: "url(" + this.props.page.bgImg + ")",
-        backgroundSize: "cover"
-      };
-
-      return React.createElement(
-        "div",
-        { className: "section", style: pageStyle },
-        React.createElement(
-          "div",
-          { className: "zt-tl-block" },
-          React.createElement(TlNode, { img: this.props.page.nodeImg }),
-          React.createElement(
-            "div",
-            { className: "zt-tl-content fade-in-right" },
-            React.createElement(
-              "h4",
-              { className: "zl-tl-date" },
-              this.props.page.date
-            ),
-            React.createElement(
-              "h3",
-              { className: "zl-tl-title" },
-              this.props.page.title
-            ),
-            React.createElement(
-              "p",
-              { className: "zl-tl-description>" },
-              this.props.page.description
-            )
-          ),
-          React.createElement(
-            "div",
-            { className: "zt-tl-content fade-in-left" },
-            React.createElement(EventsBlock, { events: this.props.page.events })
-          )
-        )
-      );
-    }
-  }]);
-
-  return Page;
-}(React.Component);
-
-// class Page extends React.Component {
-//   render() {
-//     const pageStyle = {
-//       backgroundImage: "url(" + this.props.page.bgImg + ")",
-//       backgroundSize: "cover",
-//     };
+// const pageList = [page1, page2 //, page3, page4, page5,
+//   // page1, page2, page3, page4, page5,
+//   // page1, page2, page3, page4, page5,
+//   // page1, page2, page3, page4, page5,
+//   // page1, page2, page3, page4, page5
+// ];
 //
-//     return (
-//       <div className="section" style={pageStyle}>
-//           <div className="zt-tl-block">
-//               <TlNode img={this.props.page.nodeImg} />
-//               <div className="zt-tl-content">
-//                   <h4 className="zl-tl-date">{this.props.page.date}</h4>
-//                   <h3 className="zl-tl-title">{this.props.page.title}</h3>
-//                   <p className="zl-tl-description>">{this.props.page.description}
-//                   </p>
-//               </div>
-//               <div className="zt-tl-content">
-//                   <a href={this.props.page.link} target="_blank">
-//                       <img src="" data-src={this.props.page.thumbnail}></img>
-//                   </a>
-//               </div>
-//           </div>
-//       </div>
-//     );
-//   }
+//
+// // Render
+//
+// const pages = pageList.map( (page, idx) =>
+//   <Page key={idx} page={page} />
+// );
+
+
+// const node10 = <TlNode img="img/icon00.jpeg" />
+// const c10 = <Content content={createContent(2010, data2010, "right")} />
+//
+// const node02 = <TlNode img="img/icon_2.png" />
+// const c02 = <Content content={createContent(2002, data2002, "left")} />
+//
+// const p1 = {
+//   bgImg: "",
+//   parts: [node02, c02]
+// }
+//
+// const p2 = {
+//   bgImg: "",
+//   parts: [node02, c02, node10, c10]
+// }
+//
+// const pageData = [p1, p2]
+
+// 分页
+// 2009 28
+// 2011 19
+// 2012 19
+// 2014 22
+// 2015 29
+// 2016 26
+
+// ----------
+
+var position = ["left", "right", "full"];
+// const layout = [0, 1, 0, 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
+//
+// const pageData = data.map( (d, idx) => {
+//   const node = <TlNode img="img/icon_2.png" /> // change image name
+//   const content = <Content content={createContent(d.year, d.year, d.data, position[layout[idx]])} />
+//
+//   return {bgImg: "", parts:[node, content]}
+// }
+// )
+//
+// const appPages = pageData.map( (p, idx) =>
+//   <Page key={idx} page={p} />
+// )
+
+
+// ----------
+
+var pageStack = [];
+
+// for (const d of data) {
+//   const node = <TlNode img="img/icon000.jpeg" />
+//   console.log(d.year+ ", "+ d.chopIdx + ", typeof(d.chopIdx): " + typeof(d.chopIdx));
+// if(d.chopIdx > 0) {
+//   const content1 = <Content content={createContent(d.year, d.year, "full", d.data.slice(0, d.chopIdx))} />
+//   const content2 = <Content content={createContent(d.year, "", "full", d.data.slice(d.chopIdx, d.length), d.chopIdx)} />
+//
+//   pageStack.push(
+//     {bgImg: "", parts:[node, content1]},
+//     {bgImg: "", parts:[content2]}
+//   )
+// } else {
+//   const content = <Content content={createContent(d.year, d.year, "full", d.data)} />
+//   pageStack.push(
+//     {bgImg: "", parts:[node, content]},
+//   )
+// }
 // }
 
-var App = function (_React$Component7) {
-  _inherits(App, _React$Component7);
 
-  function App() {
-    _classCallCheck(this, App);
-
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-  }
-
-  _createClass(App, [{
-    key: "render",
-    value: function render() {
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(LandingPage, null),
-        this.props.pages,
-        React.createElement(EndingPage, null)
-      );
-    }
-  }]);
-
-  return App;
-}(React.Component);
-
-// Dummy data
-
-var eventItem1 = {
-  title: "2016春晚",
-  thumb: "img/thumb_1.jpg",
-  link: "http://www.bilibili.com/video/av5202457/index_1.html"
-};
-var eventItem2 = {
-  title: "2015中国谜语大会",
-  thumb: "img/thumb_2.jpg",
-  link: "http://www.bilibili.com/video/av5202457/index_2.html"
-};
-var eventItem3 = {
-  title: "筑梦路上",
-  thumb: "img/thumb_3.jpg",
-  link: "http://www.bilibili.com/video/av5202457/index_3.html"
-};
-
-var page1 = {
-  nodeImg: "img/icon_1.png",
-  bgImg: "",
-  date: "year1",
-  title: "真情无限",
-  description: "环保环保环保",
-  link: "http://www.bilibili.com/video/av5202457/index_2.html",
-  events: [eventItem1, eventItem2, eventItem1, eventItem2]
-};
-
-var page2 = {
-  nodeImg: "img/icon_2.png",
-  bgImg: "img/bg_2.jpg",
-  date: "year2",
-  title: "春节联欢晚会2016",
-  description: "2016央视春晚主持阵容发布：在中央电视台一号演播大厅主会场的共有六位主持人，分别是周涛、朱军、董卿、撒贝宁、李思思和尼格买提。福建泉州分会场：李佳明、赵琳硕；陕西西安分会场：朱迅、徐杰；广东广州分会场：任鲁豫、邓璐；内蒙古呼伦贝尔分会场：马跃、欧仁图雅。",
-  link: "http://www.bilibili.com/video/av5202457/index_1.html",
-  events: [eventItem2, eventItem3, eventItem1, eventItem3, eventItem1, eventItem2]
-};
-
-var page3 = {
-  nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_3.png",
-  date: "year3",
-  title: "Dream",
-  description: "BLABLABLABLABLABLABL",
-  link: "http://www.bilibili.com/video/av5202457/index_3.html",
-  events: [eventItem3, eventItem1, eventItem3, eventItem2, eventItem1]
-};
-
-var page4 = {
-  nodeImg: "img/icon_2.png",
-  bgImg: "img/bg_0.jpg",
-  date: "year4",
-  title: "",
-  description: "",
-  link: "http://www.bilibili.com/video/av5202457/index_3.html",
-  events: [eventItem3, eventItem2, eventItem1, eventItem2, eventItem1, eventItem3, eventItem2]
-};
-
-var page5 = {
-  nodeImg: "img/icon_1.png",
-  bgImg: "img/bg_1.jpg",
-  date: "year5",
-  title: "",
-  description: "",
-  link: "http://www.bilibili.com/video/av5202457/index_3.html",
-  events: [eventItem3, eventItem1, eventItem1, eventItem2, eventItem1, eventItem3, eventItem1, eventItem3]
-};
-
-var pageList = [page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5, page1, page2, page3, page4, page5];
-
-// Render
-
-var pages = pageList.map(function (page, idx) {
-  return React.createElement(Page, { key: idx, page: page });
+var nodes = data.map(function (d, idx) {
+  return React.createElement(TlNode, { img: "img/icon000.jpeg" });
 });
 
-ReactDOM.render(React.createElement(App, { pages: pages }), document.getElementById('fullpage'));
+var contentGenerator = function contentGenerator(idx) {
+  if (idx < data.length) {
+    var d = data[idx];
+
+    if (d.chopIdx > 0) {
+      var content1 = React.createElement(Content, { content: createContent(d.year, d.year, "full", d.data.slice(0, d.chopIdx)) });
+      var content2 = React.createElement(Content, { content: createContent(d.year, "", "full", d.data.slice(d.chopIdx, d.length), d.chopIdx) });
+
+      return [content1, content2];
+    } else {
+      var content = React.createElement(Content, { content: createContent(d.year, d.year, d.position, d.data) });
+
+      return [content];
+    }
+  }
+};
+
+// {bgImg: "", parts:[node, content]},
+
+var pageGenerator = function pageGenerator(idx, parts) {
+  return { idx: i, bgImg: "", parts: parts };
+};
+
+var i = 0;
+var j = 0;
+
+//93 95 96
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++), nodes[i], contentGenerator(i++), nodes[i], contentGenerator(i++)]));
+
+//97 98
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++), nodes[i], contentGenerator(i++)]));
+
+// ~00
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++), nodes[i], contentGenerator(i++)]));
+
+// ~02
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++), nodes[i], contentGenerator(i++)]));
+
+// ~04
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++), nodes[i], contentGenerator(i++)]));
+
+//~06
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++), nodes[i], contentGenerator(i++)]));
+
+//~07
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
+
+// ~08
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
+
+// ~09
+// const c09 = contentGenerator(i++)
+// pageStack.push(
+//   pageGenerator( j++, [
+//     nodes[i], c09[0],
+//   ] )
+// )
+// pageStack.push(
+//   pageGenerator( j++, [
+//     c09[1]
+//   ] )
+// )
+
+// ~09
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
+
+// ~10
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
+
+// ~11
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
+
+// ~12
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
+// const c12 = contentGenerator(i++)
+// pageStack.push(
+//   pageGenerator( j++, [
+//     nodes[i], c12[0],
+//   ] )
+// )
+// pageStack.push(
+//   pageGenerator( j++, [
+//     c12[1]
+//   ] )
+// )
+
+// ~13
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
+
+// ~14
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
+
+// ~15
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
+
+// ~16
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
+
+// ~17
+pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
+
+var appPages = pageStack.map(function (p, idx) {
+  return React.createElement(Page, { key: idx, page: p });
+});
+
+ReactDOM.render(React.createElement(App, { pages: appPages }), document.getElementById('fullpage'));
 
 // TODO: set anchors
-var anchors = ["Home"].concat(pageList.map(function (i, idx) {
-  return idx + 1993 + "";
+var anchors = ["Home"].concat(pageStack.map(function (p, idx) {
+  return idx + 1 + "";
 })).concat(["Thanks"]);
 
 // Animation & Action
@@ -422,9 +207,11 @@ $('#fullpage').fullpage({
   navigationPosition: "right",
   navigationTooltips: anchors,
   // scrollBar: true
-  responsiveSlides: true,
-  responsiveWidth: 800,
-  responsiveHeight: 480,
+  autoScrolling: false,
+  fitToSection: false,
+  // responsiveSlides: true,
+  // responsiveWidth: 12000,
+  // responsiveHeight: 7200,
 
   afterLoad: function afterLoad(anchorLink, index) {
     // console.log(anchorLink + " is loaded");
