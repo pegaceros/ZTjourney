@@ -131,7 +131,7 @@ class LandingPage extends React.Component {
                       <div className="zt-tl-message fade-in-down">
                           <h3>TaoTao's Marvellous Adventure</h3>
                       </div>
-                      <TlNode img="img/icon000.jpeg" />
+                      <TlNode img="img/icon/icon_0.jpg" />
                   </div>
               </div>
 
@@ -153,7 +153,7 @@ class EndingPage extends React.Component {
           <div className="zt-ending-page">
               <div className="zt-bottom">
                   <div className="zt-tl-footer">
-                      <TlNode img="img/icon000.jpeg" />
+                      <TlNode img="img/icon/icon_0.jpg" />
                       <div className="zt-tl-message fade-in-up">
                           <h3>To Be Continued</h3>
                       </div>

@@ -247,7 +247,7 @@ var LandingPage = function (_React$Component5) {
                   "TaoTao's Marvellous Adventure"
                 )
               ),
-              React.createElement(TlNode, { img: "img/icon000.jpeg" })
+              React.createElement(TlNode, { img: "img/icon/icon_0.jpg" })
             )
           )
         )
@@ -289,7 +289,7 @@ var EndingPage = function (_React$Component6) {
             React.createElement(
               "div",
               { className: "zt-tl-footer" },
-              React.createElement(TlNode, { img: "img/icon000.jpeg" }),
+              React.createElement(TlNode, { img: "img/icon/icon_0.jpg" }),
               React.createElement(
                 "div",
                 { className: "zt-tl-message fade-in-up" },

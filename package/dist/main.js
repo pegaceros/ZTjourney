@@ -84,7 +84,7 @@ var pageStack = [];
 
 
 var nodes = data.map(function (d, idx) {
-  return React.createElement(TlNode, { img: "img/icon000.jpeg" });
+  return React.createElement(TlNode, { img: "img/icon/icon_" + (idx % 18 + 1) + ".jpg" });
 });
 
 var contentGenerator = function contentGenerator(idx) {

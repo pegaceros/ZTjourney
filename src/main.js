@@ -89,7 +89,7 @@ let pageStack = []
 
 
 const nodes = data.map( (d,idx) =>
-  <TlNode img="img/icon000.jpeg" />
+  <TlNode img={"img/icon/icon_" + (idx % 18 + 1) +".jpg"} />
 )
 
 
