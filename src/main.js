@@ -297,7 +297,29 @@ ReactDOM.render(
 );
 
 // TODO: set anchors
-const anchors = ["Home"].concat(pageStack.map( (p, idx) => (idx+1) + "")).concat(["Thanks"])
+// const anchors = ["Home"].concat(pageStack.map( (p, idx) => (idx+1) + "")).concat(["Thanks"])
+const anchors = [
+  "Home",
+  "1993~96",
+  "1997~98",
+  "1999~00",
+  "2001~02",
+  "2003~04",
+  "2005~06",
+  "2007",
+  "2008",
+  "2009",
+  "2010",
+  "2011",
+  "2012",
+  "2013",
+  "2014",
+  "2015",
+  "2016",
+  "2017",
+  "Thanks"
+]
+
 
 // Animation & Action
 
