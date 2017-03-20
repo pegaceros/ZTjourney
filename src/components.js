@@ -175,8 +175,11 @@ class Page extends React.Component {
   render() {
     const pageStyle = {
       backgroundImage: "url(" + this.props.page.bgImg + ")",
-      backgroundSize: "cover",
-      backgroundAttachment: "fixed"
+      // backgroundSize: "contain",
+      // backgroundSize: "auto 100%",
+      backgroundAttachment: "fixed",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: this.props.page.bgPosition
     };
 
     return (

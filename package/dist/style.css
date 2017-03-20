@@ -31,6 +31,11 @@ html {
 body {
   font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif; }
 
+.zt-container {
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-attachment: fixed; }
+
 .zt-bottom,
 .zt-top {
   max-width: 1000px;

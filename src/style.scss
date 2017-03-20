@@ -74,7 +74,10 @@ body {
 
 .zt-container {
     // position: relative;
-    // background-color: black;
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    // background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .zt-landing-page {
