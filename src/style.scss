@@ -271,8 +271,12 @@ body {
       // background-color: yellow;
       height: calc(#{$item-w} * #{$item-ratio-bottom});
 
-      padding: 4px;
+      padding: 6px;
       text-align: center;
+      text-shadow: 0 4px 10px rgba(255, 255, 255, 1),
+                   0 -4px 10px rgba(255, 255, 255, 1),
+                   4px 0 10px rgba(255, 255, 255, 1),
+                   -4px 0 10px rgba(255, 255, 255, 1);
       font-size: 14px;
       font-weight: 300;
       line-height: 18px;
@@ -290,6 +294,10 @@ body {
         // min-height: calc(#{$item-min-w} * #{$item-ratio});
         // border-radius: $border-radius;
         overflow: hidden;
+        // box-shadow: 0 4px 10px rgba(255,255,255,1),
+        //             0 -4px 10px rgba(255,255,255,1),
+        //             4px 0 10px rgba(255,255,255,1),
+        //             -4px 0 10px rgba(255,255,255,1);
         transition: all 0.4s ease;
         -webkit-transition: all 0.4s ease;
         -moz-transition: all 0.4s ease;
@@ -362,7 +370,7 @@ body {
           -webkit-transform: translate(0, -10px);
           -moz-transform: translate(0, -10px);
 
-          box-shadow: 0 11px 54px -9px rgba(0,0,0,0.5);
+          box-shadow: 0 11px 54px -9px rgba(0,0,0,0.8);
         }
 
         .zt-event-title {
