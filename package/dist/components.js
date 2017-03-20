@@ -204,7 +204,7 @@ var LandingPage = function (_React$Component5) {
     key: "render",
     value: function render() {
       var pageStyle = {
-        backgroundImage: "", //url(img/bg_0.jpeg)
+        backgroundImage: "url(img/top.jpeg)", //url(img/bg_0.jpeg)
         backgroundSize: "cover"
       };
       return React.createElement(

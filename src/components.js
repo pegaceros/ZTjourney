@@ -115,7 +115,7 @@ class Content extends React.Component {
 class LandingPage extends React.Component {
   render () {
     const pageStyle = {
-      backgroundImage: "", //url(img/bg_0.jpeg)
+      backgroundImage: "url(img/top.jpeg)", //url(img/bg_0.jpeg)
       backgroundSize: "cover",
     };
     return (
