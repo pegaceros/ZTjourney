@@ -337,8 +337,11 @@ var Page = function (_React$Component7) {
     value: function render() {
       var pageStyle = {
         backgroundImage: "url(" + this.props.page.bgImg + ")",
-        backgroundSize: "cover",
-        backgroundAttachment: "fixed"
+        // backgroundSize: "contain",
+        // backgroundSize: "auto 100%",
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: this.props.page.bgPosition
       };
 
       return React.createElement(
