@@ -113,7 +113,8 @@ const contentGenerator = (idx) => {
 // {bgImg: "", parts:[node, content]},
 
 const pageGenerator = (idx, parts) => {
-    return {idx: i, bgImg: "", parts:parts}
+    const bg = ["img/bg_0.jpeg", "img/bg_1.jpg", "img/bg_2.jpg", "img/bg_3.PNG"]
+    return {idx: i, bgImg: bg[idx % 4], parts:parts}
 
 }
 

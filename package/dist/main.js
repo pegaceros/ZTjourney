@@ -107,7 +107,8 @@ var contentGenerator = function contentGenerator(idx) {
 // {bgImg: "", parts:[node, content]},
 
 var pageGenerator = function pageGenerator(idx, parts) {
-  return { idx: i, bgImg: "", parts: parts };
+  var bg = ["img/bg_0.jpeg", "img/bg_1.jpg", "img/bg_2.jpg", "img/bg_3.PNG"];
+  return { idx: i, bgImg: bg[idx % 4], parts: parts };
 };
 
 var i = 0;
