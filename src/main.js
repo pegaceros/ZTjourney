@@ -111,13 +111,13 @@ const contentGenerator = (idx) => {
 }
 
 // {bgImg: "", parts:[node, content]},
-
+const bg = ["img/bg/bg_1.png", "img/bg/bg_2.png", "img/bg/bg_3.png", "img/bg/bg_4.png", "img/bg/bg_5.png"]
 const pageGenerator = (idx, parts) => {
-    const bg = ["img/1.png", "img/2.png"] //"img/bg_1.jpg",
+     //"img/bg_1.jpg",
     const bgP = ["90% 0%", "10% 0%"]
     // const bg = ["img/bg_2.jpg", "img/bg_3.png", "img/bg_0.jpeg"] //"img/bg_1.jpg",
     // const bg = ["", "", "", ""]
-    return {idx: i, bgImg: bg[idx % 2], bgPosition: bgP[idx %2], parts:parts}
+    return {idx: i, bgImg: bg[idx % 5], bgPosition: bgP[idx % 2], parts:parts}
 
 }
 
