@@ -115,6 +115,15 @@ body {
     // background-color: green;
     position: absolute;
     top: calc(#{$timeline-top-tail} + 80px);
+
+    h3 {
+      // font-size: 14px;
+
+      span {
+        font-size: 13px;
+        font-weight: lighter;
+      }
+    }
   }
   .zt-blessing {
     // background-color: yellow;

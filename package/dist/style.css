@@ -52,6 +52,9 @@ body {
 .zt-bottom .bottom-content {
   position: absolute;
   top: calc(10% + 80px); }
+  .zt-bottom .bottom-content h3 span {
+    font-size: 13px;
+    font-weight: lighter; }
 
 .zt-bottom .zt-blessing {
   text-align: left;

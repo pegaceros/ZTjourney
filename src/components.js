@@ -111,7 +111,6 @@ class Content extends React.Component {
 }
 
 
-// TODO: 编辑内容
 class LandingPage extends React.Component {
   render () {
     const pageStyle = {
@@ -153,7 +152,6 @@ class BlessItem extends React.Component {
   }
 }
 
-// TODO: 编辑内容
 class EndingPage extends React.Component {
   render () {
     const pageStyle = {
@@ -176,7 +174,7 @@ class EndingPage extends React.Component {
                   </div>
                   <div className="bottom-content">
                       <h2>感谢您为世界带来美。</h2>
-                      <h3>Thank you for bringing beauty into the world.</h3>
+                      <h3>Thank you for bringing beauty into the world.  <span>(故人去又来)</span></h3>
                       <div className="zt-blessing">
                         {listItems}
                       </div>

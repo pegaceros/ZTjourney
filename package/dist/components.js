@@ -188,9 +188,6 @@ var Content = function (_React$Component4) {
   return Content;
 }(React.Component);
 
-// TODO: 编辑内容
-
-
 var LandingPage = function (_React$Component5) {
   _inherits(LandingPage, _React$Component5);
 
@@ -289,9 +286,6 @@ var BlessItem = function (_React$Component6) {
   return BlessItem;
 }(React.Component);
 
-// TODO: 编辑内容
-
-
 var EndingPage = function (_React$Component7) {
   _inherits(EndingPage, _React$Component7);
 
@@ -346,7 +340,12 @@ var EndingPage = function (_React$Component7) {
               React.createElement(
                 "h3",
                 null,
-                "Thank you for bringing beauty into the world."
+                "Thank you for bringing beauty into the world.  ",
+                React.createElement(
+                  "span",
+                  null,
+                  "(\u6545\u4EBA\u53BB\u53C8\u6765)"
+                )
               ),
               React.createElement(
                 "div",
