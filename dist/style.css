@@ -4,23 +4,23 @@
 /* RGB */
 /* Variables */
 /* Animation */
-@keyframes pop {
+@keyframes jump {
   0% {
-    transform: scale(1); }
+    transform: translateY(0); }
   100% {
-    transform: scale(1.1); } }
+    transform: translateY(-10px); } }
 
-@-moz-keyframes pop {
+@-moz-keyframes jump {
   0% {
-    transform: scale(1); }
+    transform: translateY(0); }
   100% {
-    transform: scale(1.1); } }
+    transform: translateY(-10px); } }
 
-@-webkit-keyframes pop {
+@-webkit-keyframes jump {
   0% {
-    transform: scale(1); }
+    transform: translateY(0); }
   100% {
-    transform: scale(1.1); } }
+    transform: translateY(-10px); } }
 
 /* Style */
 html {
@@ -38,16 +38,32 @@ body {
 
 .zt-bottom,
 .zt-top {
-  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  max-height: calc(100% - 60px - 20px * 3); }
+  max-height: calc(100% - 60px - 20px * 3);
+  text-shadow: 0 4px 10px white, 0 -4px 10px white, 4px 0 10px white, -4px 0 10px white; }
   .zt-bottom img,
   .zt-top img {
     max-height: 90%;
     width: auto;
     border: 2px solid #f2efea; }
+
+.zt-bottom .bottom-content {
+  position: absolute;
+  top: calc(10% + 80px); }
+
+.zt-bottom .zt-blessing {
+  text-align: left;
+  width: 90%;
+  margin: auto; }
+  .zt-bottom .zt-blessing .bless-item {
+    display: inline-block;
+    width: 30%;
+    font-size: 11px;
+    padding: 4px; }
+    .zt-bottom .zt-blessing .bless-item .bless-message::before {
+      content: "\2661 "; }
 
 .zt-tl-block::after,
 .zt-tl-footer::before,
@@ -145,14 +161,16 @@ body {
 
 .zt-event {
   display: inline-block;
+  vertical-align: top;
   margin: 6px;
   position: relative;
   width: 200px;
   height: calc(200px * (0.6 + 0.2)); }
   .zt-event .zt-event-title {
     height: calc(200px * 0.2);
-    padding: 4px;
+    padding: 6px;
     text-align: center;
+    text-shadow: 0 4px 10px white, 0 -4px 10px white, 4px 0 10px white, -4px 0 10px white;
     font-size: 14px;
     font-weight: 300;
     line-height: 18px;
@@ -197,7 +215,7 @@ body {
     transform: translate(0, -10px);
     -webkit-transform: translate(0, -10px);
     -moz-transform: translate(0, -10px);
-    box-shadow: 0 11px 54px -9px rgba(0, 0, 0, 0.5); }
+    box-shadow: 0 11px 54px -9px rgba(0, 0, 0, 0.8); }
   .zt-event:hover .zt-event-title {
     transform: translate(0, 6px);
     -webkit-transform: translate(0, 6px);
@@ -213,8 +231,8 @@ body {
     opacity: 1; }
 
 /* Effect */
-.pop {
-  animation: pop 0.6s alternate infinite;
+.jump {
+  animation: jump 0.4s alternate infinite;
   animation-timing-function: ease; }
 
 .fade-in, .fade-in-up, .fade-in-down, .fade-in-left, .fade-in-right {

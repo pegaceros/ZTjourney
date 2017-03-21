@@ -839,7 +839,7 @@ var data2015 = [{
     "description": "涛涛以总策划身份在莆田采风，亲力亲为选场地，关注当地民俗，选出优秀的节目办好此次晚会",
     "links": ["https://v.qq.com/x/page/r01616u26wq.html"]
 }, {
-    "title": "纪念中国人民抗日战争暨世界反法西斯战争胜利70周年电影推介会",
+    "title": "纪念抗日战争暨世界反法西斯战争胜利70周年电影推介会",
     "description": "周涛在推荐会上慷慨激昂的推荐影片，大气磅礴的介绍每一部优秀影片",
     "links": ["http://www.tudou.com/programs/view/1BVX97f9bGo/"]
 }, {
@@ -917,7 +917,7 @@ var data2016 = [{
     "description": "春到福来，春下黄河冰雪开。周老师，欢迎你回来，永远记得你呼台号的中国中央电视台。",
     "links": ["http://www.iqiyi.com/v_19rrla9yr0.html"]
 }, {
-    "title": "中国谜语大会（1-3场）",
+    "title": "中国谜语大会",
     "description": "周涛涛新年带你一起猜谜,和泽群互相切磋，认真猜谜的样子很可爱",
     "links": ["http://tv.cntv.cn/video/VSET100258857930/3f38180977be4dddb12389edfd3e9a96", "http://tv.cntv.cn/video/VSET100258857930/3f38180977be4dddb12389edfd3e9a96", "http://tv.cntv.cn/video/VSET100258857930/4641480fa39f46d586b1d6089946593f"]
 }, {
@@ -941,7 +941,7 @@ var data2016 = [{
     "description": "周涛主持心连心，就算下着雨，也抵挡不了你的认真，你的热情，很高兴看见你，周老师",
     "links": ["http://www.iqiyi.com/w_19rss68fft.html"]
 }, {
-    "title": "伟大的旗帜·庆祝中国共产党成立九十五周年电视文艺特别节目",
+    "title": "伟大的旗帜·中国共产党成立九十五周年特别节目",
     "description": "周涛主持，时代有你，开天辟地",
     "links": ["http://www.tudou.com/programs/view/c2SGiHMD94Q/"]
 }, {

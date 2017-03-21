@@ -84,7 +84,7 @@ var pageStack = [];
 
 
 var nodes = data.map(function (d, idx) {
-  return React.createElement(TlNode, { img: "img/icon000.jpeg" });
+  return React.createElement(TlNode, { img: "img/icon/icon_" + (idx % 18 + 1) + ".jpg" });
 });
 
 var contentGenerator = function contentGenerator(idx) {
@@ -199,9 +199,8 @@ var appPages = pageStack.map(function (p, idx) {
 ReactDOM.render(React.createElement(App, { pages: appPages }), document.getElementById('fullpage'));
 
 // TODO: set anchors
-var anchors = ["Home"].concat(pageStack.map(function (p, idx) {
-  return idx + 1 + "";
-})).concat(["Thanks"]);
+// const anchors = ["Home"].concat(pageStack.map( (p, idx) => (idx+1) + "")).concat(["Thanks"])
+var anchors = ["Home", "1993~96", "1997~98", "1999~00", "2001~02", "2003~04", "2005~06", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "Thanks"];
 
 // Animation & Action
 

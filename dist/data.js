@@ -1,93 +1,111 @@
 "use strict";
 
-// 10 年
-// TODO: deal with links
-
-// const data2002 = [
-//   {
-//     "title": "中央电视台春节联欢晚会",
-//     "description": "周涛的出场时间很短，仅仅在开场和结尾处短短的几分钟。一句“夜已深了，兴犹未尽”千回百转。",
-//     "links": [
-//       "http://www.bilibili.com/video/av5202457/index_13.html"
-//     ]
-//   },
-//   {
-//     "title": "公安部春节晚会《盛世金盾情》",
-//     "description": "周涛的表演大方自然，一如主持时的沉稳大气，又不失幽默诙谐，拿捏得当。",
-//     "links": [
-//       "http://www.tudou.com/programs/view/dWofBNMtASc/?tpa=dW5pb25faWQ9MTAzMDkzXzEwMDAwMl8wMV8wMQ&fromvsogou=1"
-//     ]
-//   },
-//   {
-//     "title": "《青山林海歌飞扬》中央电视台心连心赴伊春慰问演出",
-//     "description": "周涛与几位艺术家老师的航班由于天气原因延误，最后连夜坐火车赶到演出现场。整场演出依然呈现出自己最好的状态。",
-//     "links": [
-//       "http://www.56.com/u45/v_NTg0OTg2NTA.html",
-//       "http://www.56.com/u14/v_NTg1MDAzNzk.html"
-//     ]
-//   },
-//   {
-//     "title": "《情系大别山》2002年中央电视台心连心艺术团赴安徽霍山慰问演出",
-//     "description": "本身就是安徽人的周涛对家乡的热爱自是溢于言表，那一句“嗯你们安徽人都是好样的”更是满满的对家乡的喜爱和身为安徽人的自豪。",
-//     "links": [
-//       "http://www.tudou.com/programs/view/QV1azjzAmDI/"
-//     ]
-//   },
-// ]
-
-
-// const data2010 = [
-//   {
-//     "title": "走进世博大型明星文艺晚会",
-//     "description": "周涛主持2010年上海旅游年启动仪式",
-//     "links": ["http://v.youku.com/v_show/id_XMTQ0MTM3Njg0.html"]
-//   },
-//   {
-//     "title": "全国检查系统迎新年主题晚会为了正义的誓言",
-//     "description": "晚会由著名央视节目主持人周涛、朱军、张泽群与来自北京市检察院的检察官韩冰共同主持。",
-//     "links": ["http://www.tudou.com/programs/view/vl-JwbPUEc0/"]
-//   },
-//   {
-//     "title": "2010年央视春节联欢晚会",
-//     "description": "周涛从1996年起连续16年主持央视春节联欢晚会，是迄今为止连续主持春晚最多的女主持。",
-//     "links": ["http://www.iqiyi.com/v_19rrgzaj7c.html"]
-//   },
-//   {
-//     "title": "中央电视台戏曲春节晚会",
-//     "description": "周涛主持我国博大精深、缤纷荟萃的艺术晚会",
-//     "links": ["http://www.tudou.com/listplay/OUndYPSvFio/aO3-wF_jHEs.html"]
-//   },
-//   {
-//     "title": "百花迎春晚会",
-//     "description": "周涛主持艺术节春节大联欢晚会",
-//     "links": ["http://www.tudou.com/programs/view/5hA7Nonl3Qg/"]
-//   },
-// ]
-
+var blessing = [{
+    "message": "周涛姐生日快乐。这是第一次为你庆生认识你是《综艺大观》，《掌声响起来》让我永远难忘我会永远爱你的。",
+    "name": "小馨"
+}, {
+    "message": "周老师生日快乐噢~今年刚刚14岁的我，成长的路上一直都有你的陪伴！周老师要注意身体，家庭幸福美满~",
+    "name": "梓萌"
+}, {
+    "message": "岁月晕染了你的眉眼，始终不变的是你的初心。愿你一生喜乐无忧，永远是那个温婉而又不失刚强的小姑娘。",
+    "name": "斯琪_Qi"
+}, {
+    "message": "周主任！生日快乐！很高兴这是陪你过的第二个生日，一年里您让我学会了如何去认真做事，做好事。希望您身体健康，开心幸福！我爱您！",
+    "name": "踹儿"
+}, {
+    "message": "你是人间的四月天，每天都会多爱你一点，愿世界温柔以待我的小姑娘，陪伴是最长情的告白，周老师生日快乐！",
+    "name": "荼荼"
+}, {
+    "message": "主任生日快乐！愿你的四十九岁依然被上天眷顾，噢，那也是你自己努力修来的福分呀。祝安宁和悦。",
+    "name": "Emma"
+}, {
+    "message": "周老师生日快乐，愿你未来每一天都是好心情，幸福安康。",
+    "name": "Eclair1017"
+}, {
+    "message": "周老师生日快乐，祝您以后每天都开开心心，蜜桃们一直在你身边，不离不弃，相信我们会陪你度过每一个属于您的3.23。我们爱您，周老师。",
+    "name": "伊万"
+}, {
+    "message": "君生我未生，我生君已老。幸不生逢时，得已见君好。一日三餐愿：一愿春光好，二愿诸事了，三愿君不老。",
+    "name": "周慕卿"
+}, {
+    "message": "斯人若彩虹，遇上方知有。谢谢您这样温柔的对待这个世界，生日快乐。愿您幸福安康，万事顺意。",
+    "name": " 罐头"
+}, {
+    "message": "在最美好的年华里遇见你是我最幸运的事。亲爱的周甜甜，生日快乐。愿你被世界温柔相待、一切安好。",
+    "name": "小丫头"
+}, {
+    "message": "愿平安喜樂，長命無憂。歲月靜好，一路相隨，當滄海不再成桑田，足矣。",
+    "name": "阿紫"
+}, {
+    "message": "乍见之欢不如久伴不厌，陪伴是最长情的告白，愿能给你世间最美的告白。",
+    "name": "王小乖"
+}, {
+    "message": "愿你得你所想，有你所愿。周老师生快。",
+    "name": "喵哥"
+}, {
+    "message": "无论时光过去多少年，还是会有怦然心动的感觉啊，成为蜜桃的第五个年头，生日快乐，一切如意，我的周老师！",
+    "name": "八月的酱桃"
+}, {
+    "message": "以前我用耳朵听到你，后来我用眼睛看见你。此刻最想说的是：周老师您好，周老师谢谢您，周老师生日快乐！",
+    "name": "陸子"
+}, {
+    "message": "遇见你的时间，刚刚好。爱上你的时间不长，但我不怨艾，毕竟，此生相遇已然足够。愿你在自己的世界里永远自由，生日快乐！",
+    "name": "沐沐"
+}, {
+    "message": "有多喜欢你呢，想把你藏起来不让别人看见，只有我一个人能看的那种喜欢。亲爱的周老师 生日快乐！",
+    "name": "柚子"
+}, {
+    "message": "觉得这世间在美好的词也不能形容你在我心中的美，亲爱的周老师，生日快乐，有生的日子天天快乐！",
+    "name": "慕木"
+}, {
+    "message": "春天出生的姑娘啊，愿你的笑容永远像春天的阳光般灿烂，愿你永远都有春天般的心情！！生日快乐！！！",
+    "name": "千皓呀"
+}, {
+    "message": "最珍重的就是你留在我身上的，如同河川留给地形一样的，你对我的改变。敲打了很多次也删了很多遍，其实最想说的还是生日快乐啊周老师，我很想你。",
+    "name": "熊猫"
+}, {
+    "message": "时光缱倦了你的眉眼，你惊艳了我的年华。从此心中想的是你，口中念的是你，最心心念念的只有你 愿你安，盼你安。",
+    "name": "夂州"
+}, {
+    "message": "你是世上最酷的周涛涛，想给你整个世界的欢喜。祝最酷的周老师生日平安喜乐。",
+    "name": "Librak"
+}, {
+    "message": "你是这世上无与伦比的美丽！周老师，生日快乐！",
+    "name": "啊粒"
+}, {
+    "message": "许是你生于三月，每每看你便觉如春风般温柔、春阳般明媚。感谢你惊艳了我的春天。亲爱的周主持，生日快乐。",
+    "name": "亦美"
+}, {
+    "message": "周老师，遇见你的我比没有遇见你的我变得更好了，所以，感谢你。如果见到你，我会说，谢谢你。",
+    "name": "瑾诺"
+}, {
+    "message": "您给了我们整个最美的年华，我们只能给您最真挚的爱和最诚恳的祝福。生日快乐小公主，愿您此后岁月无忧。",
+    "name": "墨白"
+}];
 
 var createEventItem = function createEventItem(year, num, links, title, description) {
-  var thumb = ["img/thumb/", year, "-", num, ".jpg"];
+    var thumb = ["img/thumb/", year, "-", num, ".jpg"];
 
-  var item = {
-    title: title,
-    thumb: thumb.join(""),
-    description: description,
-    links: links
-    // TODO:
-  };
-  return item;
+    var item = {
+        title: title,
+        thumb: thumb.join(""),
+        description: description,
+        links: links
+        // TODO:
+    };
+    return item;
 };
 
 var createContent = function createContent(year, title, position, dataArray1) {
-  var offset = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
+    var offset = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
 
-  var es = dataArray1.map(function (i, idx) {
-    return createEventItem(year, idx + 1 + offset, i.links, i.title, i.description);
-  });
-  var content = {
-    yearTitle: title,
-    position: position,
-    events: es
-  };
-  return content;
+    var es = dataArray1.map(function (i, idx) {
+        return createEventItem(year, idx + 1 + offset, i.links, i.title, i.description);
+    });
+    var content = {
+        yearTitle: title,
+        position: position,
+        events: es
+    };
+    return content;
 };
