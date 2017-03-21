@@ -62,7 +62,7 @@ $fadeload-delay: 0s;
 html {
     color: $color4;
     background-color: white;
-    min-width: 800px;
+    min-width: 900px;
 }
 
 body {
@@ -103,16 +103,34 @@ body {
 
         h3 {
             span {
-                font-size: 13px;
+                font-size: 12px;
                 font-weight: lighter;
             }
         }
     }
 
+    .staff-list {
+      width: 90%;
+      margin: 20px auto;
+      text-align: left;
+      font-size: 12px;
+
+      .staff {
+        display: inline-block;
+        vertical-align: top;
+        margin: 6px;
+        width: 280px;
+
+        .role {
+          border-bottom: 1px solid $color4;
+        }
+      }
+    }
+
     .zt-blessing {
         text-align: left;
         width: 90%;
-        margin: auto;
+        margin: 20px auto;
 
         .bless-item {
             display: inline-block;

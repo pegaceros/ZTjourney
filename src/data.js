@@ -1898,6 +1898,16 @@ const blessing = [{
     },
 ]
 
+const staffs = [
+  ["主催", "墨白韆骥"],
+  ["网页设计制作", "来时莫徘徊"],
+  ["总编组","墨白韆骥，来时莫徘徊，千夂州，瑾诺，三岁的鸡蛋，迟小了旭"],
+  ["文编组","柚子，千皓呀，虽虚亦美，周慕卿，周涛涛的大果粒，熊猫，王小乖，梓萌，荼荼，八月的酱桃，阿紫，小馨"],
+  ["图编组","慕木，沐沐，罐头，周涛家小丫头，Librakristen，伊万，斯琪_Qi，让我先吃饭"],
+  ["资料组","Emma，六儿~Ashley，慕青衣，陸子，周涛老公，在彼清流，Andy_Thompson，猛踹，Eclair，梨子牛奶冰，桃子，荷包蛋妹妹"],
+  ["后勤组","景鲤，嘻哈嘿w，一身卿意千寻涛，周屁桃，脑洞君小K，蛋蛋，八宝饭，杨小静要good luck，废糊，heyziKai，背篓里的采茶歌，绿豆面皮汤，树树"],
+  ["特别鸣谢","木子李的李，i陈二狗，Hasenn，pegaceros，千夂州，瑾诺，千皓呀，陸子，熊猫，在彼清流，王小乖，阿紫"],
+]
 
 const createEventItem = (year, num, links, title, description) => {
   const thumb = ["img/thumb/", year, "-", num, ".jpg"]

@@ -130,6 +130,22 @@ class BlessItem extends React.Component {
   }
 }
 
+class StaffGroup extends React.Component {
+  render () {
+
+    return (
+      <div className="staff">
+        <div className="role">
+        {this.props.role}
+        </div>
+        <div className="member">
+        {this.props.member}
+        </div>
+      </div>
+    )
+  }
+}
+
 class EndingPage extends React.Component {
   render () {
     const pageStyle = {
@@ -137,8 +153,12 @@ class EndingPage extends React.Component {
       backgroundSize: "cover",
     };
 
-    const listItems = blessing.map( (b, idx) =>
+    const blessList = blessing.map( (b, idx) =>
       <BlessItem key={idx} message={b.message} name={b.name} />
+    )
+
+    const staffList = staffs.map( (s, idx) =>
+      <StaffGroup role={s[0]} member={s[1]} />
     )
     return (
       <div className="section" style={pageStyle}>
@@ -154,11 +174,14 @@ class EndingPage extends React.Component {
                       <h2>感谢您为世界带来美。</h2>
                       <h3>Thank you for bringing beauty into the world.  <span>(故人去又来)</span></h3>
                       <div className="zt-blessing">
-                        {listItems}
+                        {blessList}
+                      </div>
+
+                      <div className="staff-list">
+                        {staffList}
                       </div>
                   </div>
               </div>
-
           </div>
       </div>
     )

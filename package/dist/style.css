@@ -25,7 +25,7 @@
 html {
   color: #403d58;
   background-color: white;
-  min-width: 800px; }
+  min-width: 900px; }
 
 body {
   font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif; }
@@ -52,13 +52,26 @@ body {
   position: absolute;
   top: calc(10% + 80px); }
   .zt-bottom .bottom-content h3 span {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: lighter; }
+
+.zt-bottom .staff-list {
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 12px; }
+  .zt-bottom .staff-list .staff {
+    display: inline-block;
+    vertical-align: top;
+    margin: 6px;
+    width: 280px; }
+    .zt-bottom .staff-list .staff .role {
+      border-bottom: 1px solid #403d58; }
 
 .zt-bottom .zt-blessing {
   text-align: left;
   width: 90%;
-  margin: auto; }
+  margin: 20px auto; }
   .zt-bottom .zt-blessing .bless-item {
     display: inline-block;
     width: 30%;
