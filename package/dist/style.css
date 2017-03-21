@@ -38,16 +38,32 @@ body {
 
 .zt-bottom,
 .zt-top {
-  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  max-height: calc(100% - 60px - 20px * 3); }
+  max-height: calc(100% - 60px - 20px * 3);
+  text-shadow: 0 4px 10px white, 0 -4px 10px white, 4px 0 10px white, -4px 0 10px white; }
   .zt-bottom img,
   .zt-top img {
     max-height: 90%;
     width: auto;
     border: 2px solid #f2efea; }
+
+.zt-bottom .bottom-content {
+  position: absolute;
+  top: calc(10% + 80px); }
+
+.zt-bottom .zt-blessing {
+  text-align: left;
+  width: 90%;
+  margin: auto; }
+  .zt-bottom .zt-blessing .bless-item {
+    display: inline-block;
+    width: 30%;
+    font-size: 11px;
+    padding: 4px; }
+    .zt-bottom .zt-blessing .bless-item .bless-message::before {
+      content: "\2661 "; }
 
 .zt-tl-block::after,
 .zt-tl-footer::before,

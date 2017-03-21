@@ -204,7 +204,7 @@ var LandingPage = function (_React$Component5) {
     key: "render",
     value: function render() {
       var pageStyle = {
-        backgroundImage: "url(img/top.jpeg)", //url(img/bg_0.jpeg)
+        backgroundImage: "url(img/top.jpg)", //url(img/bg_0.jpeg)
         backgroundSize: "cover"
       };
       return React.createElement(
@@ -258,11 +258,42 @@ var LandingPage = function (_React$Component5) {
   return LandingPage;
 }(React.Component);
 
+var BlessItem = function (_React$Component6) {
+  _inherits(BlessItem, _React$Component6);
+
+  function BlessItem() {
+    _classCallCheck(this, BlessItem);
+
+    return _possibleConstructorReturn(this, (BlessItem.__proto__ || Object.getPrototypeOf(BlessItem)).apply(this, arguments));
+  }
+
+  _createClass(BlessItem, [{
+    key: "render",
+    value: function render() {
+
+      return React.createElement(
+        "div",
+        { className: "bless-item" },
+        React.createElement(
+          "div",
+          { className: "bless-message" },
+          this.props.message,
+          "(",
+          this.props.name,
+          ")"
+        )
+      );
+    }
+  }]);
+
+  return BlessItem;
+}(React.Component);
+
 // TODO: 编辑内容
 
 
-var EndingPage = function (_React$Component6) {
-  _inherits(EndingPage, _React$Component6);
+var EndingPage = function (_React$Component7) {
+  _inherits(EndingPage, _React$Component7);
 
   function EndingPage() {
     _classCallCheck(this, EndingPage);
@@ -277,6 +308,10 @@ var EndingPage = function (_React$Component6) {
         backgroundImage: "", //url(img/bg_0.jpeg)
         backgroundSize: "cover"
       };
+
+      var listItems = blessing.map(function (b, idx) {
+        return React.createElement(BlessItem, { key: idx, message: b.message, name: b.name });
+      });
       return React.createElement(
         "div",
         { className: "section", style: pageStyle },
@@ -302,16 +337,21 @@ var EndingPage = function (_React$Component6) {
             ),
             React.createElement(
               "div",
-              null,
+              { className: "bottom-content" },
               React.createElement(
-                "h1",
+                "h2",
                 null,
                 "\u611F\u8C22\u60A8\u4E3A\u4E16\u754C\u5E26\u6765\u7F8E\u3002"
               ),
               React.createElement(
-                "h2",
+                "h3",
                 null,
                 "Thank you for bringing beauty into the world."
+              ),
+              React.createElement(
+                "div",
+                { className: "zt-blessing" },
+                listItems
               )
             )
           )
@@ -323,8 +363,8 @@ var EndingPage = function (_React$Component6) {
   return EndingPage;
 }(React.Component);
 
-var Page = function (_React$Component7) {
-  _inherits(Page, _React$Component7);
+var Page = function (_React$Component8) {
+  _inherits(Page, _React$Component8);
 
   function Page() {
     _classCallCheck(this, Page);
@@ -359,8 +399,8 @@ var Page = function (_React$Component7) {
   return Page;
 }(React.Component);
 
-var App = function (_React$Component8) {
-  _inherits(App, _React$Component8);
+var App = function (_React$Component9) {
+  _inherits(App, _React$Component9);
 
   function App() {
     _classCallCheck(this, App);

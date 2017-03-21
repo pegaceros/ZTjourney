@@ -87,18 +87,61 @@ body {
 .zt-bottom,
 .zt-top {
     // color: $white;
-    max-width: $top-max-width;
+    // max-width: $top-max-width;
     margin-left: auto;
     margin-right: auto;
     // background-color: blue;
     text-align: center;
     max-height: calc(100% - #{$tl-node-width} - #{$padding} * 3);
 
+    text-shadow: 0 4px 10px rgba(255, 255, 255, 1),
+                 0 -4px 10px rgba(255, 255, 255, 1),
+                 4px 0 10px rgba(255, 255, 255, 1),
+                 -4px 0 10px rgba(255, 255, 255, 1);
+
     img {
         max-height: 90%;
         width: auto;
         border: 2px solid $color1;
     }
+}
+
+.zt-bottom {
+  .zt-tl-footer {
+    // min-height: 80px;
+  }
+
+  .bottom-content {
+    // background-color: green;
+    position: absolute;
+    top: calc(#{$timeline-top-tail} + 80px);
+  }
+  .zt-blessing {
+    // background-color: yellow;
+    text-align: left;
+    width: 90%;
+    margin: auto;
+
+    .bless-item {
+      display: inline-block;
+      width: 30%;
+      font-size: 11px;
+      padding: 4px;
+
+
+
+      .bless-message {
+        // text-align: left;
+        &::before {
+          content: "\2661 ";
+        }
+      }
+      // .bless-name {
+      //   text-align: right;
+      // }
+
+    }
+  }
 }
 
 

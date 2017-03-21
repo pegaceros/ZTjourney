@@ -115,7 +115,7 @@ class Content extends React.Component {
 class LandingPage extends React.Component {
   render () {
     const pageStyle = {
-      backgroundImage: "url(img/top.jpeg)", //url(img/bg_0.jpeg)
+      backgroundImage: "url(img/top.jpg)", //url(img/bg_0.jpeg)
       backgroundSize: "cover",
     };
     return (
@@ -141,6 +141,18 @@ class LandingPage extends React.Component {
   }
 }
 
+
+class BlessItem extends React.Component {
+  render() {
+
+    return (
+      <div className="bless-item">
+        <div className="bless-message">{this.props.message}({this.props.name})</div>
+      </div>
+    )
+  }
+}
+
 // TODO: 编辑内容
 class EndingPage extends React.Component {
   render () {
@@ -148,6 +160,10 @@ class EndingPage extends React.Component {
       backgroundImage: "", //url(img/bg_0.jpeg)
       backgroundSize: "cover",
     };
+
+    const listItems = blessing.map( (b, idx) =>
+      <BlessItem key={idx} message={b.message} name={b.name} />
+    )
     return (
       <div className="section" style={pageStyle}>
           <div className="zt-ending-page">
@@ -158,9 +174,12 @@ class EndingPage extends React.Component {
                           <h3>To Be Continued</h3>
                       </div>
                   </div>
-                  <div>
-                      <h1>感谢您为世界带来美。</h1>
-                      <h2>Thank you for bringing beauty into the world.</h2>
+                  <div className="bottom-content">
+                      <h2>感谢您为世界带来美。</h2>
+                      <h3>Thank you for bringing beauty into the world.</h3>
+                      <div className="zt-blessing">
+                        {listItems}
+                      </div>
                   </div>
               </div>
 
