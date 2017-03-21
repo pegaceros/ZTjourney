@@ -1,87 +1,6 @@
 "use strict";
 
-// const pageList = [page1, page2 //, page3, page4, page5,
-//   // page1, page2, page3, page4, page5,
-//   // page1, page2, page3, page4, page5,
-//   // page1, page2, page3, page4, page5,
-//   // page1, page2, page3, page4, page5
-// ];
-//
-//
-// // Render
-//
-// const pages = pageList.map( (page, idx) =>
-//   <Page key={idx} page={page} />
-// );
-
-
-// const node10 = <TlNode img="img/icon00.jpeg" />
-// const c10 = <Content content={createContent(2010, data2010, "right")} />
-//
-// const node02 = <TlNode img="img/icon_2.png" />
-// const c02 = <Content content={createContent(2002, data2002, "left")} />
-//
-// const p1 = {
-//   bgImg: "",
-//   parts: [node02, c02]
-// }
-//
-// const p2 = {
-//   bgImg: "",
-//   parts: [node02, c02, node10, c10]
-// }
-//
-// const pageData = [p1, p2]
-
-// 分页
-// 2009 28
-// 2011 19
-// 2012 19
-// 2014 22
-// 2015 29
-// 2016 26
-
-// ----------
-
-var position = ["left", "right", "full"];
-// const layout = [0, 1, 0, 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
-//
-// const pageData = data.map( (d, idx) => {
-//   const node = <TlNode img="img/icon_2.png" /> // change image name
-//   const content = <Content content={createContent(d.year, d.year, d.data, position[layout[idx]])} />
-//
-//   return {bgImg: "", parts:[node, content]}
-// }
-// )
-//
-// const appPages = pageData.map( (p, idx) =>
-//   <Page key={idx} page={p} />
-// )
-
-
-// ----------
-
 var pageStack = [];
-
-// for (const d of data) {
-//   const node = <TlNode img="img/icon000.jpeg" />
-//   console.log(d.year+ ", "+ d.chopIdx + ", typeof(d.chopIdx): " + typeof(d.chopIdx));
-// if(d.chopIdx > 0) {
-//   const content1 = <Content content={createContent(d.year, d.year, "full", d.data.slice(0, d.chopIdx))} />
-//   const content2 = <Content content={createContent(d.year, "", "full", d.data.slice(d.chopIdx, d.length), d.chopIdx)} />
-//
-//   pageStack.push(
-//     {bgImg: "", parts:[node, content1]},
-//     {bgImg: "", parts:[content2]}
-//   )
-// } else {
-//   const content = <Content content={createContent(d.year, d.year, "full", d.data)} />
-//   pageStack.push(
-//     {bgImg: "", parts:[node, content]},
-//   )
-// }
-// }
-
 
 var nodes = data.map(function (d, idx) {
   return React.createElement(TlNode, { img: "img/icon/icon_" + (idx % 18 + 1) + ".jpg" });
@@ -104,13 +23,9 @@ var contentGenerator = function contentGenerator(idx) {
   }
 };
 
-// {bgImg: "", parts:[node, content]},
 var bg = ["img/bg/bg_1.png", "img/bg/bg_2.png", "img/bg/bg_3.png", "img/bg/bg_4.png", "img/bg/bg_5.png"];
 var pageGenerator = function pageGenerator(idx, parts) {
-  //"img/bg_1.jpg",
-  var bgP = ["90% 0%", "10% 0%"];
-  // const bg = ["img/bg_2.jpg", "img/bg_3.png", "img/bg_0.jpeg"] //"img/bg_1.jpg",
-  // const bg = ["", "", "", ""]
+  var bgP = ["10% 0%", "90% 0%"];
   return { idx: i, bgImg: bg[idx % 5], bgPosition: bgP[idx % 2], parts: parts };
 };
 
@@ -140,19 +55,6 @@ pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
 
 // ~08
 pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
-
-// ~09
-// const c09 = contentGenerator(i++)
-// pageStack.push(
-//   pageGenerator( j++, [
-//     nodes[i], c09[0],
-//   ] )
-// )
-// pageStack.push(
-//   pageGenerator( j++, [
-//     c09[1]
-//   ] )
-// )
 
 // ~09
 pageStack.push(pageGenerator(j++, [nodes[i], contentGenerator(i++)]));
@@ -198,8 +100,6 @@ var appPages = pageStack.map(function (p, idx) {
 
 ReactDOM.render(React.createElement(App, { pages: appPages }), document.getElementById('fullpage'));
 
-// TODO: set anchors
-// const anchors = ["Home"].concat(pageStack.map( (p, idx) => (idx+1) + "")).concat(["Thanks"])
 var anchors = ["Home", "1993~96", "1997~98", "1999~00", "2001~02", "2003~04", "2005~06", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "Thanks"];
 
 // Animation & Action

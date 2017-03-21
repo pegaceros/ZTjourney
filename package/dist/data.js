@@ -1097,7 +1097,6 @@ var createEventItem = function createEventItem(year, num, links, title, descript
         thumb: thumb.join(""),
         description: description,
         links: links
-        // TODO:
     };
     return item;
 };

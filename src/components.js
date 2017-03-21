@@ -1,8 +1,3 @@
-// Componets
-
-// const node = {
-//   img: "img/icon_2.png"
-// };
 class TlNode extends React.Component {
   render () {
     if (this.props.img) {
@@ -22,25 +17,16 @@ class TlNode extends React.Component {
 }
 
 
-// const eventItem = {
-//   title: "title",
-//   thumb: "img/thumb_1.jpg",
-//   link: "http://www.bilibili.com/video/av5202457/index_1.html"
-// };
 class EventItem extends React.Component {
   render () {
     const thumbStyle = {
       backgroundImage: "url(" + this.props.eventItem.thumb + ")",
     };
-    // <div className="zt-event-thumb" style={thumbStyle}></div>
-    // <img className="zt-event-thumb" src={this.props.eventItem.thumb} />
     let l = "javascript:void(0)";
-    // console.log(this.props.eventItem.links[0]);
     if (this.props.eventItem.links[0]) {
       l = this.props.eventItem.links[0];
     }
     return (
-      // TODO: 处理复数 links
       <div className="zt-event">
         <a href={l} target="_blank">
           <div className="zt-event-preview">
@@ -71,11 +57,6 @@ class EventsBlock extends React.Component {
   }
 }
 
-// const content = {
-//   yearTitle: "Year"
-//   position: left, right, full
-//   events: [EventItem]
-// };
 class Content extends React.Component {
   render () {
     const position = this.props.content.position;
@@ -96,10 +77,7 @@ class Content extends React.Component {
       <EventsBlock events={es} key={idx} />
     );
 
-    // const fadeStyle = (position == "right") ? "fade-in-left" : "fade-in-right";
-
     const cName = "zt-tl-content " + "content-" + position;
-    // const cName2 ="content-title " + fadeStyle;
 
     return (
       <div className={cName}>
@@ -114,7 +92,7 @@ class Content extends React.Component {
 class LandingPage extends React.Component {
   render () {
     const pageStyle = {
-      backgroundImage: "url(img/top.jpg)", //url(img/bg_0.jpeg)
+      backgroundImage: "url(img/top.jpg)",
       backgroundSize: "cover",
     };
     return (
@@ -122,13 +100,13 @@ class LandingPage extends React.Component {
           <div className="zt-landing-page">
               <div className="zt-top">
                 <div>
-                  <h1>周涛，2017生日快乐！</h1>
+                  <h1>周涛，2017年3月23日生日快乐！</h1>
                   <h2>Happy 49th Birthday!</h2>
                   <h5>四舍五入还没满月嘛 ( •̀ᴗ•́ )و ̑̑</h5>
                 </div>
                   <div className="zt-tl-header">
                       <div className="zt-tl-message jump">
-                          <h3>TaoTao's Marvellous Adventure</h3>
+                          <h3>↓ TaoTao's Marvellous Adventure ↓</h3>
                       </div>
                       <TlNode img="img/icon/icon_0.jpg"/>
                   </div>
@@ -155,7 +133,7 @@ class BlessItem extends React.Component {
 class EndingPage extends React.Component {
   render () {
     const pageStyle = {
-      backgroundImage: "", //url(img/bg_0.jpeg)
+      backgroundImage: "",
       backgroundSize: "cover",
     };
 
@@ -192,8 +170,6 @@ class Page extends React.Component {
   render() {
     const pageStyle = {
       backgroundImage: "url(" + this.props.page.bgImg + ")",
-      // backgroundSize: "contain",
-      // backgroundSize: "auto 100%",
       backgroundAttachment: "fixed",
       backgroundRepeat: "no-repeat",
       backgroundPosition: this.props.page.bgPosition

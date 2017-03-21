@@ -8,11 +8,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// Componets
-
-// const node = {
-//   img: "img/icon_2.png"
-// };
 var TlNode = function (_React$Component) {
   _inherits(TlNode, _React$Component);
 
@@ -39,13 +34,6 @@ var TlNode = function (_React$Component) {
   return TlNode;
 }(React.Component);
 
-// const eventItem = {
-//   title: "title",
-//   thumb: "img/thumb_1.jpg",
-//   link: "http://www.bilibili.com/video/av5202457/index_1.html"
-// };
-
-
 var EventItem = function (_React$Component2) {
   _inherits(EventItem, _React$Component2);
 
@@ -61,41 +49,35 @@ var EventItem = function (_React$Component2) {
       var thumbStyle = {
         backgroundImage: "url(" + this.props.eventItem.thumb + ")"
       };
-      // <div className="zt-event-thumb" style={thumbStyle}></div>
-      // <img className="zt-event-thumb" src={this.props.eventItem.thumb} />
       var l = "javascript:void(0)";
-      // console.log(this.props.eventItem.links[0]);
       if (this.props.eventItem.links[0]) {
         l = this.props.eventItem.links[0];
       }
-      return (
-        // TODO: 处理复数 links
+      return React.createElement(
+        "div",
+        { className: "zt-event" },
         React.createElement(
-          "div",
-          { className: "zt-event" },
-          React.createElement(
-            "a",
-            { href: l, target: "_blank" },
-            React.createElement(
-              "div",
-              { className: "zt-event-preview" },
-              React.createElement("div", { className: "zt-event-thumb", style: thumbStyle }),
-              React.createElement(
-                "div",
-                { className: "zt-event-description" },
-                React.createElement(
-                  "div",
-                  null,
-                  this.props.eventItem.description
-                )
-              )
-            )
-          ),
+          "a",
+          { href: l, target: "_blank" },
           React.createElement(
             "div",
-            { className: "zt-event-title" },
-            this.props.eventItem.title
+            { className: "zt-event-preview" },
+            React.createElement("div", { className: "zt-event-thumb", style: thumbStyle }),
+            React.createElement(
+              "div",
+              { className: "zt-event-description" },
+              React.createElement(
+                "div",
+                null,
+                this.props.eventItem.description
+              )
+            )
           )
+        ),
+        React.createElement(
+          "div",
+          { className: "zt-event-title" },
+          this.props.eventItem.title
         )
       );
     }
@@ -130,13 +112,6 @@ var EventsBlock = function (_React$Component3) {
   return EventsBlock;
 }(React.Component);
 
-// const content = {
-//   yearTitle: "Year"
-//   position: left, right, full
-//   events: [EventItem]
-// };
-
-
 var Content = function (_React$Component4) {
   _inherits(Content, _React$Component4);
 
@@ -167,10 +142,7 @@ var Content = function (_React$Component4) {
         return React.createElement(EventsBlock, { events: es, key: idx });
       });
 
-      // const fadeStyle = (position == "right") ? "fade-in-left" : "fade-in-right";
-
       var cName = "zt-tl-content " + "content-" + position;
-      // const cName2 ="content-title " + fadeStyle;
 
       return React.createElement(
         "div",
@@ -201,7 +173,7 @@ var LandingPage = function (_React$Component5) {
     key: "render",
     value: function render() {
       var pageStyle = {
-        backgroundImage: "url(img/top.jpg)", //url(img/bg_0.jpeg)
+        backgroundImage: "url(img/top.jpg)",
         backgroundSize: "cover"
       };
       return React.createElement(
@@ -219,7 +191,7 @@ var LandingPage = function (_React$Component5) {
               React.createElement(
                 "h1",
                 null,
-                "\u5468\u6D9B\uFF0C2017\u751F\u65E5\u5FEB\u4E50\uFF01"
+                "\u5468\u6D9B\uFF0C2017\u5E743\u670823\u65E5\u751F\u65E5\u5FEB\u4E50\uFF01"
               ),
               React.createElement(
                 "h2",
@@ -241,7 +213,7 @@ var LandingPage = function (_React$Component5) {
                 React.createElement(
                   "h3",
                   null,
-                  "TaoTao's Marvellous Adventure"
+                  "\u2193 TaoTao's Marvellous Adventure \u2193"
                 )
               ),
               React.createElement(TlNode, { img: "img/icon/icon_0.jpg" })
@@ -299,7 +271,7 @@ var EndingPage = function (_React$Component7) {
     key: "render",
     value: function render() {
       var pageStyle = {
-        backgroundImage: "", //url(img/bg_0.jpeg)
+        backgroundImage: "",
         backgroundSize: "cover"
       };
 
@@ -376,8 +348,6 @@ var Page = function (_React$Component8) {
     value: function render() {
       var pageStyle = {
         backgroundImage: "url(" + this.props.page.bgImg + ")",
-        // backgroundSize: "contain",
-        // backgroundSize: "auto 100%",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
         backgroundPosition: this.props.page.bgPosition

@@ -1907,7 +1907,6 @@ const createEventItem = (year, num, links, title, description) => {
     thumb: thumb.join(""),
     description: description,
     links: links
-    // TODO:
   }
   return item
 }
