@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var babel = require('gulp-babel');
 var rename = require("gulp-rename");
+var uglify = require('gulp-uglify');
 
 gulp.task('default', function() {
     // 默认的任务代码放在这
@@ -16,15 +17,11 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./package/dist/'));
 });
 
-// gulp.task('coffee', function() {
-//   gulp.src('./src/**/*.coffee')
-//     .pipe(coffee({bare: true}))
-//     .pipe(gulp.dest('./src/'));
-// });
 
 gulp.task("babel", function() {
     gulp.src("./src/**/*.js")
         .pipe(babel())
+        .pipe(uglify())
         .pipe(gulp.dest("./package/dist/"));
 });
 
