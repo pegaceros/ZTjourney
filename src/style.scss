@@ -34,31 +34,31 @@ $fadeload-duration: 0.6s;
 $fadeload-offset: 30px;
 $fadeload-delay: 0s;
 /* Animation */
-@keyframes pop {
+@keyframes jump {
     0% {
-        transform: scale(1);
+        transform: translateY(0);
     }
 
     100% {
-        transform: scale(1.1);
+        transform: translateY(-10px);
     }
 }
-@-moz-keyframes pop {
+@-moz-keyframes jump {
     0% {
-        transform: scale(1);
+        transform: translateY(0);
     }
 
     100% {
-        transform: scale(1.1);
+        transform: translateY(-10px);
     }
 }
-@-webkit-keyframes pop {
+@-webkit-keyframes jump {
     0% {
-        transform: scale(1);
+        transform: translateY(0);
     }
 
     100% {
-        transform: scale(1.1);
+        transform: translateY(-10px);
     }
 }
 /* Style */
@@ -438,8 +438,8 @@ body {
     }
 }
 /* Effect */
-.pop {
-    animation: pop 0.6s alternate infinite;
+.jump {
+    animation: jump 0.4s alternate infinite;
     animation-timing-function: ease;
 }
 

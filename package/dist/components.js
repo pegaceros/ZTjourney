@@ -240,7 +240,7 @@ var LandingPage = function (_React$Component5) {
               { className: "zt-tl-header" },
               React.createElement(
                 "div",
-                { className: "zt-tl-message fade-in-down" },
+                { className: "zt-tl-message jump" },
                 React.createElement(
                   "h3",
                   null,

@@ -128,10 +128,10 @@ class LandingPage extends React.Component {
                   <h5>四舍五入还没满月嘛 ( •̀ᴗ•́ )و ̑̑</h5>
                 </div>
                   <div className="zt-tl-header">
-                      <div className="zt-tl-message fade-in-down">
+                      <div className="zt-tl-message jump">
                           <h3>TaoTao's Marvellous Adventure</h3>
                       </div>
-                      <TlNode img="img/icon/icon_0.jpg" />
+                      <TlNode img="img/icon/icon_0.jpg"/>
                   </div>
               </div>
 
